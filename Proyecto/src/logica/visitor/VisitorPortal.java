@@ -3,7 +3,6 @@ package logica.visitor;
 import objeto.atravesable.PortalIn;
 import objeto.atravesable.PortalOut;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
-import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
@@ -30,12 +29,6 @@ public class VisitorPortal extends Visitor{
 			po.getTile().setComponente(e);
 			e.setTile(po.getTile());
 		}
-	}
-
-	@Override
-	public void afectar(OTConVida otcv) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

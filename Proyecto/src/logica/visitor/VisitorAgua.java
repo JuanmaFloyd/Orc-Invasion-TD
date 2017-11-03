@@ -2,7 +2,6 @@ package logica.visitor;
 
 import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
-import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
@@ -21,7 +20,6 @@ public class VisitorAgua extends Visitor{
 	public void afectar(Enemigo e) {
 		e.modificarVelocidad(agua.getRall());
 	}
-	public void afectar(OTConVida otcv) {}
 	public void afectar(OMConVida omcv) {}
 	public void afectar(Premio p) {}
 	

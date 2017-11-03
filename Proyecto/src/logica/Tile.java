@@ -1,8 +1,6 @@
 package logica;
 
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
-import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 import objeto.atravesable.*;
@@ -53,6 +51,9 @@ public class Tile {
 	public Tile getAbajo(){
 		return miJuego.getTile(fila+1, columna);
 	}
+	public Tile getArriba() {
+		return miJuego.getTile(fila-1, columna);
+	}
 	public void destruirAliado(Aliado a){
 		componente = null;
 		miJuego.agregarAliadoABorrar(a);
@@ -69,14 +70,8 @@ public class Tile {
 	public void destruirObjeto(OMConVida ocv){
 		componente=null;
 	}
-	public void destruirObjeto(OTConVida ocv){
-		componente=null;
-	}
 	public Logica getLogica(){
 		return miJuego;
 	}
 
-	public Tile getArriba() {
-		return miJuego.getTile(fila-1, columna);
-	}
 }

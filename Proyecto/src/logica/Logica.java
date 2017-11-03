@@ -10,7 +10,6 @@ import objeto.noAtravesable.objetoConVida.Premios.Escudo;
 import objeto.noAtravesable.objetoConVida.Premios.Fireball;
 import objeto.noAtravesable.objetoConVida.Premios.Frenzy;
 import objeto.noAtravesable.objetoConVida.Premios.Wololo;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
@@ -91,7 +90,7 @@ public class Logica {
 		}
 		enemigosAAgregar = new LinkedList<Enemigo>();
 	}
-	public void eliminarObjetos(){
+	private void eliminarObjetos(){
 		for (ObjetoTemporal obj : objetosTemporalesABorrar){
 			objetosTemporales.remove(obj);
 		}

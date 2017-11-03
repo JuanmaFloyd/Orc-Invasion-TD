@@ -11,7 +11,7 @@ public class AnimationEnemy extends Animation {
 	protected int pixelTime, pixelCounter;
 	protected long movementTimer;
 	protected Enemigo myEnemy;
-	boolean stopped;
+	protected boolean stopped;
 	
 	public AnimationEnemy(Enemigo enemy, int x, int y, float atSpd, float movSpd , BufferedImage[] att, BufferedImage[] mov){
 		super(x,y,atSpd,att);

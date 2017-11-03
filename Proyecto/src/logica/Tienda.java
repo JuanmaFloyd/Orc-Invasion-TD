@@ -2,8 +2,8 @@ package logica;
 
 import game.display.PanelTienda;
 import objeto.atravesable.ObjetoAtravesable;
-import objeto.noAtravesable.objetoConVida.OTConVida.*;
-import objeto.noAtravesable.objetoConVida.personaje.*;
+import objeto.noAtravesable.objetoConVida.ObjetoConVida;
+import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public class Tienda {
@@ -43,7 +43,7 @@ public class Tienda {
 		juego.agregarAliado(a);
 		
 	}
-	public void comprar(OTConVida otcv){
+	public void comprar(OMConVida otcv){
 		monedas-=otcv.getValor();
 	}
 	public void agregar(ObjetoAtravesable a){
@@ -51,7 +51,7 @@ public class Tienda {
 	}
 	//agregar comprar para temporales
 	
-	public void vender(Aliado a){
+	public void vender(ObjetoConVida a){
 		if(a.fullVida()){
 			a.getTile().setComponente(null);
 			monedas+=a.getValor();
@@ -59,16 +59,6 @@ public class Tienda {
 		else{
 			a.getTile().setComponente(null);
 			monedas+=a.getValor()/2;
-		}
-	}
-	public void vender(OTConVida otcv){
-		if(otcv.fullVida()){
-			otcv.getTile().setComponente(null);
-			monedas+=otcv.getValor();
-		}
-		else{
-			otcv.getTile().setComponente(null);
-			monedas+=otcv.getValor()/2;
 		}
 	}
 	

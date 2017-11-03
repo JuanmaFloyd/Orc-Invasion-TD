@@ -3,9 +3,9 @@ package logica;
 import logica.visitor.VisitorPortal;
 import objeto.atravesable.PortalIn;
 import objeto.atravesable.PortalOut;
-import objeto.noAtravesable.objetoConVida.OTConVida.OTConVida;
+import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 
-public class Portal extends OTConVida{
+public class Portal extends OMConVida{
 	protected PortalIn pi;
 	protected PortalOut po;
 	
@@ -24,6 +24,7 @@ public class Portal extends OTConVida{
 	//despues lo borro
 	public void restarVida(int v) {
 	}
+	
 	public Objeto clone() {
 		return new Portal();
 	}

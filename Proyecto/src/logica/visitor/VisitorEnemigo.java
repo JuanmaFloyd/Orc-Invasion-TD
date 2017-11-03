@@ -1,7 +1,6 @@
 package logica.visitor;
 
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
-import objeto.noAtravesable.objetoConVida.OTConVida.*;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
@@ -27,10 +26,6 @@ public class VisitorEnemigo extends Visitor {
 	}
 	public void afectar(OMConVida omcv){
 		omcv.restarVida(enemigo.getImpacto());
-		enemigo.setState(enemigo.getAttackingState());
-	}
-	public void afectar(OTConVida otcv){
-		otcv.restarVida(enemigo.getImpacto());
 		enemigo.setState(enemigo.getAttackingState());
 	}
 	public void afectar(Premio p){
