@@ -16,13 +16,7 @@ public class VisitorPortal extends Visitor{
 		pi = i;
 	}
 
-	@Override
-	public void afectar(Aliado a) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
+	public void afectar(Aliado a) {}
 	public void afectar(Enemigo e) {
 		if(po.getTile().getComponente()==null){
 			pi.getTile().setComponente(null);
@@ -30,16 +24,6 @@ public class VisitorPortal extends Visitor{
 			e.setTile(po.getTile());
 		}
 	}
-
-	@Override
-	public void afectar(OMConVida omcv) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afectar(Premio p) {
-		// TODO Auto-generated method stub
-		
-	} 
+	public void afectar(OMConVida omcv) {}
+	public void afectar(Premio p) {} 
 }

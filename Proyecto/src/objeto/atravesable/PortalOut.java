@@ -14,7 +14,7 @@ public class PortalOut extends ObjetoAtravesable{
 		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.7f, ImageLoader.portalOrange);
 	}
 	
-	public void modificar(ObjetoNoAtravesable p){}
+	public void modificar(ObjetoNoAtravesable o){}
 	public Objeto clone() {
 		return new PortalOut(new Tile(null, 0, 0));
 	}

@@ -21,8 +21,8 @@ public class PortalIn extends ObjetoAtravesable{
 		this.v = v;
 	}
 	
-	public void modificar(ObjetoNoAtravesable p) {
-		p.accept(v);
+	public void modificar(ObjetoNoAtravesable o) {
+		o.accept(v);
 	}
 	public Objeto clone(){
 		return new PortalIn(null, new Tile(null, 0, 0));

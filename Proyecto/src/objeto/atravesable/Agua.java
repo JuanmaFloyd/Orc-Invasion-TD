@@ -28,10 +28,6 @@ public class Agua extends ObjetoAtravesable{
 	public float getRall(){
 		return rall;
 	}
-
-	public void normalizar(Personaje p) {
-		p.normalizarVelocidad();
-	}
 	public Objeto clone() {
 		return new Agua(new Tile(null, 0, 0));
 	}
