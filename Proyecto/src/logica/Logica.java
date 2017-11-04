@@ -14,15 +14,18 @@ import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
 public class Logica {
+	
 	//atributos
-	protected LinkedList<Enemigo> listaEnemigos, enemigosABorrar, enemigosAAgregar;
-	protected LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
-	protected LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
-	protected LinkedList<ObjetoTemporal> objetosTemporales, objetosTemporalesABorrar;
-	protected Tienda tienda;
-	protected int score;
-	protected Tile[][] tablero;
-	protected final int filas=6, columnas=12;
+	private LinkedList<Enemigo> listaEnemigos, enemigosABorrar, enemigosAAgregar;
+	private LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
+	private LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
+	private LinkedList<ObjetoTemporal> objetosTemporales, objetosTemporalesABorrar;
+	
+	private Tienda tienda;
+	private int score;
+	private Tile[][] tablero;
+	private final int filas=6, columnas=12;
+	
 	private static Logica logica = new Logica();
 	
 	//constructor
