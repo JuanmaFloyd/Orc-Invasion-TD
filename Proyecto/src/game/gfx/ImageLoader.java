@@ -33,6 +33,7 @@ public class ImageLoader {
 	public static BufferedImage[] jefeOrcoMov = new BufferedImage[4];
 	public static BufferedImage[] orcoBallestaMov = new BufferedImage[4];
 	public static BufferedImage[] orcoBallestaAtk = new BufferedImage[4];
+	public static BufferedImage[] campeonEnanoAtk = new BufferedImage[4];
 	
  	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
@@ -149,7 +150,11 @@ public class ImageLoader {
 		orcoBallestaAtk[1] = orcoBallestero;
 		orcoBallestaAtk[2] = orcoBallestero;
 		orcoBallestaAtk[3] = orcoBallestero;
-		
+		sheet = loadImage("/Textures/Animations/DwarfChampion attack.png");
+		campeonEnanoAtk[0] = sheet.getSubimage(0, 0, 64, 64);
+		campeonEnanoAtk[1] = sheet.getSubimage(64, 0, 64, 64);
+		campeonEnanoAtk[2] = sheet.getSubimage(128, 0, 64, 64);
+		campeonEnanoAtk[3] = sheet.getSubimage(192, 0, 64, 64);	
 	}
 	
 	public static BufferedImage loadImage(String path){
