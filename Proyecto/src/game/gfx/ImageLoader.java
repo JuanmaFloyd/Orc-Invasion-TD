@@ -33,6 +33,7 @@ public class ImageLoader {
 	public static BufferedImage[] jefeOrcoMov = new BufferedImage[4];
 	public static BufferedImage[] orcoBallestaMov = new BufferedImage[4];
 	public static BufferedImage[] orcoBallestaAtk = new BufferedImage[4];
+	public static BufferedImage[] campeonEnanoAtk = new BufferedImage[4];
 	
  	public static void init(){
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
@@ -95,10 +96,11 @@ public class ImageLoader {
 		arqueroAtk[1] = sheet.getSubimage(64, 0, 64, 64);
 		arqueroAtk[2] = sheet.getSubimage(128, 0, 64, 64);
 		arqueroAtk[3] = sheet.getSubimage(192, 0, 64, 64);
-		mageAtk[0] = mago;
-		mageAtk[1] = mago;
-		mageAtk[2] = mago;
-		mageAtk[3] = mago;
+		sheet = loadImage("/Textures/Animations/Mage attack.png");
+		mageAtk[0] = sheet.getSubimage(0, 0, 64, 64);
+		mageAtk[1] = sheet.getSubimage(64, 0, 64, 64);
+		mageAtk[2] = sheet.getSubimage(128, 0, 64, 64);
+		mageAtk[3] = sheet.getSubimage(192, 0, 64, 64);
 		sheet = loadImage("/Textures/Animations/DwarfHunter attack.png");
 		dwarfHunterAtk[0] = sheet.getSubimage(0, 0, 64, 64);
 		dwarfHunterAtk[1] = sheet.getSubimage(64, 0, 64, 64);
@@ -148,7 +150,11 @@ public class ImageLoader {
 		orcoBallestaAtk[1] = orcoBallestero;
 		orcoBallestaAtk[2] = orcoBallestero;
 		orcoBallestaAtk[3] = orcoBallestero;
-		
+		sheet = loadImage("/Textures/Animations/DwarfChampion attack.png");
+		campeonEnanoAtk[0] = sheet.getSubimage(0, 0, 64, 64);
+		campeonEnanoAtk[1] = sheet.getSubimage(64, 0, 64, 64);
+		campeonEnanoAtk[2] = sheet.getSubimage(128, 0, 64, 64);
+		campeonEnanoAtk[3] = sheet.getSubimage(192, 0, 64, 64);	
 	}
 	
 	public static BufferedImage loadImage(String path){

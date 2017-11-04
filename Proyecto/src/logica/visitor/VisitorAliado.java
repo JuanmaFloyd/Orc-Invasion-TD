@@ -1,6 +1,7 @@
 package logica.visitor;
 
 import logica.Tile;
+import objeto.noAtravesable.ObjectStateStatic;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.*;
@@ -33,6 +34,8 @@ public class VisitorAliado extends Visitor {
 			}
 			current = current.getLeft();
 		}
+		if (!encontre)	
+			aliado.setState(new ObjectStateStatic());
 	}
 	public void afectar(Premio p) {}
 }

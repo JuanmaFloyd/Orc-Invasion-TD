@@ -16,7 +16,7 @@ public class AnimationEnemy extends Animation {
 	public AnimationEnemy(Enemigo enemy, int x, int y, float atSpd, float movSpd , BufferedImage[] att, BufferedImage[] mov){
 		super(x,y,atSpd,att);
 		movement = mov;
-		pixelTime = (int) ((1000 * movSpd) / 64);// System.out.println(pixelTime);
+		pixelTime = (int) ((1000 * movSpd) / 64);
 		movementTimer = 1;
 		myEnemy = enemy;
 		pixelCounter = 0;
@@ -44,8 +44,6 @@ public class AnimationEnemy extends Animation {
 				}
 				pixelCounter = (pixelCounter + 1) % 64;
 				movementTimer = 0;
-				g.drawImage(ImageLoader.vida[1], x, y, 40, 4, null);
-				g.drawImage(ImageLoader.vida[0], x, y, (40*myEnemy.getVida())/myEnemy.getMaxVida(), 4, null);
 			}
 			if (timer > indexTime){
 				index = (index + 1) % totalImages;
@@ -54,9 +52,9 @@ public class AnimationEnemy extends Animation {
 		}
 		else {
 			g.drawImage(movement[0], x, y, 64,64, null);
-			g.drawImage(ImageLoader.vida[1], x, y, 40, 4, null);
-			g.drawImage(ImageLoader.vida[0], x, y, (40*myEnemy.getVida())/myEnemy.getMaxVida(), 4, null);
 		}
+		//g.drawImage(ImageLoader.vida[1], x, y, 40, 4, null);
+		//g.drawImage(ImageLoader.vida[0], x, y, (40*myEnemy.getVida())/myEnemy.getMaxVida(), 4, null);
 	}
 	
 	public void setMovSpeed(float value){

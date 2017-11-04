@@ -12,6 +12,7 @@ import java.awt.Graphics;
 import java.util.Random;
 
 import game.gfx.AnimationEnemy;
+import game.gfx.ImageLoader;
 
 public abstract class Enemigo extends Personaje{
 	//atributos
@@ -64,7 +65,6 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void avanzar(){
-		//System.out.println("Orden de avanzar, detenido = " + detenido + " reloj: " + relojMov);
 		if(!detenido && relojMov==0 && miTile.getRight().getComponente()==null){
 			Tile sig = miTile.getRight();
 			miTile.setComponente(null);
@@ -73,7 +73,6 @@ public abstract class Enemigo extends Personaje{
 			this.setTile(sig);
 			normalizarVelocidad();
 			animation.switchMovementState();
-			//relojMov = (relojMov+1)%(int)(velocidadMov*60);
 		}
 		relojMov = (relojMov+1)%(int)(velocidadMov*60);
 		if (detenido) relojMov = 0;
@@ -104,6 +103,8 @@ public abstract class Enemigo extends Personaje{
 	
 	public void dibujar(Graphics g){
 		state.draw(g, this);
+		g.drawImage(ImageLoader.vida[1], animation.getX(), animation.getY(), 40, 4, null);
+		g.drawImage(ImageLoader.vida[0], animation.getX(), animation.getY(), (40*getVida())/getMaxVida(), 4, null);
 	}
 	
 	public void switchMovementState(){

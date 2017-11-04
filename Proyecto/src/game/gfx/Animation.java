@@ -38,4 +38,12 @@ public class Animation {
 		x = a*64;
 		y = b*64;
 	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
+	}
 }

@@ -21,7 +21,6 @@ public abstract class ObjetoTemporal {
 		if (reloj == 0){
 			efectoFinal();
 			logica.agregarObjetoTemporalABorrar(this);
-			logica = null;
 		}
 		efecto();
 	}

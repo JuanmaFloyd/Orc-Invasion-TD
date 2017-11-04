@@ -29,15 +29,12 @@ public class Game implements Runnable{
 	private GraphicsManager graphicsManager;
 	private Visitor v;
 
-	// Atributo para manejar los graficos del juego.
+	private Nivel nivel;
 
 	private GameGraphics myGraphics;
 	
 	private boolean running=false;
 	private Thread thread;
-	
-	private BufferStrategy bs;
-	private Graphics g;
 	
 	//Variables de prueba
 	
@@ -54,27 +51,16 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		myGraphics = new GameGraphics(myLogic);
 		graphicsManager = new GraphicsManager(display);
-		v=new VisitorClick();
+		v = new VisitorClick();
+		nivel = new NivelFacil();
+		nivel.start();
 	}
 	
 	private void update(){
 		myLogic.actualizar();
 		display.actualizarPuntaje(myLogic.getScore());
 	}
-	
-	private void render(){
-		bs = display.getCanvas().getBufferStrategy();
-		if(bs == null){
-			display.getCanvas().createBufferStrategy(3);
-			return;
-		}
-		g = bs.getDrawGraphics();
-		myGraphics.setGraphics(g);
-		myGraphics.dibujarMapa();
-		
-		bs.show();
-		g.dispose();
-	}
+
 	
 	public void run(){
 		
@@ -96,7 +82,6 @@ public class Game implements Runnable{
 
 			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
 				update();
-				//render();
 				delta--;
 			}
 		}
@@ -112,7 +97,7 @@ public class Game implements Runnable{
 		running = true;
 		thread = new Thread(this);
 		thread.start();
-		
+
 	}
 	
 	public synchronized void stop(){
@@ -162,16 +147,16 @@ public class Game implements Runnable{
 		if (myLogic.getTile(y, 0).getComponente() == null){
 			if (ran == 0){
 				Brujo brujo = new Brujo(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(brujo);
+				myLogic.agregarEnemigo(brujo,myLogic.getTile(y, 0));
 			} else if (ran == 1){
-				Goblin gob = new Goblin(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(gob);
+				Goblin gob = new Goblin();
+				myLogic.agregarEnemigo(gob,myLogic.getTile(y, 0));
 			} else if (ran == 2){
 				Grunt grunt = new Grunt(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(grunt);
+				myLogic.agregarEnemigo(grunt,myLogic.getTile(y, 0));
 			} else if (ran == 3){
 				JefeOrco jefe = new JefeOrco(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(jefe);
+				myLogic.agregarEnemigo(jefe,myLogic.getTile(y, 0));
 			}
 		}
 	}
