@@ -95,10 +95,11 @@ public class ImageLoader {
 		arqueroAtk[1] = sheet.getSubimage(64, 0, 64, 64);
 		arqueroAtk[2] = sheet.getSubimage(128, 0, 64, 64);
 		arqueroAtk[3] = sheet.getSubimage(192, 0, 64, 64);
-		mageAtk[0] = mago;
-		mageAtk[1] = mago;
-		mageAtk[2] = mago;
-		mageAtk[3] = mago;
+		sheet = loadImage("/Textures/Animations/Mage attack.png");
+		mageAtk[0] = sheet.getSubimage(0, 0, 64, 64);
+		mageAtk[1] = sheet.getSubimage(64, 0, 64, 64);
+		mageAtk[2] = sheet.getSubimage(128, 0, 64, 64);
+		mageAtk[3] = sheet.getSubimage(192, 0, 64, 64);
 		sheet = loadImage("/Textures/Animations/DwarfHunter attack.png");
 		dwarfHunterAtk[0] = sheet.getSubimage(0, 0, 64, 64);
 		dwarfHunterAtk[1] = sheet.getSubimage(64, 0, 64, 64);
