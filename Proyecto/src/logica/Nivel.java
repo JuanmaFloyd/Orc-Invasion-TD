@@ -43,6 +43,8 @@ public abstract class Nivel implements Runnable{
 		
 		init();
 		
+		random = new Random();
+		
 		while(!nivelFinalizado){
 			
 			try {
@@ -51,15 +53,15 @@ public abstract class Nivel implements Runnable{
 			catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
+			numeroRandom = random.nextInt(6);
 			if (!oleada1.oleadaFinalizada()){
-				logicaJuego.agregarEnemigo(oleada1.liberarEnemigo());
+				logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(),logicaJuego.getTile(numeroRandom, 0));
 			}
 			else if(!oleada2.oleadaFinalizada()){
-				logicaJuego.agregarEnemigo(oleada2.liberarEnemigo());
+				logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(),logicaJuego.getTile(numeroRandom, 0));
 			}
 			else if(!oleada3.oleadaFinalizada()){
-				logicaJuego.agregarEnemigo(oleada3.liberarEnemigo());
+				logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(),logicaJuego.getTile(numeroRandom, 0));
 			}
 			else{
 				nivelFinalizado = true;

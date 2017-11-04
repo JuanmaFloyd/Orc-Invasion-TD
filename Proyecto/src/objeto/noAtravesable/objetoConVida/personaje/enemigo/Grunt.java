@@ -15,7 +15,7 @@ public class Grunt extends Enemigo{
 		vida=45;
 		maxVida=45;
 		miTile=t;
-		velocidadMov = 0.5f;
+		velocidadMov = 2.0f;
 		velocidadAt=0.7f;
 		animation = new AnimationEnemy(this,0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.gruntAtk, ImageLoader.gruntMove);
 		t.setComponente(this);

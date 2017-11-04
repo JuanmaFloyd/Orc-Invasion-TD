@@ -147,16 +147,16 @@ public class Game implements Runnable{
 		if (myLogic.getTile(y, 0).getComponente() == null){
 			if (ran == 0){
 				Brujo brujo = new Brujo(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(brujo);
+				myLogic.agregarEnemigo(brujo,myLogic.getTile(y, 0));
 			} else if (ran == 1){
-				Goblin gob = new Goblin(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(gob);
+				Goblin gob = new Goblin();
+				myLogic.agregarEnemigo(gob,myLogic.getTile(y, 0));
 			} else if (ran == 2){
 				Grunt grunt = new Grunt(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(grunt);
+				myLogic.agregarEnemigo(grunt,myLogic.getTile(y, 0));
 			} else if (ran == 3){
 				JefeOrco jefe = new JefeOrco(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(jefe);
+				myLogic.agregarEnemigo(jefe,myLogic.getTile(y, 0));
 			}
 		}
 	}

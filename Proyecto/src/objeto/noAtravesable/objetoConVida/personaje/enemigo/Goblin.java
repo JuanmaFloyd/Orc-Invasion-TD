@@ -10,15 +10,13 @@ import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 
 public class Goblin extends Enemigo {
 	//constructor
-	public Goblin(Tile t){
+	public Goblin(){
 		super();
 		vida=35;
 		maxVida=35;
-		miTile=t;
 		velocidadAt=0.7f;
-		velocidadMov=0.5f;
-		animation = new AnimationEnemy(this, 0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.goblinAtk, ImageLoader.goblinMove);
-		t.setComponente(this);
+		velocidadMov=1.5f;
+		animation = new AnimationEnemy(this, 0, 0, velocidadAt, velocidadMov, ImageLoader.goblinAtk, ImageLoader.goblinMove);
 		image = ImageLoader.goblin;
 		ancho=1;
 		alto=1;
@@ -34,7 +32,7 @@ public class Goblin extends Enemigo {
 		premio = new Peste();
 	}
 	public ObjetoNoAtravesable clone(){
-		return new Goblin(new Tile(null,0,0));
+		return new Goblin();
 	}
 	public void accept(VisitorWololo vw, Tile t){
 		vw.visit(this, t);

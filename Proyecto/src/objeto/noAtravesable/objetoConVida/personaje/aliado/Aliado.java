@@ -75,10 +75,10 @@ public abstract class Aliado extends Personaje {
 	}
 	
 	public void dibujar(Graphics g){
+		state.draw(g, this);
 		g.drawImage(ImageLoader.vida[1], getTile().getColumna() * 64, getTile().getFila() * 64, 40, 4, null);
 		g.drawImage(ImageLoader.vida[0], getTile().getColumna() * 64, getTile().getFila() * 64, (40*vida)/maxVida, 4, null);
 		g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64)+7, (40*escudo)/maxEscudo, 4, null);
-		state.draw(g, this);
 	}
 	
 	public void agregar(Tienda tien, Tile t){

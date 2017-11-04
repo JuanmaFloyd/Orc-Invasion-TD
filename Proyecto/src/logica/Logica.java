@@ -57,8 +57,10 @@ public class Logica {
 	public void agregarAliado(Aliado a){
 		aliadosAAgregar.addLast(a);
 	}
-	public void agregarEnemigo(Enemigo e){
+	public void agregarEnemigo(Enemigo e, Tile t){
 		enemigosAAgregar.addLast(e);
+		e.setTile(t);
+		t.setComponente(e);
 	}
 	public void agregarAtravesable(ObjetoAtravesable oa){
 		listaAtravesables.addLast(oa);
