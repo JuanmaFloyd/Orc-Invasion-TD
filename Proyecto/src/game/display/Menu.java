@@ -21,7 +21,7 @@ public class Menu extends JPanel{
 		g=ga;
 		setLayout(new CardLayout());
 		
-		JLabel labelFondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/Fondo Menu")));
+		JLabel labelFondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/Fondo Menu.png")));
 		
 		add(labelFondo);
 		
