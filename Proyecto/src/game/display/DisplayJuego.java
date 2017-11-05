@@ -24,7 +24,7 @@ public class DisplayJuego extends JPanel{
 	private PanelTienda panelTienda;
 	
 	
-	public DisplayJuego(String title, int width, int height, Game g){
+	public DisplayJuego(Game g){
 		myGame = g;
 		tienda = Tienda.getTienda(myGame.getLogica());
 		createDisplay();
