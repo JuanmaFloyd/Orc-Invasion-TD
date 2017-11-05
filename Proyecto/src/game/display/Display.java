@@ -19,7 +19,7 @@ public class Display {
 	private Tienda tienda;
 	private String title;
 	private int width, height;
-	private PanelTienda panel;
+	private PanelTienda panelTienda;
 	
 	
 	public Display(String title, int width, int height, Game g){
@@ -41,9 +41,9 @@ public class Display {
 		frame.setVisible(true);
 		frame.setLayout(new GridBagLayout());
 
-		panel = new PanelTienda(myGame, tienda);
+		panelTienda = new PanelTienda(myGame, tienda);
 		
-		PremioManager.init(panel);
+		PremioManager.init(panelTienda);
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(864, 512));
@@ -65,7 +65,7 @@ public class Display {
 		frame.add(canvas,c);
 		c.gridx=1;
 		c.ipadx=width/4;
-		frame.add(panel,c);
+		frame.add(panelTienda,c);
 		frame.pack();
 		
 	}
@@ -77,18 +77,18 @@ public class Display {
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + e.getY());
 
-		if(panel.getPrototype()!=null){// && myGame.getLogica().getTile(e.getY()/64, e.getX()/64).getComponente()==null
-			panel.getPrototype().agregar(tienda, myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
+		if(panelTienda.getPrototype()!=null){// && myGame.getLogica().getTile(e.getY()/64, e.getX()/64).getComponente()==null
+			panelTienda.getPrototype().agregar(tienda, myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
 		}
 		else
 			myGame.interaccion(e.getX(), e.getY());
 	}
 	
 	public void actualizarPuntaje(int p){
-		panel.actualizarPuntaje(p, tienda.getMonedas());
+		panelTienda.actualizarPuntaje(p, tienda.getMonedas());
 	}
 	
 	public PanelTienda getPanelTienda(){
-		return panel;
+		return panelTienda;
 	}
 }
