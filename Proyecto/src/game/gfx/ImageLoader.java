@@ -42,9 +42,13 @@ public class ImageLoader {
 		//agua = new BufferedImage[1];
 		agua = sheet.getSubimage(0, height, width, height);
 		//piedra = new BufferedImage[1]; 
-		piedra =	sheet.getSubimage(width, 0, width, height);
+		piedra = sheet.getSubimage(width, 0, width, height);
 		//arbol = new BufferedImage[1];
 		arbol = loadImage("/Textures/arbol.png");
+		lava[0] = sheet.getSubimage(0, 64, 32, 32);
+		lava[1] = sheet.getSubimage(0, 64, 32, 32);
+		lava[2] = sheet.getSubimage(0, 64, 32, 32);
+		lava[3] = sheet.getSubimage(0, 64, 32, 32);
 		espadachin = loadImage("/Textures/Personajes/Soldado.png");
 		paladin = loadImage("/Textures/Personajes/Paladin.png");
 		arquero = loadImage("/Textures/Personajes/Arquero.png");
