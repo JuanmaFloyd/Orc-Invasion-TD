@@ -26,6 +26,7 @@ public class EnanoCazador extends Aliado {
 		alcance=4;
 		valor=75;
 		v=new VisitorAliado(this);
+		animation.setYOffset(128);
 	}
 	
 	public void agregar(Tienda tien, Tile t){

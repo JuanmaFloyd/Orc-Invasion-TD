@@ -18,6 +18,7 @@ public class OrcoConBallesta extends Enemigo{
 		velocidadMov=1.3f;
 		velocidadAt=1.2f;
 		animation = new AnimationEnemy(this, 0 , t.getFila()*64, velocidadAt, velocidadMov ,ImageLoader.orcoBallestaAtk, ImageLoader.orcoBallestaMov);
+		animation.setYOffset(128);
 		t.setComponente(this);
 		image = ImageLoader.orcoBallestero;
 		ancho=1;

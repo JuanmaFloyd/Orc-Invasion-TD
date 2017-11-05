@@ -233,7 +233,12 @@ public class Logica {
 	}
 	
 	public Tile getTile(int f, int c){
-		return tablero[f][c];
+		if (f < tablero.length && c < tablero[0].length){
+			return tablero[f][c];
+		}
+		else{
+			return null;
+		}
 	}
 	
 	public int getFilas(){

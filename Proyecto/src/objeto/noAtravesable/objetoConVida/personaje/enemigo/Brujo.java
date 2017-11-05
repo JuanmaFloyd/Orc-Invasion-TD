@@ -16,6 +16,7 @@ public class Brujo extends Enemigo{
 		velocidadMov=2.3f;
 		velocidadAt=1.2f;
 		animation = new AnimationEnemy(this, 0 , t.getFila()*64, velocidadAt, velocidadMov ,ImageLoader.warlockAtk, ImageLoader.warlockMove);
+		animation.setYOffset(128);
 		t.setComponente(this);
 		image = ImageLoader.brujo;
 		ancho=1;

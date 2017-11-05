@@ -34,6 +34,7 @@ public class Paladin extends Aliado{
 			valor=50;
 			v=new VisitorAliado(this);
 			animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.paladinAtk);
+			animation.setYOffset(128);
 			
 		}
 		public void restarVida(int v){

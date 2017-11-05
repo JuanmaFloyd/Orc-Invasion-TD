@@ -26,6 +26,7 @@ public class Arquero extends Aliado{
 			valor=40;
 			v=new VisitorAliado(this);
 			animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.arqueroAtk);
+			animation.setYOffset(128);
 		}
 		
 		public ObjetoNoAtravesable clone(){
