@@ -17,6 +17,7 @@ public class Goblin extends Enemigo {
 		velocidadAt=0.7f;
 		velocidadMov=1.5f;
 		animation = new AnimationEnemy(this, 0, 0, velocidadAt, velocidadMov, ImageLoader.goblinAtk, ImageLoader.goblinMove);
+		animation.setXOffset(-32);
 		image = ImageLoader.goblin;
 		ancho=1;
 		alto=1;

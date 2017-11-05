@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 public class Animation {
 	
 	protected BufferedImage ataque[];
-	protected int x, y, index, totalImages, indexTime;
+	protected int x, y, index, totalImages, indexTime, xOffset, yOffset;
 	protected long lastTime, now, timer;
 	
 	public Animation (int x, int y, float atkSpeed , BufferedImage[] anim){
@@ -21,7 +21,7 @@ public class Animation {
 	}
 	
 	public void drawrAtk(Graphics g){
-		g.drawImage(ataque[index], x, y, 64 , 64 , null);
+		g.drawImage(ataque[index], x + xOffset , y + yOffset, 64 , 64 , null);
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		if (timer > indexTime){
@@ -45,5 +45,14 @@ public class Animation {
 	
 	public int getY(){
 		return y;
+	}
+	
+	
+	public void setXOffset(int x){
+		xOffset = x;
+	}
+	
+	public void setYOffset(int y){
+		yOffset = y;
 	}
 }

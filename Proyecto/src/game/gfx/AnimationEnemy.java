@@ -29,7 +29,7 @@ public class AnimationEnemy extends Animation {
 
 	public void drawMove(Graphics g){
 		if (!stopped){
-			g.drawImage(movement[index], x, y, myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
+			g.drawImage(movement[index], x + xOffset, y + yOffset, myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
 			movementTimer += System.currentTimeMillis() - lastTime;
 			timer += System.currentTimeMillis() - lastTime;
 			lastTime = System.currentTimeMillis();
@@ -51,11 +51,12 @@ public class AnimationEnemy extends Animation {
 			}
 		}
 		else {
-			g.drawImage(movement[0], x, y, 64,64, null);
+			g.drawImage(movement[0], x + xOffset, y + yOffset, 64,64, null);
 		}
 	}
 	
 	public void setMovSpeed(float value){
 		pixelTime = (int) ((1000 * value) / 64);
 	}
+
 }
