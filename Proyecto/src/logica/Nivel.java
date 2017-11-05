@@ -42,12 +42,11 @@ public abstract class Nivel implements Runnable{
 	}
 	
 	@Override
-	public void run() {		
+public void run() {		
 		
 		init();
-		
+		boolean oleada1fin = false, oleada2fin = false, oleada3fin = false;
 		random = new Random();
-		
 		while(!nivelFinalizado){
 			
 			try {
@@ -57,22 +56,24 @@ public abstract class Nivel implements Runnable{
 				e.printStackTrace();
 			}
 			numeroRandom = random.nextInt(6);
-			if (!oleada1.oleadaFinalizada() || !logicaJuego.noHayEnemigos()){
-				if (!oleada1.oleadaFinalizada())
-					logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(),logicaJuego.getTile(numeroRandom, 0));
-			}
-			else{
-				modificarMapa();
-				if(!oleada2.oleadaFinalizada()){
-				logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(),logicaJuego.getTile(numeroRandom, 0));
+			if (!oleada1fin){
+				if(!oleada1.oleadaFinalizada())
+					logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
+				else if (logicaJuego.noHayEnemigos()){
+					oleada1fin = true;
+					modificarMapa();
 				}
-				else if(!oleada3.oleadaFinalizada()){
-					logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(),logicaJuego.getTile(numeroRandom, 0));
+			} else if (!oleada2fin){
+			if(!oleada2.oleadaFinalizada())
+				logicaJuego.agregarEnemigo(oleada2.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
+			else if (logicaJuego.noHayEnemigos())
+				oleada2fin = true;
+			} else if (!oleada3fin){
+				if(!oleada3.oleadaFinalizada())
+					logicaJuego.agregarEnemigo(oleada3.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
+				else if (logicaJuego.noHayEnemigos())
+					oleada3fin = true;
 				}
-				else{
-					nivelFinalizado = true;
-				}
-			}
 		}
 	}
 	
