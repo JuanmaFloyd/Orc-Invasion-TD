@@ -16,8 +16,6 @@ import logica.Tienda;
 
 @SuppressWarnings("serial")
 public class DisplayJuego extends JPanel{
-
-	private JLabel frame;
 	private Canvas canvas;
 	private Game myGame;
 	private Tienda tienda;
@@ -31,7 +29,8 @@ public class DisplayJuego extends JPanel{
 	}
 	
 	private void createDisplay(){
-		frame.setLayout(new GridBagLayout());
+
+		setLayout(new GridBagLayout());
 
 		panelTienda = new PanelTienda(myGame, tienda);
 		
@@ -54,10 +53,10 @@ public class DisplayJuego extends JPanel{
 		c.gridx = 0;
 		c.gridy = 0;
 		c.fill = GridBagConstraints.BOTH;
-		frame.add(canvas,c);
+		add(canvas,c);
 		c.gridx=1;
 		c.ipadx=768/4;
-		frame.add(panelTienda,c);
+		add(panelTienda,c);
 		
 	}
 	
