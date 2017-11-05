@@ -20,6 +20,7 @@ public class DisplayJuego extends JPanel{
 	private Game myGame;
 	private Tienda tienda;
 	private PanelTienda panelTienda;
+	private int offset = 128;
 	
 	
 	public DisplayJuego(Game g){
@@ -65,13 +66,13 @@ public class DisplayJuego extends JPanel{
 	}
 	
 	public void click(MouseEvent e){
-		System.out.println(e.getX() + " " + e.getY());
+		System.out.println(e.getX() + " " + (e.getY()-offset));
 
-		if(panelTienda.getPrototype()!=null){// && myGame.getLogica().getTile(e.getY()/64, e.getX()/64).getComponente()==null
-			panelTienda.getPrototype().agregar(tienda, myGame.getLogica().getTile(e.getY()/64, e.getX()/64));
+		if(panelTienda.getPrototype()!=null){
+			panelTienda.getPrototype().agregar(tienda, myGame.getLogica().getTile((e.getY()-offset)/64, e.getX()/64));
 		}
 		else
-			myGame.interaccion(e.getX(), e.getY());
+			myGame.interaccion(e.getX(), e.getY()-offset);
 	}
 	
 	public void actualizarPuntaje(int p){
