@@ -2,7 +2,7 @@ package game;
 
 import java.awt.Graphics;
 
-import game.display.Display;
+import game.display.DisplayJuego;
 import game.gfx.GameGraphics;
 import logica.Logica;
 
@@ -10,10 +10,10 @@ public class GameState implements UIState{
 
 	private GameGraphics graphics;
 	private static Logica logica = Logica.getLogica();
-	private Display display;
+	private DisplayJuego display;
 	
 	
-	public GameState(Display display, GameGraphics graphics){
+	public GameState(DisplayJuego display, GameGraphics graphics){
 		this.display = display;
 		this.graphics = graphics;
 	}

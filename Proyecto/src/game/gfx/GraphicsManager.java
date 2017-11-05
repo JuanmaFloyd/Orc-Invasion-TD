@@ -4,13 +4,13 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import game.UIState;
-import game.display.Display;
+import game.display.DisplayJuego;
 import logica.Logica;
 
 public class GraphicsManager implements Runnable{
 
 	private GameGraphics myGraphics;
-	private Display display;
+	private DisplayJuego display;
 	private boolean running = false;
 	private Thread thread;
 	private Logica myLogic;
@@ -18,7 +18,7 @@ public class GraphicsManager implements Runnable{
 	private Graphics g;
 	private UIState state;
 	
-	public GraphicsManager (Display display){
+	public GraphicsManager (DisplayJuego display){
 		this.display = display;
 		myLogic = Logica.getLogica();
 		myLogic.generarMapa();

@@ -16,6 +16,9 @@ public class BotonNivel extends JLabel{
 	private Nivel nivel;
 	
 	public BotonNivel(Nivel n, int i){
+		
+		nivel = n;
+		
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteNivel());

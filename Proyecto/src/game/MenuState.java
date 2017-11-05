@@ -2,14 +2,14 @@ package game;
 
 import java.awt.Graphics;
 
-import game.display.Display;
+import game.display.DisplayJuego;
 
 public class MenuState implements UIState {
 
 	
-	private Display display;
+	private DisplayJuego display;
 	
-	public MenuState(Display display){
+	public MenuState(DisplayJuego display){
 		this.display = display;
 	}
 	

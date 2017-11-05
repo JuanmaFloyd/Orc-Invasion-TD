@@ -14,7 +14,8 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Grunt;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
-import game.display.Display;
+import game.display.DisplayJuego;
+import game.display.Menu;
 import game.display.PremioManager;
 import game.gfx.GameGraphics;
 import game.gfx.GraphicsManager;
@@ -22,7 +23,8 @@ import game.gfx.ImageLoader;
 
 public class Game implements Runnable{
 
-	private Display display;
+	private DisplayJuego display;
+	private Menu menu;
 	public int width,height;
 	public String title;
 	private Logica myLogic;
@@ -49,14 +51,13 @@ public class Game implements Runnable{
 		
 		ImageLoader.init(); 
 		myLogic = Logica.getLogica();
-		display = new Display(title , width , height, this);
+		menu = new Menu(this);
 		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
-		state = new GameState(display, new GameGraphics());
+		
+		state = new MenuState(menu, new GameGraphics());
 		graphicsManager.setState(state);
 		v = new VisitorClick();
-		nivel = new NivelFacil();
-		nivel.start();
 	}
 	
 	private void update(){
@@ -164,5 +165,15 @@ public class Game implements Runnable{
 	
 	public Logica getLogica(){
 		return myLogic;
+	}
+	public void empezarNivel(Nivel n){
+		nivel=n;
+		display = new DisplayJuego(title , width , height, this);
+		myLogic.generarMapa();
+		graphicsManager = new GraphicsManager(display);
+		
+		state = new GameState(display, new GameGraphics());
+		graphicsManager.setState(state);
+		nivel.start();
 	}
 }

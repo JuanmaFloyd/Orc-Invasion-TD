@@ -8,11 +8,17 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import game.Game;
 import game.gfx.ImageLoader;
+import logica.Nivel;
 
 public class Menu extends JPanel{
+	//atributos
+	private Game g;
 	
-	public Menu(){
+	//constructor
+	public Menu(Game ga){
+		g=ga;
 		setLayout(new CardLayout());
 		
 		JLabel labelFondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/Fondo Menu")));
@@ -29,5 +35,9 @@ public class Menu extends JPanel{
 		
 		
 		add(panelPrincipal);
+	}
+	
+	public void empezarNivel(Nivel n){
+		
 	}
 }
