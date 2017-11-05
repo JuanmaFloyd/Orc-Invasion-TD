@@ -14,6 +14,7 @@ public class Lava extends ObjetoAtravesable{
 	
 	public Lava(Tile t){
 		miTile = t;
+		impacto = 1;
 		v = new VisitorLava(this);
 		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.5f, ImageLoader.lava);
 	}

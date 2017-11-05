@@ -66,13 +66,16 @@ public void run() {
 			} else if (!oleada2fin){
 			if(!oleada2.oleadaFinalizada())
 				logicaJuego.agregarEnemigo(oleada2.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
-			else if (logicaJuego.noHayEnemigos())
-				oleada2fin = true;
+				else if (logicaJuego.noHayEnemigos()){
+					oleada2fin = true;
+					modificarMapa();
+				}
 			} else if (!oleada3fin){
 				if(!oleada3.oleadaFinalizada())
 					logicaJuego.agregarEnemigo(oleada3.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
-				else if (logicaJuego.noHayEnemigos())
-					oleada3fin = true;
+					else if (logicaJuego.noHayEnemigos())
+						oleada3fin = true;
+						modificarMapa();
 				}
 		}
 	}
@@ -84,7 +87,9 @@ public void run() {
 			int y = r.nextInt(12);
 			if (logicaJuego.getTile(x, y).getComponente() != null)
 				logicaJuego.getTile(x, y).getComponente().restarVida(10000);
-			logicaJuego.getTile(x, y).setComponenteAtravesable(new Lava(logicaJuego.getTile(x, y)));
+			Lava l = new Lava(logicaJuego.getTile(x, y));
+			logicaJuego.getTile(x, y).setComponenteAtravesable(l);
+			logicaJuego.agregarAtravesable(l);
 		}
 		
 	}
