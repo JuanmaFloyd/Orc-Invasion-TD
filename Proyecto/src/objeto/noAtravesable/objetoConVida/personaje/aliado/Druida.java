@@ -56,4 +56,9 @@ public class Druida extends Aliado{
 			}
 		}
 	}
+	
+	@Override
+	public int getPrecio() {
+		return valor;
+	}
 }

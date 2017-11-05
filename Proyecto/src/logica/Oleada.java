@@ -12,8 +12,8 @@ public class Oleada {
 		enemigos = enem;
 	}
 	
-	public Enemigo liberarEnemigo(){
-		return enemigos.removeFirst();
+	public Enemigo liberarEnemigo(){	
+			return enemigos.removeFirst();
 	}
 	
 	public boolean oleadaFinalizada(){

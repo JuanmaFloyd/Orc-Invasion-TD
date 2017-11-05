@@ -5,7 +5,7 @@ import objeto.atravesable.PortalIn;
 import objeto.atravesable.PortalOut;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 
-public class Portal extends OMConVida{
+public class Portal extends OMConVida implements Comprable{
 	protected PortalIn pi;
 	protected PortalOut po;
 	
@@ -44,6 +44,11 @@ public class Portal extends OMConVida{
 			}
 			else tien.getPanel().setPrototype(this);
 		}
+	}
+	
+	@Override
+	public int getPrecio() {
+		return valor;
 	}
 }
 

@@ -243,4 +243,8 @@ public class Logica {
 	public int getColumnas(){
 		return columnas;
 	}
+	
+	public boolean noHayEnemigos(){
+		return listaEnemigos.size() == 0;
+	}
 }

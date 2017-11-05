@@ -16,6 +16,6 @@ public class Fireball extends Premio{
 	}
 	public void efecto(Tile t) {
 		if (t.getComponente() != null)
-			t.getComponente().restarVida(10);
+			t.getComponente().restarVida(40);
 	}
 }

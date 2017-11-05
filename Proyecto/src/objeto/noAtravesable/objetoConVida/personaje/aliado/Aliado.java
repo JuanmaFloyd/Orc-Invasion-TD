@@ -4,13 +4,14 @@ import java.awt.Graphics;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
+import logica.Comprable;
 import logica.Tienda;
 import logica.Tile;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
-public abstract class Aliado extends Personaje {
+public abstract class Aliado extends Personaje implements Comprable {
 	//atributos
 	protected VisitorAliado v;
 	protected Animation animation;
