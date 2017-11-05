@@ -1,13 +1,10 @@
 package game;
 
-import java.awt.Graphics;
 import java.util.Random;
-import java.awt.image.BufferStrategy;
 import logica.*;
 import logica.visitor.Visitor;
 import logica.visitor.VisitorClick;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCazador;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Mago;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
@@ -15,17 +12,12 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Grunt;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 import game.display.Display;
-import game.display.DisplayJuego;
-import game.display.Menu;
-import game.display.PremioManager;
-import game.gfx.GameGraphics;
 import game.gfx.GraphicsManager;
 import game.gfx.ImageLoader;
 
 public class Game implements Runnable{
 
 	private Display display;
-	private Menu menu;
 	public int width,height;
 	public String title;
 	private Logica myLogic;
@@ -34,8 +26,6 @@ public class Game implements Runnable{
 	private UIState state;
 	
 	private Nivel nivel;
-
-	private GameGraphics myGraphics;
 	
 	private boolean running=false;
 	private Thread thread;
@@ -52,7 +42,6 @@ public class Game implements Runnable{
 		
 		ImageLoader.init(); 
 		myLogic = Logica.getLogica();
-		menu = new Menu(this);
 		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
 		
