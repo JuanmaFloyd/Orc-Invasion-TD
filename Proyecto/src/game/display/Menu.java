@@ -38,6 +38,6 @@ public class Menu extends JPanel{
 	}
 	
 	public void empezarNivel(Nivel n){
-		
+		g.empezarNivel(n);
 	}
 }

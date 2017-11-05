@@ -9,8 +9,6 @@ import game.Game;
 public class Display {
 	//atributos
 	private JFrame frame;
-	private String title;
-	private int width, height;
 	private JPanel panel;
 	private Game myGame;
 	
@@ -18,10 +16,6 @@ public class Display {
 	public Display(String title, int width, int height, Game g){
 		
 		myGame = g;
-
-		this.title = title;
-		this.width = width;
-		this.height = height;
 		
 		frame = new JFrame(title);
 		frame.setSize(width, height);
@@ -31,9 +25,20 @@ public class Display {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		
+		
+		
 		frame.pack();
 	}
 	public void setJuego(){
+		if(panel!=null)
+			frame.remove(panel);
 		panel = new DisplayJuego(myGame);
+		frame.add(panel);
+	}
+	public void setMenu(){
+		if(panel!=null)
+			frame.remove(panel);
+		panel = new Menu(myGame);
+		frame.add(panel);
 	}
 }
