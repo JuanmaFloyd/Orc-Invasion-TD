@@ -27,9 +27,13 @@ public class Clerigo extends Aliado {
 		valor=40;
 		v=new VisitorClerigo(this);
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.monkAtk);
-		
 	}
+	
 	public ObjetoNoAtravesable clone(){
 		return new Clerigo(new Tile(null, 0, 0));
+	}
+	@Override
+	public int getPrecio() {
+		return valor;
 	}
 }

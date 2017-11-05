@@ -71,4 +71,9 @@ public class Paladin extends Aliado{
 		public ObjetoNoAtravesable clone(){
 			return new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0));
 		}
+		
+		@Override
+		public int getPrecio() {
+			return valor;
+		}
 }

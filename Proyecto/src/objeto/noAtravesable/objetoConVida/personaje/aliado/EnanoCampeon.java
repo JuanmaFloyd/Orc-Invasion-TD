@@ -29,4 +29,9 @@ public class EnanoCampeon extends Aliado{
 	public ObjetoNoAtravesable clone(){
 		return new EnanoCampeon(new Tile(null, 0, 0));
 	}
+	
+	@Override
+	public int getPrecio() {
+		return valor;
+	}
 }

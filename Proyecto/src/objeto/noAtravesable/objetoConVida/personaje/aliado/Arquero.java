@@ -27,7 +27,13 @@ public class Arquero extends Aliado{
 			v=new VisitorAliado(this);
 			animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.arqueroAtk);
 		}
+		
 		public ObjetoNoAtravesable clone(){
 			return new Arquero(new Tile(null, 0, 0));
+		}
+		
+		@Override
+		public int getPrecio() {
+			return valor;
 		}
 }
