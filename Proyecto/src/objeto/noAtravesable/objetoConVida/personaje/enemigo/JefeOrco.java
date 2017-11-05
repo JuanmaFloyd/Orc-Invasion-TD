@@ -19,6 +19,7 @@ public class JefeOrco extends Enemigo{
 		velocidadAt=1.8f;
 		velocidadMov=1.4f;
 		animation = new AnimationEnemy(this, 0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.jefeOrcoMov, ImageLoader.jefeOrcoMov);
+		animation.setYOffset(128);
 		t.setComponente(this);
 		image = ImageLoader.jefeOrco;
 		ancho=2;

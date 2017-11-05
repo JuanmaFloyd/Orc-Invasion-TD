@@ -18,6 +18,7 @@ public class Grunt extends Enemigo{
 		velocidadMov = 2.0f;
 		velocidadAt=0.7f;
 		animation = new AnimationEnemy(this,0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.gruntAtk, ImageLoader.gruntMove);
+		animation.setYOffset(128);
 		t.setComponente(this);
 		image = ImageLoader.grunt;
 		ancho=1;

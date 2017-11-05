@@ -26,6 +26,7 @@ public class Espadachin extends Aliado{
 		valor=20;
 		v=new VisitorAliado(this);
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.warriorAtk);
+		animation.setYOffset(128);
 	}
 	public ObjetoNoAtravesable clone(){
 		return new Espadachin(new Tile(null,0,0));
