@@ -11,17 +11,17 @@ import javax.swing.JLabel;
 
 import game.gfx.ImageLoader;
 import logica.Objeto;
-import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.Premios.Premio;
 
 @SuppressWarnings("serial")
 public class BotonCompraPremio extends BotonCompra {
 	//atributos
-	protected ObjetoNoAtravesable o;
+	protected Premio o;
 	protected int c;
 	protected JLabel cant;
 	
 	//constructor
-	public BotonCompraPremio(PanelTienda pan, BufferedImage i, ObjetoNoAtravesable ob){
+	public BotonCompraPremio(PanelTienda pan, BufferedImage i, Premio ob){
 		super(pan, ob.getValor());
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAnulado.png")));

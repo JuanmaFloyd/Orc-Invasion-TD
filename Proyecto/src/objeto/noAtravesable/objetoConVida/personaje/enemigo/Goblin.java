@@ -25,7 +25,7 @@ public class Goblin extends Enemigo {
 		velMovMaxima=1.5f;
 		velAtMaxima=0.7f;
 		puntaje=20;
-		Coins=15;
+		coins=15;
 		reloj=1;
 		v=new VisitorEnemigo(this);
 		state=new ObjectStateMoving();

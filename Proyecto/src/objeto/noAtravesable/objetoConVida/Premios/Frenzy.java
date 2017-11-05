@@ -4,9 +4,9 @@ import java.util.LinkedList;
 
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
 import logica.visitor.VisitorFrenzy;
-import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objetosTemporales.EfectoFrenzy;
 
@@ -28,7 +28,7 @@ public class Frenzy extends Premio{
 		lista.addLast(aliado);
 	}
 	
-	public ObjetoNoAtravesable clone() {
+	public Objeto clone() {
 		return new Frenzy();
 	}
 	

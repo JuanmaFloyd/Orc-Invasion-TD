@@ -2,8 +2,8 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
-import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Bomba extends Premio{
 	
@@ -13,7 +13,7 @@ public class Bomba extends Premio{
 		b = PremioManager.bomba;
 	}
 	
-	public ObjetoNoAtravesable clone() {
+	public Objeto clone() {
 		return new Bomba();
 	}
 	

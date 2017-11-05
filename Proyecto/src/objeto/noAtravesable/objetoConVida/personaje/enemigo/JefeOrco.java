@@ -28,7 +28,7 @@ public class JefeOrco extends Enemigo{
 		velMovMaxima=1.4f;
 		velAtMaxima=1.8f;
 		puntaje=20;
-		Coins=25;
+		coins=25;
 		reloj=1;
 		v=new VisitorEnemigo(this);
 		state=new ObjectStateMoving();

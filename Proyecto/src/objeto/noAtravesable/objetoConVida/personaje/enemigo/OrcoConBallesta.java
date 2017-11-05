@@ -27,7 +27,7 @@ public class OrcoConBallesta extends Enemigo{
 		velMovMaxima=1.3f;
 		velAtMaxima=1.2f;
 		puntaje=22;
-		Coins=200;
+		coins=200;
 		reloj=1;
 		v = new VisitorEnemigo(this);
 		setState(new ObjectStateMoving());

@@ -2,9 +2,8 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
-import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public class Wololo extends Premio{
 	//atributos
@@ -16,7 +15,7 @@ public class Wololo extends Premio{
 		b = PremioManager.wololo;
 		vw = new VisitorWololo();
 	}
-	public ObjetoNoAtravesable clone() {
+	public Objeto clone() {
 		return new Wololo();
 	}
 	public void efecto(Tile t) {

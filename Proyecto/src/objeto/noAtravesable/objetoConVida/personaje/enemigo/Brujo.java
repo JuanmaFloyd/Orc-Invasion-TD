@@ -25,7 +25,7 @@ public class Brujo extends Enemigo{
 		velMovMaxima=2.3f;
 		velAtMaxima=1.2f;
 		puntaje=20;
-		Coins=200;
+		coins=200;
 		reloj=1;
 		v = new VisitorEnemigo(this);
 		setState(new ObjectStateMoving());

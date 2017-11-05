@@ -19,7 +19,7 @@ public abstract class Enemigo extends Personaje{
 	protected float velocidadMov;
 	protected float velMovMaxima;
 	protected int puntaje;
-	protected int Coins, relojMov;
+	protected int coins, relojMov;
 	protected VisitorEnemigo v;
 	protected ObjectState stateMoving;
 	protected AnimationEnemy animation;
@@ -89,8 +89,8 @@ public abstract class Enemigo extends Personaje{
 	
 	public int getCoins(){
 		Random r = new Random();
-		double ran = (r.nextInt((int) (0.2 * Coins)) - (0.1 * Coins));
-		return (int) ran + Coins;
+		double ran = (r.nextInt((int) (0.2 * coins)) - (0.1 * coins));
+		return (int) ran + coins;
 	}
 	
 	public AnimationEnemy getAnimation(){

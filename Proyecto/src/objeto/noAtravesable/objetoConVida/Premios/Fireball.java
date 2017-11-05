@@ -2,8 +2,8 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
-import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Fireball extends Premio{
 	public Fireball(){
@@ -11,7 +11,7 @@ public class Fireball extends Premio{
 		image = ImageLoader.pBolaDeFuego;
 		b = PremioManager.fireball;
 	}
-	public ObjetoNoAtravesable clone() {
+	public Objeto clone() {
 		return new Fireball();
 	}
 	public void efecto(Tile t) {

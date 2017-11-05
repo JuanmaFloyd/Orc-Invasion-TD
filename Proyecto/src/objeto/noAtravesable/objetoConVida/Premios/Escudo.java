@@ -2,9 +2,9 @@ package objeto.noAtravesable.objetoConVida.Premios;
 
 import game.display.PremioManager;
 import game.gfx.ImageLoader;
+import logica.Objeto;
 import logica.Tile;
 import logica.visitor.VisitorEscudo;
-import objeto.noAtravesable.ObjetoNoAtravesable;
 
 public class Escudo extends Premio{
 	protected VisitorEscudo visitor;
@@ -15,7 +15,7 @@ public class Escudo extends Premio{
 		image = ImageLoader.pEscudo;
 		b = PremioManager.escudo;
 	}
-	public ObjetoNoAtravesable clone() {
+	public Objeto clone() {
 		return new Escudo();
 	}
 	public void efecto(Tile t) {

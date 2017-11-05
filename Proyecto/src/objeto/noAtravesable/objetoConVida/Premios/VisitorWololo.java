@@ -1,7 +1,6 @@
 package objeto.noAtravesable.objetoConVida.Premios;
 
 import logica.Tile;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Arquero;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCampeon;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Espadachin;
