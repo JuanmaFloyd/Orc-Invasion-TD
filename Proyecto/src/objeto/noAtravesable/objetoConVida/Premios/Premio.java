@@ -23,10 +23,11 @@ public abstract class Premio extends ObjetoNoAtravesable{
 	}
 	
 	public void dibujar(Graphics g){
-		g.drawImage(image, miTile.getColumna()*64, miTile.getFila()*64, 64, 64, null);
+		g.drawImage(image, miTile.getColumna()*64, miTile.getFila()*64 + 128, 64, 64, null);
 	}
 	
 	public void restarVida(int n){}
+	
 	public abstract void efecto(Tile t);
 	
 	public void agregar(Tienda tien, Tile t){

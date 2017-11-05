@@ -15,6 +15,7 @@ public class PortalIn extends ObjetoAtravesable{
 		miTile = t;
 		t.setComponenteAtravesable(this);
 		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.7f, ImageLoader.portalBlue);
+		animation.setYOffset(128);
 	}
 	
 	public void setVP(VisitorPortal v){
