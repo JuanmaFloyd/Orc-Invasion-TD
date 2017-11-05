@@ -15,9 +15,9 @@ public class GameState implements UIState{
 	private BufferStrategy bs;
 	
 	
-	public GameState(DisplayJuego display, GameGraphics graphics){
+	public GameState(DisplayJuego display){
 		this.display = display;
-		this.graphics = graphics;
+		this.graphics = new GameGraphics();
 	}
 	
 	@Override
