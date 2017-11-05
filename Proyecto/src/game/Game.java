@@ -175,7 +175,7 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
 		
-		state = new GameState(display, new GameGraphics());
+		state = display.getState();
 		graphicsManager.setState(state);
 		nivel.start();
 	}

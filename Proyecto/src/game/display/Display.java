@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 import game.Game;
 import game.GameState;
+import game.MenuState;
 import game.UIState;
 
 public class Display {
@@ -28,8 +29,6 @@ public class Display {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		
-		
-		
 		frame.pack();
 	}
 	public void setJuego(){
@@ -43,7 +42,12 @@ public class Display {
 	public void setMenu(){
 		if(panel!=null)
 			frame.remove(panel);
-		panel = new Menu(myGame);
+		Menu m = new Menu(myGame);
+		state = new MenuState(m);
+		panel = m;
 		frame.add(panel);
+	}
+	public UIState getState(){
+		return state;
 	}
 }

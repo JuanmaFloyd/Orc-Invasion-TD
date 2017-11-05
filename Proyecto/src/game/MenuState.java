@@ -1,27 +1,21 @@
 package game;
 
-import java.awt.Graphics;
-
-import game.display.DisplayJuego;
+import game.display.Menu;
 
 public class MenuState implements UIState {
 
 	
-	public MenuState(DisplayJuego display){
+	public MenuState(Menu display){
 	}
 	
-	
-	@Override
 	public void render() {
 		
 	}
-
-	@Override
+	
 	public void actualizar() {
 		
 	}
-
-	@Override
+	
 	public void interactuar() {
 
 	}
