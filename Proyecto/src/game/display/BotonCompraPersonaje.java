@@ -7,16 +7,18 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 
 import game.gfx.ImageLoader;
+import logica.Comprable;
 import logica.Objeto;
 import objeto.noAtravesable.ObjetoNoAtravesable;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 @SuppressWarnings("serial")
 public class BotonCompraPersonaje extends BotonCompra{
 	//atributos
-	protected ObjetoNoAtravesable o;
+	protected Comprable o;
 	
-	public BotonCompraPersonaje(PanelTienda pan, BufferedImage i, ObjetoNoAtravesable ob){
-		super(pan, ob.getValor());
+	public BotonCompraPersonaje(PanelTienda pan, BufferedImage i, Comprable ob){
+		super(pan, ob.getPrecio());
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAnulado.png")));
 		addMouseListener(new OyenteCompra());

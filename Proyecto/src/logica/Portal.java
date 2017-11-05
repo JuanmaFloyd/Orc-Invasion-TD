@@ -5,13 +5,12 @@ import objeto.atravesable.PortalIn;
 import objeto.atravesable.PortalOut;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 
-public class Portal extends OMConVida implements Comprable{
+public class Portal extends Objeto implements Comprable{
 	protected PortalIn pi;
 	protected PortalOut po;
 	
 	
 	public Portal(){
-		valor=50;
 	}
 	
 	public PortalOut getOut(){
@@ -48,7 +47,7 @@ public class Portal extends OMConVida implements Comprable{
 	
 	@Override
 	public int getPrecio() {
-		return valor;
+		return 50;
 	}
 }
 

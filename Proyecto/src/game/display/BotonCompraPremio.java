@@ -22,7 +22,7 @@ public class BotonCompraPremio extends BotonCompra {
 	
 	//constructor
 	public BotonCompraPremio(PanelTienda pan, BufferedImage i, Premio ob){
-		super(pan, ob.getValor());
+		super(pan, 0);
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAnulado.png")));
 		addMouseListener(new OyenteCompra());

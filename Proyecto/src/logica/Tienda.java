@@ -39,26 +39,26 @@ public class Tienda {
 		monedas-=val;
 	}
 	public void comprar(Aliado a){
-		monedas-=a.getValor();
+		monedas-=a.getPrecio();
 		juego.agregarAliado(a);
 		
 	}
-	public void comprar(OMConVida otcv){
-		monedas-=otcv.getValor();
+	public void comprar(Comprable otcv){
+		monedas-=otcv.getPrecio();
 	}
 	public void agregar(ObjetoAtravesable a){
 		juego.agregarAtravesable(a);
 	}
 	//agregar comprar para temporales
 	
-	public void vender(ObjetoConVida a){
+	public void vender(Aliado a){
 		if(a.fullVida()){
 			a.getTile().setComponente(null);
-			monedas+=a.getValor();
+			monedas+=a.getPrecio();
 		}
 		else{
 			a.getTile().setComponente(null);
-			monedas+=a.getValor()/2;
+			monedas+=a.getPrecio()/2;
 		}
 	}
 	
