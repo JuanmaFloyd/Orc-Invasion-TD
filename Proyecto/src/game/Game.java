@@ -28,7 +28,8 @@ public class Game implements Runnable{
 	private Logica myLogic;
 	private GraphicsManager graphicsManager;
 	private Visitor v;
-
+	private UIState state;
+	
 	private Nivel nivel;
 
 	private GameGraphics myGraphics;
@@ -45,20 +46,21 @@ public class Game implements Runnable{
 	}
 	
 	private void init(){
-		ImageLoader.init();
+		
+		ImageLoader.init(); 
 		myLogic = Logica.getLogica();
 		display = new Display(title , width , height, this);
 		myLogic.generarMapa();
-		myGraphics = new GameGraphics(myLogic);
 		graphicsManager = new GraphicsManager(display);
+		state = new GameState(display, new GameGraphics());
+		graphicsManager.setState(state);
 		v = new VisitorClick();
 		nivel = new NivelFacil();
 		nivel.start();
 	}
 	
 	private void update(){
-		myLogic.actualizar();
-		display.actualizarPuntaje(myLogic.getScore());
+		state.actualizar();
 	}
 
 	
@@ -119,7 +121,6 @@ public class Game implements Runnable{
 				ObjetoNoAtravesable o=tile.getComponente();
 				o.accept(v);
 			}
-		
 	}
 	
 	public void crearAliado(){

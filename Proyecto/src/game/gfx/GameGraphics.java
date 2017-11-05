@@ -7,12 +7,9 @@ import logica.Logica;
 	
 public class GameGraphics {
 	
-	private Logica logic;
+	private Logica logic = Logica.getLogica();
 	private Graphics g;
 	
-	public GameGraphics(Logica logic){
-		this.logic = logic;
-	}
 	
 	public void setGraphics(Graphics g){
 		this.g = g;

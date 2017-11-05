@@ -3,6 +3,7 @@ package game.gfx;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import game.UIState;
 import game.display.Display;
 import logica.Logica;
 
@@ -15,12 +16,16 @@ public class GraphicsManager implements Runnable{
 	private Logica myLogic;
 	private BufferStrategy bs;
 	private Graphics g;
+	private UIState state;
 	
 	public GraphicsManager (Display display){
 		this.display = display;
 		myLogic = Logica.getLogica();
 		myLogic.generarMapa();
-		myGraphics = new GameGraphics(myLogic);
+	}
+	
+	public void setState(UIState state){
+		this.state = state;
 	}
 	
 	public synchronized void start(){
@@ -69,18 +74,23 @@ public class GraphicsManager implements Runnable{
 	}
 
 	private void render(){
+		
 		bs = display.getCanvas().getBufferStrategy();
+		
 		if(bs == null){
 			display.getCanvas().createBufferStrategy(3);
 			return;
 		}
+		
 		g = bs.getDrawGraphics();
-		myGraphics.setGraphics(g);
-		myGraphics.dibujarMapa();
+		
+		//myGraphics.setGraphics(g);
+		//myGraphics.dibujarMapa();
+		
+		state.render(g);
 		
 		bs.show();
 		g.dispose();
 	}
-	
 	
 }
