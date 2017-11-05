@@ -46,9 +46,9 @@ public class Display {
 		PremioManager.init(panel);
 		
 		canvas = new Canvas();
-		canvas.setPreferredSize(new Dimension(width,height));
-		canvas.setMaximumSize(new Dimension(width,height));
-		canvas.setMinimumSize(new Dimension(width,height));
+		canvas.setPreferredSize(new Dimension(864, 512));
+		canvas.setMaximumSize(new Dimension(864, 512));
+		canvas.setMinimumSize(new Dimension(864, 512));
 		
 		canvas.addMouseListener(new MouseAdapter(){
 			@Override
@@ -57,10 +57,11 @@ public class Display {
 			}
 		}
 		);
-		GridBagConstraints c=new GridBagConstraints();
-		c.gridx=0;
-		c.gridy=0;
-		c.fill=GridBagConstraints.BOTH;
+		
+		GridBagConstraints c = new GridBagConstraints();
+		c.gridx = 0;
+		c.gridy = 0;
+		c.fill = GridBagConstraints.BOTH;
 		frame.add(canvas,c);
 		c.gridx=1;
 		c.ipadx=width/4;
@@ -83,10 +84,10 @@ public class Display {
 			myGame.interaccion(e.getX(), e.getY());
 	}
 	
-
 	public void actualizarPuntaje(int p){
 		panel.actualizarPuntaje(p, tienda.getMonedas());
 	}
+	
 	public PanelTienda getPanelTienda(){
 		return panel;
 	}

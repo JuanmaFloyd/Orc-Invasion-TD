@@ -27,8 +27,6 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 	public ObjectState getStaticState(){
 		return stateStatic;
 	}
-	public void serModificado(Agua a){}
-	public void serNormalizado(Agua a){}
 	public void accept(Visitor v){}
 	public void accept(VisitorWololo vw, Tile t){}
 	public void setState(ObjectState newState){

@@ -53,8 +53,6 @@ public class AnimationEnemy extends Animation {
 		else {
 			g.drawImage(movement[0], x, y, 64,64, null);
 		}
-		//g.drawImage(ImageLoader.vida[1], x, y, 40, 4, null);
-		//g.drawImage(ImageLoader.vida[0], x, y, (40*myEnemy.getVida())/myEnemy.getMaxVida(), 4, null);
 	}
 	
 	public void setMovSpeed(float value){
