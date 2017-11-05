@@ -38,6 +38,7 @@ public class Display {
 		state = new GameState(d);
 		panel = d;
 		frame.add(panel);
+		frame.pack();
 	}
 	public void setMenu(){
 		if(panel!=null)
@@ -46,6 +47,7 @@ public class Display {
 		state = new MenuState(m);
 		panel = m;
 		frame.add(panel);
+		frame.pack();
 	}
 	public UIState getState(){
 		return state;
