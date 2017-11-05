@@ -11,8 +11,8 @@ public class Arquero extends Aliado{
 		public Arquero(Tile t){
 			super();
 			miTile=t;
-			velocidadAt=1f;
-			velAtMaxima=1f;
+			velocidadAt=1.0f;
+			velAtMaxima=1.0f;
 			t.setComponente(this);
 			image=ImageLoader.arquero;
 			vida=50;

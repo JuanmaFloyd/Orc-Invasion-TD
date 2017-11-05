@@ -24,7 +24,6 @@ public abstract class Aliado extends Personaje implements Comprable {
 		escudo = 0;
 		maxEscudo = (int)(maxVida*0.2);
 		state = stateStatic;
-		
 	}
 	
 	//metodos
@@ -33,6 +32,7 @@ public abstract class Aliado extends Personaje implements Comprable {
 			e.accept(v);
 		}
 	}
+	
 	public void crearEscudo(){
 		escudo=(int)(maxVida*0.2);
 		maxEscudo = (int)(maxVida*0.2);

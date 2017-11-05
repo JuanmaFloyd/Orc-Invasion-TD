@@ -11,8 +11,8 @@ public class EnanoCazador extends Aliado {
 	public EnanoCazador(Tile t){
 		super();
 		miTile=t;
-		velocidadAt=1.1f;
-		velAtMaxima=1.1f;
+		velocidadAt=2.0f;
+		velAtMaxima=2.0f;
 		t.setComponente(this);
 		image=ImageLoader.cazadorEnano;
 		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.dwarfHunterAtk);
@@ -22,10 +22,10 @@ public class EnanoCazador extends Aliado {
 		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
-		impacto=35;
+		impacto=10;
 		alcance=4;
 		valor=75;
-		v=new VisitorAliado(this);
+		v = new VisitorAliado(this);
 		animation.setYOffset(128);
 	}
 	
@@ -36,7 +36,6 @@ public class EnanoCazador extends Aliado {
 			Oso o= new Oso(abajo);
 			tien.comprar(o);
 		}
-		tien.comprar(this);
 		tien.getPanel().setPrototype(null);
 	}
 	

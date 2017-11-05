@@ -103,15 +103,15 @@ public class Logica {
 		for (Aliado a : aliadosABorrar){
 			listaAliados.remove(a);
 		}
-		aliadosABorrar=new LinkedList<Aliado>();
+		aliadosABorrar = new LinkedList<Aliado>();
 		for (Enemigo e : enemigosABorrar){
 			listaEnemigos.remove(e);
 		}
-		enemigosABorrar=new LinkedList<Enemigo>();
+		enemigosABorrar = new LinkedList<Enemigo>();
 		for (ObjetoAtravesable oa : atravesablesABorrar){
 			listaAtravesables.remove(oa);
 		}
-		atravesablesABorrar=new LinkedList<ObjetoAtravesable>();
+		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
 	}
 	
 	public void generarMapa(){
@@ -125,7 +125,7 @@ public class Logica {
 			}
 		}
 		
-		Bomba b = new Bomba();
+		/*Bomba b = new Bomba();
 		tablero[0][0].setComponente(b);
 		b.setTile(tablero[0][0]);
 		Escudo e = new Escudo();
@@ -142,7 +142,7 @@ public class Logica {
 		fr.setTile(tablero[0][4]);
 		Frenzy fre = new Frenzy();
 		tablero[0][5].setComponente(fre);
-		fre.setTile(tablero[0][5]);
+		fre.setTile(tablero[0][5]);*/
 		
 		
 		for (int i = 0; i < filas ; i++){
@@ -181,7 +181,6 @@ public class Logica {
 			boolean encontre = false;
 			if(a.getTile().getColumna()!=0){
 				Tile actual = a.getTile().getLeft();
-				
 				for(int i=0; !encontre && actual.getColumna()!=0 && i<a.getAlcance(); i++){
 					if(actual.getComponente()!=null){
 						a.atacar(actual.getComponente());
