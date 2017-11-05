@@ -14,6 +14,7 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Grunt;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
+import game.display.Display;
 import game.display.DisplayJuego;
 import game.display.Menu;
 import game.display.PremioManager;
@@ -23,7 +24,7 @@ import game.gfx.ImageLoader;
 
 public class Game implements Runnable{
 
-	private DisplayJuego display;
+	private Display display;
 	private Menu menu;
 	public int width,height;
 	public String title;
@@ -55,7 +56,7 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
 		
-		state = new MenuState(menu, new GameGraphics());
+		empezarNivel(new NivelFacil());
 		graphicsManager.setState(state);
 		v = new VisitorClick();
 	}
@@ -166,9 +167,11 @@ public class Game implements Runnable{
 	public Logica getLogica(){
 		return myLogic;
 	}
+	
 	public void empezarNivel(Nivel n){
 		nivel=n;
-		display = new DisplayJuego(title , width , height, this);
+		display = new Display(title , width , height, this);
+		display.setJuego();
 		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
 		

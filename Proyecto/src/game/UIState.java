@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public interface UIState {
 	
 	
-	public void render(Graphics g);
+	public void render();
 	
 	public void actualizar();
 	

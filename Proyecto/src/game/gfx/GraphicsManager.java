@@ -4,21 +4,21 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import game.UIState;
+import game.display.Display;
 import game.display.DisplayJuego;
 import logica.Logica;
 
 public class GraphicsManager implements Runnable{
 
 	private GameGraphics myGraphics;
-	private DisplayJuego display;
+	private Display display;
 	private boolean running = false;
 	private Thread thread;
 	private Logica myLogic;
-	private BufferStrategy bs;
 	private Graphics g;
 	private UIState state;
 	
-	public GraphicsManager (DisplayJuego display){
+	public GraphicsManager (Display display){
 		this.display = display;
 		myLogic = Logica.getLogica();
 		myLogic.generarMapa();
@@ -75,22 +75,7 @@ public class GraphicsManager implements Runnable{
 
 	private void render(){
 		
-		bs = display.getCanvas().getBufferStrategy();
-		
-		if(bs == null){
-			display.getCanvas().createBufferStrategy(3);
-			return;
-		}
-		
-		g = bs.getDrawGraphics();
-		
-		//myGraphics.setGraphics(g);
-		//myGraphics.dibujarMapa();
-		
-		state.render(g);
-		
-		bs.show();
-		g.dispose();
+		state.render();
 	}
 	
 }

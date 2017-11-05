@@ -7,15 +7,12 @@ import game.display.DisplayJuego;
 public class MenuState implements UIState {
 
 	
-	private DisplayJuego display;
-	
 	public MenuState(DisplayJuego display){
-		this.display = display;
 	}
 	
 	
 	@Override
-	public void render(Graphics g) {
+	public void render() {
 		
 	}
 

@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
 
 import game.display.DisplayJuego;
 import game.gfx.GameGraphics;
@@ -11,6 +12,7 @@ public class GameState implements UIState{
 	private GameGraphics graphics;
 	private static Logica logica = Logica.getLogica();
 	private DisplayJuego display;
+	private BufferStrategy bs;
 	
 	
 	public GameState(DisplayJuego display, GameGraphics graphics){
@@ -19,9 +21,20 @@ public class GameState implements UIState{
 	}
 	
 	@Override
-	public void render(Graphics g) {
+	public void render() {
+		bs = display.getCanvas().getBufferStrategy();
+		
+		if(bs == null){
+			display.getCanvas().createBufferStrategy(3);
+			return;
+		}
+		Graphics g = bs.getDrawGraphics();
+		
 		graphics.setGraphics(g);
 		graphics.dibujarMapa();
+		
+		bs.show();
+		g.dispose();
 	}
 
 	@Override
