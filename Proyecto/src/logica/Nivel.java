@@ -63,19 +63,20 @@ public void run() {
 					oleada1fin = true;
 					modificarMapa();
 				}
-			} else if (!oleada2fin){
+			} else if (oleada1fin && !oleada2fin){
 			if(!oleada2.oleadaFinalizada())
 				logicaJuego.agregarEnemigo(oleada2.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
 				else if (logicaJuego.noHayEnemigos()){
 					oleada2fin = true;
 					modificarMapa();
 				}
-			} else if (!oleada3fin){
+			} else if (!oleada3fin && oleada1fin && oleada2fin){
 				if(!oleada3.oleadaFinalizada())
 					logicaJuego.agregarEnemigo(oleada3.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
-					else if (logicaJuego.noHayEnemigos())
+					else if (logicaJuego.noHayEnemigos()){
 						oleada3fin = true;
 						modificarMapa();
+					}
 				}
 		}
 	}
