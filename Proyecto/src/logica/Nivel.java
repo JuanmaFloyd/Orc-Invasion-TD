@@ -19,13 +19,14 @@ public abstract class Nivel implements Runnable{
 	public abstract void init();
 	
 	public synchronized void start(){
+		
 		if(running){
 			return;
 		}
 		running = true;
 		thread = new Thread(this);
 		thread.start();
-
+		
 	}
 	
 	public synchronized void stop(){
