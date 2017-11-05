@@ -17,6 +17,7 @@ public abstract class Aliado extends Personaje implements Comprable {
 	protected Animation animation;
 	protected int escudo;
 	protected int maxEscudo;
+	protected int valor;
 	
 	public Aliado(){
 		super();
@@ -94,5 +95,9 @@ public abstract class Aliado extends Personaje implements Comprable {
 	public void setTile(Tile t){
 		super.setTile(t);
 		animation.setPos(t.getColumna(), t.getFila());
+	}
+	
+	public int getPrecio(){
+		return valor;
 	}
 }

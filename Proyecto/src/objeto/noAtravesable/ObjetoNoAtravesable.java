@@ -1,6 +1,7 @@
 package objeto.noAtravesable;
 
 
+import logica.Comprable;
 import logica.Objeto;
 import logica.Tienda;
 import logica.Tile;
@@ -9,9 +10,8 @@ import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
-public abstract class ObjetoNoAtravesable extends Objeto{
+public abstract class ObjetoNoAtravesable extends Objeto {
 	
-	protected int valor;
 	protected ObjectState state;
 	protected ObjectState stateStatic;
 
@@ -38,8 +38,6 @@ public abstract class ObjetoNoAtravesable extends Objeto{
 		tien.getPanel().setPrototype(null);
 	}
 
-	public int getValor(){
-		return valor;
-	}
+	
 	public abstract void restarVida(int n);
 }

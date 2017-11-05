@@ -43,9 +43,4 @@ public class EnanoCazador extends Aliado {
 	public ObjetoNoAtravesable clone(){
 		return new EnanoCazador(new Tile(null, 0, 0));
 	}
-	
-	@Override
-	public int getPrecio() {
-		return valor;
-	}
 }

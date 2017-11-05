@@ -33,8 +33,4 @@ public class Clerigo extends Aliado {
 	public ObjetoNoAtravesable clone(){
 		return new Clerigo(new Tile(null, 0, 0));
 	}
-	@Override
-	public int getPrecio() {
-		return valor;
-	}
 }
