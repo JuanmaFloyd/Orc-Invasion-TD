@@ -30,4 +30,9 @@ public class Oso extends Aliado{
 	public ObjetoNoAtravesable clone(){
 		return new Oso(new Tile(null, 0, 0));
 	}
+	
+	@Override
+	public int getPrecio() {
+		return valor;
+	}
 }
