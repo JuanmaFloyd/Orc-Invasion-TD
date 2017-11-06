@@ -20,7 +20,7 @@ public class EnanoCampeon extends Aliado{
 		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
-		impacto=40;
+		impacto=30;
 		alcance=1;
 		valor=65;
 		v=new VisitorAliado(this);

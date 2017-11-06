@@ -47,7 +47,7 @@ public class Portal extends Objeto implements Comprable{
 	
 	@Override
 	public int getPrecio() {
-		return 50;
+		return 150;
 	}
 }
 
