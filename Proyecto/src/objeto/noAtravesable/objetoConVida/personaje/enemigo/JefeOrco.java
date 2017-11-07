@@ -51,10 +51,8 @@ public class JefeOrco extends Enemigo{
 		vw.visit(this, t);
 	}
 	public void restarVida(int v){
-		vida-=v;
+		super.restarVida(v);
 		if(vida<=0){ 
-			miTile.destruirEnemigo(this);
-			miTile = null;
 			segundo.setComponente(null);
 			segundo=null;
 		}

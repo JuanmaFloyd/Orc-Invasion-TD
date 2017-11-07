@@ -8,6 +8,7 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 
 public class NivelDificil extends Nivel{
 	
+	@Override
 	public void init() {
 		
 		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();

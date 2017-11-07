@@ -42,7 +42,7 @@ public abstract class Nivel implements Runnable{
 	}
 	
 	@Override
-public void run() {		
+	public void run() {		
 		
 		init();
 		boolean oleada1fin = false, oleada2fin = false, oleada3fin = false;
