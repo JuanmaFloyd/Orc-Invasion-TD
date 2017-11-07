@@ -37,7 +37,9 @@ public class JefeOrco extends Enemigo{
 	}
 	public void avanzar(){
 		super.avanzar();
-		if (miTile.getColumna()==1){
+		if (miTile.getColumna()>=1){
+			if(segundo!=null)
+				segundo.setComponente(null);
 			segundo = miTile.getLeft();
 			segundo.setComponente(this);
 		}
@@ -47,6 +49,15 @@ public class JefeOrco extends Enemigo{
 	}
 	public void accept(VisitorWololo vw, Tile t){
 		vw.visit(this, t);
+	}
+	public void restarVida(int v){
+		vida-=v;
+		if(vida<=0){ 
+			miTile.destruirEnemigo(this);
+			miTile = null;
+			segundo.setComponente(null);
+			segundo=null;
+		}
 	}
 
 }
