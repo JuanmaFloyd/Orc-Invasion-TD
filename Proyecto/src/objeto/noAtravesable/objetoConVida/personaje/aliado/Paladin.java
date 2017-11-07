@@ -33,7 +33,7 @@ public class Paladin extends Aliado{
 			alcance=1;
 			valor=50;
 			v=new VisitorAliado(this);
-			animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.paladinAtk);
+			animation = new Animation(this, t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.paladinAtk);
 			animation.setYOffset(128);
 			
 		}

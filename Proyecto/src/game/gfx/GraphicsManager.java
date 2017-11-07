@@ -21,7 +21,6 @@ public class GraphicsManager implements Runnable{
 	public GraphicsManager (Display display){
 		this.display = display;
 		myLogic = Logica.getLogica();
-		myLogic.generarMapa();
 	}
 	
 	public void setState(UIState state){

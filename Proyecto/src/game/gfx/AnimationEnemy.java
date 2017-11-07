@@ -14,7 +14,7 @@ public class AnimationEnemy extends Animation {
 	protected boolean stopped;
 	
 	public AnimationEnemy(Enemigo enemy, int x, int y, float atSpd, float movSpd , BufferedImage[] att, BufferedImage[] mov){
-		super(x,y,atSpd,att);
+		super(enemy, x,y,atSpd,att);
 		movement = mov;
 		pixelTime = (int) ((1000 * movSpd) / 64);
 		movementTimer = 1;
@@ -29,7 +29,7 @@ public class AnimationEnemy extends Animation {
 
 	public void drawMove(Graphics g){
 		if (!stopped){
-			g.drawImage(movement[index], x + xOffset, y + yOffset, myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
+			g.drawImage(movement[index], x + xOffset-((myEnemy.getAncho()-1)*64), y + yOffset-((myEnemy.getAlto()-1)*64), myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
 			movementTimer += System.currentTimeMillis() - lastTime;
 			timer += System.currentTimeMillis() - lastTime;
 			lastTime = System.currentTimeMillis();
@@ -51,12 +51,22 @@ public class AnimationEnemy extends Animation {
 			}
 		}
 		else {
-			g.drawImage(movement[0], x + xOffset, y + yOffset, 64,64, null);
+			g.drawImage(movement[0], x + xOffset-((myEnemy.getAncho()-1)*64), y + yOffset-((myEnemy.getAlto()-1)*64), myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
 		}
 	}
 	
 	public void setMovSpeed(float value){
 		pixelTime = (int) ((1000 * value) / 64);
+	}
+	
+	public void drawrAtk(Graphics g){
+		g.drawImage(ataque[index], x + xOffset -((myEnemy.getAncho()-1)*64), y + yOffset-((o.getAlto()-1)*64), o.getAncho()*64 , o.getAlto()*64 , null);
+		timer += System.currentTimeMillis() - lastTime;
+		lastTime = System.currentTimeMillis();
+		if (timer > indexTime){
+			index = (index + 1) % totalImages;
+			timer = 0;
+		}
 	}
 
 }

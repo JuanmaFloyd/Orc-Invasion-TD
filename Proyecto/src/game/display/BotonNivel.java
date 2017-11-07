@@ -14,11 +14,15 @@ import logica.Nivel;
 public class BotonNivel extends JLabel{
 	//atributos
 	private Nivel nivel;
+	private Menu menu;
 	
-	public BotonNivel(Nivel n, int i){
+	public BotonNivel(Menu m, Nivel n, int i){
 		
 		nivel = n;
+		menu = m;
 		
+		setVisible(true);
+		setOpaque(true);
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteNivel());
@@ -41,8 +45,9 @@ public class BotonNivel extends JLabel{
 			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivelPresionado.png")));
 		}
 		public void mouseReleased(MouseEvent arg0) {
-			if(((BotonCompra)arg0.getSource()).isEnabled()){
+			if(((BotonNivel)arg0.getSource()).isEnabled()){
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+				menu.empezarNivel(nivel);
 			}
 		}
 	}

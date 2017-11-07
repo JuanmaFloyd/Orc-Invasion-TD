@@ -11,10 +11,12 @@ public class PortalIn extends ObjetoAtravesable{
 	protected VisitorPortal v;
 	
 	public PortalIn(VisitorPortal v, Tile t){
+		ancho=1;
+		alto=1;
 		this.v = v;
 		miTile = t;
 		t.setComponenteAtravesable(this);
-		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.7f, ImageLoader.portalBlue);
+		animation = new Animation(this, t.getColumna()*64, t.getFila()*64, 0.7f, ImageLoader.portalBlue);
 		animation.setYOffset(128);
 	}
 	

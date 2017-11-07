@@ -10,17 +10,17 @@ import objeto.noAtravesable.objetoConVida.Premios.Frenzy;
 import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 
 public class JefeOrco extends Enemigo{
+	//atributos
+	protected Tile segundo;
 	
-	public JefeOrco(Tile t){
+	public JefeOrco(){
 		super();
 		vida=100;
 		maxVida=100;
-		miTile=t;
 		velocidadAt=1.8f;
 		velocidadMov=1.4f;
-		animation = new AnimationEnemy(this, 0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.jefeOrcoMov, ImageLoader.jefeOrcoMov);
+		animation = new AnimationEnemy(this, 0, 0, velocidadAt, velocidadMov, ImageLoader.jefeOrcoMov, ImageLoader.jefeOrcoMov);
 		animation.setYOffset(128);
-		t.setComponente(this);
 		image = ImageLoader.jefeOrco;
 		ancho=2;
 		alto=1;
@@ -35,8 +35,15 @@ public class JefeOrco extends Enemigo{
 		state=new ObjectStateMoving();
 		premio = new Frenzy();
 	}
+	public void avanzar(){
+		super.avanzar();
+		if (miTile.getColumna()==1){
+			segundo = miTile.getLeft();
+			segundo.setComponente(this);
+		}
+	}
 	public ObjetoNoAtravesable clone() {
-		return new JefeOrco(new Tile(null, 0, 0));
+		return new JefeOrco();
 	}
 	public void accept(VisitorWololo vw, Tile t){
 		vw.visit(this, t);

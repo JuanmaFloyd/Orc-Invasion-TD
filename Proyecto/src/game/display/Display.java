@@ -44,7 +44,7 @@ public class Display {
 		if(panel!=null)
 			frame.remove(panel);
 		Menu m = new Menu(myGame);
-		state = new MenuState(m);
+		state = new MenuState();
 		panel = m;
 		frame.add(panel);
 		frame.pack();

@@ -3,13 +3,17 @@ package game.gfx;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import logica.Objeto;
+
 public class Animation {
 	
 	protected BufferedImage ataque[];
 	protected int x, y, index, totalImages, indexTime, xOffset, yOffset;
 	protected long lastTime, now, timer;
+	protected Objeto o;
 	
-	public Animation (int x, int y, float atkSpeed , BufferedImage[] anim){
+	public Animation (Objeto ob, int x, int y, float atkSpeed , BufferedImage[] anim){
+		o=ob;
 		ataque = anim;
 		this.x = x;
 		this.y = y;
@@ -21,7 +25,7 @@ public class Animation {
 	}
 	
 	public void drawrAtk(Graphics g){
-		g.drawImage(ataque[index], x + xOffset , y + yOffset, 64 , 64 , null);
+		g.drawImage(ataque[index], x + xOffset , y + yOffset-((o.getAlto()-1)*64), o.getAncho()*64 , o.getAlto()*64 , null);
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		if (timer > indexTime){

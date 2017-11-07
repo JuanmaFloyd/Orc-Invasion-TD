@@ -5,7 +5,7 @@ import game.display.Menu;
 public class MenuState implements UIState {
 
 	
-	public MenuState(Menu display){
+	public MenuState(){
 	}
 	
 	public void render() {

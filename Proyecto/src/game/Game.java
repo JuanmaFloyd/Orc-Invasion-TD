@@ -45,7 +45,11 @@ public class Game implements Runnable{
 		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
 		
-		empezarNivel(new NivelFacil());
+		display = new Display(title , width , height, this);
+		display.setMenu();
+		
+		state = new MenuState();
+		
 		graphicsManager.setState(state);
 		v = new VisitorClick();
 	}
@@ -147,7 +151,7 @@ public class Game implements Runnable{
 				Grunt grunt = new Grunt(myLogic.getTile(y, 0));
 				myLogic.agregarEnemigo(grunt,myLogic.getTile(y, 0));
 			} else if (ran == 3){
-				JefeOrco jefe = new JefeOrco(myLogic.getTile(y, 0));
+				JefeOrco jefe = new JefeOrco();
 				myLogic.agregarEnemigo(jefe,myLogic.getTile(y, 0));
 			}
 		}
@@ -159,10 +163,10 @@ public class Game implements Runnable{
 	
 	public void empezarNivel(Nivel n){
 		nivel=n;
-		display = new Display(title , width , height, this);
+		
 		display.setJuego();
-		myLogic.generarMapa();
 		graphicsManager = new GraphicsManager(display);
+		graphicsManager.start();
 		
 		state = display.getState();
 		graphicsManager.setState(state);

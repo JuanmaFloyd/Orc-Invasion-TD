@@ -18,6 +18,7 @@ public class GameState implements UIState{
 	public GameState(DisplayJuego display){
 		this.display = display;
 		this.graphics = new GameGraphics();
+		logica.generarMapa();
 	}
 	
 	@Override
