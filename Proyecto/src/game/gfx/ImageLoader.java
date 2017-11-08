@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 
 public class ImageLoader {
 
-	private static int width = 32, height = 32;
+	private static int width = 64, height = 64;
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol, fondo;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;

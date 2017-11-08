@@ -24,8 +24,13 @@ public class Animation {
 		lastTime = System.currentTimeMillis();
 	}
 	
+	public void draw(Graphics g, BufferedImage img){
+		g.drawImage(img, x + xOffset, y + yOffset - (img.getHeight() - 64), img.getWidth() , img.getHeight(), null);
+	}
+	
 	public void drawrAtk(Graphics g){
-		g.drawImage(ataque[index], x + xOffset , y + yOffset-((o.getAlto()-1)*64), o.getAncho()*64 , o.getAlto()*64 , null);
+		BufferedImage img = ataque[index];
+		g.drawImage(img, x + xOffset, y + yOffset - (img.getHeight() - 64), img.getWidth() , img.getHeight(), null);
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		if (timer > indexTime){
