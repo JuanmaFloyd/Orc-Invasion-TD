@@ -60,7 +60,7 @@ public class AnimationEnemy extends Animation {
 	}
 	
 	public void drawrAtk(Graphics g){
-		g.drawImage(movement[index], x + xOffset - (movement[index].getWidth() - 64), y + yOffset - (movement[index].getHeight() - 64), ataque[index].getWidth() , movement[index].getHeight(), null);
+		g.drawImage(ataque[index], x + xOffset - (ataque[index].getWidth() - 64), y + yOffset - (ataque[index].getHeight() - 64), ataque[index].getWidth() , ataque[index].getHeight(), null);
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		if (timer > indexTime){
