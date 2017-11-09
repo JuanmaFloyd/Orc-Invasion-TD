@@ -1,7 +1,11 @@
 package game;
 
-import game.display.Menu;
-
+/**
+ * 
+ * Clase MenuState
+ * representa el estado del menu principal
+ *
+ */
 public class MenuState implements UIState {
 
 	

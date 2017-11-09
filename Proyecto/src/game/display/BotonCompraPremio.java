@@ -1,5 +1,6 @@
 package game.display;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
@@ -41,7 +42,7 @@ public class BotonCompraPremio extends BotonCompra {
 		cant.setText("" + this.c);
 		cant.setHorizontalAlignment(JLabel.RIGHT);
 		cant.setVerticalAlignment(JLabel.TOP);
-		//cant.setLocation(cant.getX()-10, cant.getY()+10);
+		cant.setPreferredSize(new Dimension(20,10));
 		cant.setVisible(true);
 		v.add(cant,c);
 		v.setVisible(true);

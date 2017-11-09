@@ -1,20 +1,18 @@
 package game;
 
-import java.util.Random;
 import logica.*;
-import logica.visitor.Visitor;
 import logica.visitor.VisitorClick;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCazador;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Mago;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Grunt;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 import game.display.Display;
 import game.gfx.GraphicsManager;
 import game.gfx.ImageLoader;
 
+/**
+ * 
+ * Clase Game
+ * se encarga de correr el juego
+ *
+ */
 public class Game implements Runnable{
 
 	private Display display;
@@ -109,6 +107,11 @@ public class Game implements Runnable{
 		}
 	}
 	
+	/**
+	 * Interactua con el mapa en un punto (x, y)
+	 * @param x 
+	 * @param y
+	 */
 	public void interaccion(int x, int y){
 		Tile tile = myLogic.getTile(y/64, x/64);
 			System.out.println("Orden de interactuar en "+ y/64+", "+x/64);
@@ -117,11 +120,18 @@ public class Game implements Runnable{
 				o.accept(v);
 			}
 	}
-	
+	/**
+	 * Retorna la logica
+	 * @return logica
+	 */
 	public Logica getLogica(){
 		return myLogic;
 	}
 	
+	/**
+	 * comienza un nivel n
+	 * @param n
+	 */
 	public void empezarNivel(Nivel n){
 		display.setJuego(v);
 		nivel=n;

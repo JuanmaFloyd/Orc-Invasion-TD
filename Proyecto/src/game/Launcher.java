@@ -4,8 +4,12 @@ import java.io.*;
 
 import javax.sound.sampled.*;
 
-import sun.audio.*;
-
+/**
+ * 
+ * Clase Launcher
+ * Se encarga de ejecutar el programa
+ *
+ */
 public class Launcher {
 
 	public static void main(String[] args) throws Exception{

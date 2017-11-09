@@ -1,7 +1,11 @@
 package game;
 
-import java.awt.Graphics;
-
+/**
+ * 
+ * Interfaz UIState
+ * representa un estado del juego (menu principal, juego, etc.)
+ *
+ */
 public interface UIState {
 	
 	

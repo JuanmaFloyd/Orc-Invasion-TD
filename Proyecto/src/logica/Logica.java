@@ -189,8 +189,8 @@ public class Logica {
 				e.avanzar();
 				e.setState(e.getMovingState());
 			}
-			eliminarObjetos();
 		}
+		eliminarObjetos();
 		agregarObjetos();
 		for(ObjetoAtravesable oa: listaAtravesables){
 			if(oa.getTile().getComponente()!=null)

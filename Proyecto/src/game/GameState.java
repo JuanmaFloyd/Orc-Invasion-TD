@@ -6,7 +6,12 @@ import java.awt.image.BufferStrategy;
 import game.display.DisplayJuego;
 import game.gfx.GameGraphics;
 import logica.Logica;
-
+/**
+ * 
+ * Clase GameState
+ * Representa el estado de juego
+ *
+ */
 public class GameState implements UIState{
 
 	private GameGraphics graphics;
