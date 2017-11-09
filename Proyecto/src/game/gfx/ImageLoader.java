@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 
 public class ImageLoader {
 
-	private static int width = 32, height = 32;
+	private static int width = 64, height = 64;
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol, fondo;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
@@ -46,10 +46,10 @@ public class ImageLoader {
 		piedra = sheet.getSubimage(width, 0, width, height);
 		//arbol = new BufferedImage[1];
 		arbol = loadImage("/Textures/arbol.png");
-		lava[0] = sheet.getSubimage(0, 64, 32, 32);
-		lava[1] = sheet.getSubimage(0, 64, 32, 32);
-		lava[2] = sheet.getSubimage(0, 64, 32, 32);
-		lava[3] = sheet.getSubimage(0, 64, 32, 32);
+		lava[0] = sheet.getSubimage(0, 128, 64, 64);
+		lava[1] = sheet.getSubimage(0, 128, 64, 64);
+		lava[2] = sheet.getSubimage(0, 128, 64, 64);
+		lava[3] = sheet.getSubimage(0, 128, 64, 64);
 		espadachin = loadImage("/Textures/Personajes/Soldado.png");
 		paladin = loadImage("/Textures/Personajes/Paladin.png");
 		arquero = loadImage("/Textures/Personajes/Arquero.png");
@@ -130,15 +130,15 @@ public class ImageLoader {
 		gruntMove[2] = sheet.getSubimage(128, 0, 64, 64);
 		gruntMove[3] = sheet.getSubimage(192, 0, 64, 64);
 		sheet = loadImage("/Textures/Animations/PortalBlue.png");
-		portalBlue[0] = sheet.getSubimage(0, 0, 32, 32);
-		portalBlue[1] = sheet.getSubimage(32, 0, 32, 32);
-		portalBlue[2] = sheet.getSubimage(64, 0, 32, 32);
-		portalBlue[3] = sheet.getSubimage(96, 0, 32, 32);
+		portalBlue[0] = sheet.getSubimage(0, 0, 64, 64);
+		portalBlue[1] = sheet.getSubimage(width, 0, 64, 64);
+		portalBlue[2] = sheet.getSubimage(2*width, 0, 64, 64);
+		portalBlue[3] = sheet.getSubimage(3*width, 0, 64, 64);
 		sheet = loadImage("/Textures/Animations/PortalOrange.png");
-		portalOrange[0] = sheet.getSubimage(0, 0, 32, 32);
-		portalOrange[1] = sheet.getSubimage(32, 0, 32, 32);
-		portalOrange[2] = sheet.getSubimage(64, 0, 32, 32);
-		portalOrange[3] = sheet.getSubimage(96, 0, 32, 32);
+		portalOrange[0] = sheet.getSubimage(0, 0, 64, 64);
+		portalOrange[1] = sheet.getSubimage(1*width, 0, 64, 64);
+		portalOrange[2] = sheet.getSubimage(2*width, 0, 64, 64);
+		portalOrange[3] = sheet.getSubimage(3*width, 0, 64, 64);
 		aguaMov[0] = agua;
 		aguaMov[1] = agua;
 		aguaMov[2] = agua;

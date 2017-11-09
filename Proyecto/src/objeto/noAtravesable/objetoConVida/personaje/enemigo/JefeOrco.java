@@ -24,7 +24,7 @@ public class JefeOrco extends Enemigo{
 		image = ImageLoader.jefeOrco;
 		ancho=2;
 		alto=1;
-		impacto=50;
+		impacto=30;
 		alcance=1;
 		velMovMaxima=1.4f;
 		velAtMaxima=1.8f;

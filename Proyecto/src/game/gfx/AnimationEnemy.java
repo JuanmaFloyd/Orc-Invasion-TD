@@ -29,7 +29,7 @@ public class AnimationEnemy extends Animation {
 
 	public void drawMove(Graphics g){
 		if (!stopped){
-			g.drawImage(movement[index], x + xOffset-((myEnemy.getAncho()-1)*64), y + yOffset-((myEnemy.getAlto()-1)*64), myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
+			g.drawImage(movement[index], x + xOffset - (movement[index].getWidth() - 64), y + yOffset - (movement[index].getHeight() - 64), movement[index].getWidth() , movement[index].getHeight(), null);
 			movementTimer += System.currentTimeMillis() - lastTime;
 			timer += System.currentTimeMillis() - lastTime;
 			lastTime = System.currentTimeMillis();
@@ -51,7 +51,7 @@ public class AnimationEnemy extends Animation {
 			}
 		}
 		else {
-			g.drawImage(movement[0], x + xOffset-((myEnemy.getAncho()-1)*64), y + yOffset-((myEnemy.getAlto()-1)*64), myEnemy.getAncho()*64,myEnemy.getAlto()*64, null);
+			g.drawImage(movement[index], x + xOffset - (movement[index].getWidth() - 64), y + yOffset - (movement[index].getHeight() - 64), ataque[index].getWidth() , movement[index].getHeight(), null);
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class AnimationEnemy extends Animation {
 	}
 	
 	public void drawrAtk(Graphics g){
-		g.drawImage(ataque[index], x + xOffset -((myEnemy.getAncho()-1)*64), y + yOffset-((o.getAlto()-1)*64), o.getAncho()*64 , o.getAlto()*64 , null);
+		g.drawImage(ataque[index], x + xOffset - (ataque[index].getWidth() - 64), y + yOffset - (ataque[index].getHeight() - 64), ataque[index].getWidth() , ataque[index].getHeight(), null);
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		if (timer > indexTime){
