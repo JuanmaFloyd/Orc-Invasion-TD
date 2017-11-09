@@ -85,7 +85,7 @@ public abstract class Nivel implements Runnable{
 		Random r = new Random();
 		for (int i = 0; i<3; i++){
 			int x = r.nextInt(6);
-			int y = r.nextInt(12);
+			int y = r.nextInt(11) + 1;
 			if (logicaJuego.getTile(x, y).getComponente() != null)
 				logicaJuego.getTile(x, y).getComponente().restarVida(10000);
 			Lava l = new Lava(logicaJuego.getTile(x, y));
