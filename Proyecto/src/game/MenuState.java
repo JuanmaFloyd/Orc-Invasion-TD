@@ -6,6 +6,7 @@ public class MenuState implements UIState {
 
 	
 	public MenuState(){
+		
 	}
 	
 	public void render() {

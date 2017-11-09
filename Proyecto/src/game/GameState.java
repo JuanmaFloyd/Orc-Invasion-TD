@@ -29,6 +29,7 @@ public class GameState implements UIState{
 			display.getCanvas().createBufferStrategy(3);
 			return;
 		}
+		
 		Graphics g = bs.getDrawGraphics();
 		
 		graphics.setGraphics(g);
