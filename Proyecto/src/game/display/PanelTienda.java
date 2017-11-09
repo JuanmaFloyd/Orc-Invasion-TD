@@ -25,11 +25,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.LinkedList;
-
-import javax.swing.JButton;
 
 @SuppressWarnings("serial")
 public class PanelTienda extends JPanel {
@@ -317,29 +313,6 @@ public class PanelTienda extends JPanel {
 		panelPremios.add(panelPre, c4);
 		
 		pScroll.add(panelPremios, conScroll);
-		
-		conScroll.gridy=5;
-
-		JButton botonAliados = new JButton("Agregar aliado");
-		pScroll.add(botonAliados, conScroll);
-		
-		conScroll.gridy=6;
-		
-		botonAliados.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				myGame.crearAliado();
-			}
-		});
-		
-		JButton botonEnemigos = new JButton("Agregar enemigos");
-		pScroll.add(botonEnemigos, conScroll);
-		botonEnemigos.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				myGame.crearEnemigo();
-			}
-		});
 		
 		
 		add(scrollPane, c);

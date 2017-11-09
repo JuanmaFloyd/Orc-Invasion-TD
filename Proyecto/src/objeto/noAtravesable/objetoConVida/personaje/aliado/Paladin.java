@@ -58,6 +58,7 @@ public class Paladin extends Aliado{
 			}
 		}
 		public void agregar(Tienda tien, Tile t){
+			super.agregar(tien, t);
 			if(t.getColumna()!=11 && t.getRight().getComponente()==null){
 				miTile=t;
 				t.setComponente(this);

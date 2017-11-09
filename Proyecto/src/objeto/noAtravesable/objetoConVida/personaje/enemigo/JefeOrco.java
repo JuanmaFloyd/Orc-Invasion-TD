@@ -57,5 +57,12 @@ public class JefeOrco extends Enemigo{
 			segundo=null;
 		}
 	}
+	public void setTile(Tile t){
+		super.setTile(t);
+		if(t.getColumna()!=0 && t.getLeft().getComponente()!=null){
+			segundo = miTile.getLeft();
+			segundo.setComponente(this);
+		}
+	}
 
 }

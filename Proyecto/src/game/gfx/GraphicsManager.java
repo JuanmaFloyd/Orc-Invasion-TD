@@ -1,26 +1,14 @@
 package game.gfx;
 
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 import game.UIState;
-import game.display.Display;
-import game.display.DisplayJuego;
-import logica.Logica;
 
 public class GraphicsManager implements Runnable{
-
-	private GameGraphics myGraphics;
-	private Display display;
+	
 	private boolean running = false;
 	private Thread thread;
-	private Logica myLogic;
-	private Graphics g;
 	private UIState state;
 	
-	public GraphicsManager (Display display){
-		this.display = display;
-		myLogic = Logica.getLogica();
+	public GraphicsManager (){
 	}
 	
 	public void setState(UIState state){

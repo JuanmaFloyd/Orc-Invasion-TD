@@ -43,7 +43,7 @@ public class Game implements Runnable{
 		ImageLoader.init(); 
 		myLogic = Logica.getLogica();
 		myLogic.generarMapa();
-		graphicsManager = new GraphicsManager(display);
+		graphicsManager = new GraphicsManager();
 		
 		display = new Display(title , width , height, this);
 		display.setMenu();
@@ -118,45 +118,6 @@ public class Game implements Runnable{
 			}
 	}
 	
-	public void crearAliado(){
-		Random r = new Random();
-		int ran = r.nextInt(2);
-		int x = myLogic.getColumnas() - 1 - r.nextInt(5);
-		int y = myLogic.getFilas() - 1 - r.nextInt(6);
-		
-		if (myLogic.getTile(y, x).getComponente() == null){
-			if (ran == 0){
-				Mago mago = new Mago(myLogic.getTile(y, x));
-				myLogic.agregarAliado(mago);
-			} else if (ran == 1){
-				EnanoCazador cazador = new EnanoCazador(myLogic.getTile(y, x));
-				myLogic.agregarAliado(cazador);
-			}
-		}
-	}
-	
-	public void crearEnemigo(){
-		Random r = new Random();
-		int ran = r.nextInt(4);
-		int y = r.nextInt(6);
-		
-		if (myLogic.getTile(y, 0).getComponente() == null){
-			if (ran == 0){
-				Brujo brujo = new Brujo(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(brujo,myLogic.getTile(y, 0));
-			} else if (ran == 1){
-				Goblin gob = new Goblin();
-				myLogic.agregarEnemigo(gob,myLogic.getTile(y, 0));
-			} else if (ran == 2){
-				Grunt grunt = new Grunt(myLogic.getTile(y, 0));
-				myLogic.agregarEnemigo(grunt,myLogic.getTile(y, 0));
-			} else if (ran == 3){
-				JefeOrco jefe = new JefeOrco();
-				myLogic.agregarEnemigo(jefe,myLogic.getTile(y, 0));
-			}
-		}
-	}
-	
 	public Logica getLogica(){
 		return myLogic;
 	}
@@ -165,7 +126,7 @@ public class Game implements Runnable{
 		nivel=n;
 		
 		display.setJuego();
-		graphicsManager = new GraphicsManager(display);
+		graphicsManager = new GraphicsManager();
 		graphicsManager.start();
 		
 		state = display.getState();
