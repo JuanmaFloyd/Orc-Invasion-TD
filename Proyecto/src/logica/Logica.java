@@ -5,11 +5,6 @@ import java.util.Random;
 import objeto.atravesable.*;
 import objeto.noAtravesable.ObjectStateStatic;
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
-import objeto.noAtravesable.objetoConVida.Premios.Bomba;
-import objeto.noAtravesable.objetoConVida.Premios.Escudo;
-import objeto.noAtravesable.objetoConVida.Premios.Fireball;
-import objeto.noAtravesable.objetoConVida.Premios.Frenzy;
-import objeto.noAtravesable.objetoConVida.Premios.Wololo;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
@@ -125,26 +120,6 @@ public class Logica {
 			}
 		}
 		
-		/*Bomba b = new Bomba();
-		tablero[0][0].setComponente(b);
-		b.setTile(tablero[0][0]);
-		Escudo e = new Escudo();
-		tablero[0][1].setComponente(e);
-		e.setTile(tablero[0][1]);
-		Fireball f = new Fireball();
-		tablero[0][2].setComponente(f);
-		f.setTile(tablero[0][2]);
-		Wololo w = new Wololo();
-		tablero[0][3].setComponente(w);
-		w.setTile(tablero[0][3]);
-		Frenzy fr = new Frenzy();
-		tablero[0][4].setComponente(fr);
-		fr.setTile(tablero[0][4]);
-		Frenzy fre = new Frenzy();
-		tablero[0][5].setComponente(fre);
-		fre.setTile(tablero[0][5]);*/
-		
-		
 		for (int i = 0; i < filas ; i++){
 			for (int j = 1; j < columnas; j++){
 				r = random.nextInt(100);
@@ -200,6 +175,7 @@ public class Logica {
 			Tile actual=e.getTile();
 			if (actual.getColumna()==11){
 				encontre=true;
+				
 			}
 			int restantes = 12 - (actual.getColumna()+e.getAlcance());
 			for(int i=0; restantes > 0 && i<e.getAlcance() && !encontre; i++){
@@ -228,7 +204,7 @@ public class Logica {
 	}
 	
 	public void setScore(int s){
-		score=s;
+		score = s;
 	}
 	
 	public Tile getTile(int f, int c){

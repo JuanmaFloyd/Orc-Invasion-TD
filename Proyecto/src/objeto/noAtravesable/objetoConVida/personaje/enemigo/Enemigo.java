@@ -76,7 +76,6 @@ public abstract class Enemigo extends Personaje{
 		}
 		relojMov = (relojMov+1)%(int)(velocidadMov*60);
 		if (detenido) relojMov = 0;
-		
 	}
 	
 	public void restarVida(int v){

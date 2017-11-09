@@ -14,6 +14,8 @@ public abstract class Nivel implements Runnable{
 	protected Random random;
 	protected int numeroRandom;
 	
+	private int vidas;
+	
 	private Thread thread;
 	
 	public abstract void init();
@@ -47,7 +49,7 @@ public abstract class Nivel implements Runnable{
 		init();
 		boolean oleada1fin = false, oleada2fin = false, oleada3fin = false;
 		random = new Random();
-		while(!nivelFinalizado){
+		while(running){
 			
 			try {
 				Thread.sleep(3000);
@@ -95,9 +97,15 @@ public abstract class Nivel implements Runnable{
 		
 	}
 	
-	public boolean nivelFinalizado(){
-		return nivelFinalizado;
+
+	
+	/*public void reducirVida(){
+		vidas--;
+		if (vidas == 0){
+			logica.
+		}
 	}
+	*/
 	
 	
 	

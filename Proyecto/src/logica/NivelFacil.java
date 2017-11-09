@@ -9,6 +9,8 @@ public class NivelFacil extends Nivel{
 	@Override
 	public void init() {
 		
+		//vidas = 5;
+		
 		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
 		LinkedList<Enemigo> lista2 = new LinkedList<Enemigo>();
 		LinkedList<Enemigo> lista3 = new LinkedList<Enemigo>();
