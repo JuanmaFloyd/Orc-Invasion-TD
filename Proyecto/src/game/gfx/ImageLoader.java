@@ -13,6 +13,7 @@ public class ImageLoader {
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
 	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero;
 	public static BufferedImage pBolaDeFuego, pBomba, pEscudo, pFrenzy, pPeste, pWololo;
+	public static BufferedImage[] pesteMov = new BufferedImage[4];
 	public static BufferedImage[] vida = new BufferedImage[3];
 	public static BufferedImage[] goblinMove = new BufferedImage[4];
 	public static BufferedImage[] goblinAtk = new BufferedImage[4];
@@ -75,6 +76,10 @@ public class ImageLoader {
 		pEscudo = loadImage("/Textures/Premios/PremioEscudo.png");
 		pFrenzy = loadImage("/Textures/Premios/PremioFrenzy.png");
 		pPeste = loadImage("/Textures/Premios/PremioPeste.png");
+		pesteMov[0] = peste;
+		pesteMov[1] = peste;
+		pesteMov[2] = peste;
+		pesteMov[3] = peste;
 		pWololo = loadImage("/Textures/Premios/PremioWololo.png");
 		goblinMove[0] = sheet.getSubimage(0, 0, 64, 64);
 		goblinMove[1] = sheet.getSubimage(64, 0, 64, 64);

@@ -8,10 +8,13 @@ import objetosTemporales.EfectoPeste;
 
 public class VisitorPeste extends Visitor{
 	
-	public VisitorPeste(){}
+	private boolean afecte;
+	
+	public VisitorPeste(){
+		afecte = false;
+	}
 	
 	public void afectar(Aliado a){
-		boolean afecte = false;
 		if (!afecte && a != null){
 			EfectoPeste ef = new EfectoPeste(600, a);
 			afecte = true;
@@ -22,7 +25,6 @@ public class VisitorPeste extends Visitor{
 	}
 	
 	public void afectar(Enemigo e){
-		boolean afecte = false;
 		if (!afecte && e != null){
 			EfectoPeste ef = new EfectoPeste(600, e);
 			afecte = true;

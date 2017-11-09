@@ -22,5 +22,16 @@ public class EfectoPeste extends ObjetoTemporal{
 
 	@Override
 	public void efectoFinal() {}
+	
+	public void decrementarReloj(){
+		reloj--;
+		if (reloj == 0){
+			efectoFinal();
+			logica.agregarObjetoTemporalABorrar(this);
+		}
+		if (reloj % 7 == 0 && j.getVida() > 0){
+			efecto();
+		}
+	}
 
 }
