@@ -51,15 +51,9 @@ public class Tienda {
 	}
 	//agregar comprar para temporales
 	
-	public void vender(Aliado a){
-		if(a.fullVida()){
-			a.getTile().setComponente(null);
-			monedas+=a.getPrecio();
-		}
-		else{
-			a.getTile().setComponente(null);
-			monedas+=a.getPrecio()/2;
-		}
+	public void vender(Comprable a){
+		a.remover();
+		monedas+=a.getPrecioVenta();
 	}
 	
 	//agregar vender para temporales

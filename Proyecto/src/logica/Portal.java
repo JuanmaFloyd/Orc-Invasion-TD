@@ -49,5 +49,17 @@ public class Portal extends Objeto implements Comprable{
 	public int getPrecio() {
 		return 150;
 	}
+
+	@Override
+	public int getPrecioVenta() {
+		return 150;
+	}
+
+	public void remover() {
+		pi.getTile().setComponenteAtravesable(null);
+		pi.setTile(null);
+		po.getTile().setComponenteAtravesable(null);
+		po.setTile(null);
+	}
 }
 

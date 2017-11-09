@@ -107,4 +107,8 @@ public abstract class Aliado extends Personaje implements Comprable {
 		else
 			return valor/2;
 	}
+	public void remover(){
+		miTile.setComponente(null);
+		miTile=null;
+	}
 }

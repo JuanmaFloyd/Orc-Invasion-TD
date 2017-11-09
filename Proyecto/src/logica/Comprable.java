@@ -6,4 +6,5 @@ public interface Comprable {
 	public int getPrecio();
 	public Objeto clone();
 	public int getPrecioVenta();
+	public void remover();
 }
