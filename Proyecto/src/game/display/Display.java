@@ -1,13 +1,14 @@
 package game.display;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import game.Game;
 import game.GameState;
 import game.MenuState;
 import game.UIState;
+import logica.Objeto;
+import logica.visitor.VisitorClick;
 
 public class Display {
 	//atributos
@@ -32,10 +33,10 @@ public class Display {
 		
 		frame.pack();
 	}
-	public void setJuego(){
+	public void setJuego(VisitorClick v){
 		if(panel!=null)
 			frame.remove(panel);
-		DisplayJuego d = new DisplayJuego(myGame);
+		DisplayJuego d = new DisplayJuego(myGame, v);
 		state = new GameState(d);
 		panel = d;
 		frame.add(panel);

@@ -9,14 +9,9 @@ import logica.Objeto;
 import logica.Portal;
 import logica.Tienda;
 import logica.Tile;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Arquero;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Clerigo;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Druida;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCampeon;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.EnanoCazador;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Espadachin;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Mago;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Paladin;
+import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
+import objeto.noAtravesable.objetoConVida.personaje.aliado.*;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
 import javax.swing.JLabel;
 
@@ -32,9 +27,11 @@ public class PanelTienda extends JPanel {
 	
 	protected Game myGame;
 	protected JLabel labelPuntaje;
+	protected JPanel pScroll;
+	protected GridBagConstraints conScroll;
 	protected Objeto prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
-	protected JPanel panelCompraElfos, panelCompraEnanos, panelPre;
+	protected JPanel panelCompraElfos, panelCompraEnanos, panelPre, panelInfo;
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
@@ -69,9 +66,9 @@ public class PanelTienda extends JPanel {
 		c.weightx=0.5;
 		c.weighty=0.5;
 		
-		JPanel pScroll=new JPanel(new GridBagLayout());
+		pScroll=new JPanel(new GridBagLayout());
 		
-		GridBagConstraints conScroll = new GridBagConstraints();
+		conScroll = new GridBagConstraints();
 		conScroll.gridx=0;
 		conScroll.gridy=0;
 		conScroll.fill=GridBagConstraints.BOTH;
@@ -289,8 +286,6 @@ public class PanelTienda extends JPanel {
 		GridBagConstraints c4 = new GridBagConstraints();
 		c4.gridx=0;
 		c4.gridy=0;
-		c4.gridx=0;
-		c4.gridy=0;
 		c4.weightx=0;
 		c4.weighty=0;
 		c4.ipadx=0;
@@ -307,11 +302,9 @@ public class PanelTienda extends JPanel {
 		c4.ipady=0;
 		
 		panelPre= new JPanel(new GridLayout(3, 2));
-		
-		//asociar lista de premios a panelPre
-		
+			
 		panelPremios.add(panelPre, c4);
-		
+	
 		pScroll.add(panelPremios, conScroll);
 		
 		
@@ -355,5 +348,29 @@ public class PanelTienda extends JPanel {
 	}
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
+	}
+
+	public void mostrarInfoAliado(Aliado a) {
+		if(panelInfo!=null)
+			pScroll.remove(panelInfo);
+		conScroll.gridy=5;
+		panelInfo = new PanelInfoAliado(a);
+		pScroll.add(panelInfo, conScroll);
+	}
+
+	public void mostrarInfoEnemigo(Enemigo e) {
+		if(panelInfo!=null)
+			pScroll.remove(panelInfo);
+		conScroll.gridy=5;
+		panelInfo = new PanelInfoPersonaje(e);
+		pScroll.add(panelInfo, conScroll);
+	}
+
+	public void mostrtarInfoOM(OMConVida omcv) {
+		if(panelInfo!=null)
+			pScroll.remove(panelInfo);
+		conScroll.gridy=5;
+		panelInfo = new PanelInfo(omcv);
+		pScroll.add(panelInfo, conScroll);
 	}
 }

@@ -22,7 +22,7 @@ public class Game implements Runnable{
 	public String title;
 	private Logica myLogic;
 	private GraphicsManager graphicsManager;
-	private Visitor v;
+	private VisitorClick v;
 	private UIState state;
 	
 	private Nivel nivel;
@@ -123,9 +123,9 @@ public class Game implements Runnable{
 	}
 	
 	public void empezarNivel(Nivel n){
+		display.setJuego(v);
 		nivel=n;
 		
-		display.setJuego();
 		graphicsManager = new GraphicsManager();
 		graphicsManager.start();
 		

@@ -100,4 +100,11 @@ public abstract class Aliado extends Personaje implements Comprable {
 	public int getPrecio(){
 		return valor;
 	}
+	public int getPrecioVenta() {
+		if(fullVida()){
+			return valor;
+		}
+		else
+			return valor/2;
+	}
 }
