@@ -31,7 +31,10 @@ public class VisitorAliado extends Visitor {
 				aliado.atacar(current.getComponente());
 				encontre = true;
 			}
-			current = current.getLeft();
+			if (current.getColumna() > 0)
+				current = current.getLeft();
+			else
+				i = aliado.getAlcance();
 		}
 		if (!encontre)	
 			aliado.setState(new ObjectStateStatic());
@@ -46,7 +49,10 @@ public class VisitorAliado extends Visitor {
 				aliado.atacar(current.getComponente());
 				encontre = true;
 			}
-			current = current.getLeft();
+			if (current.getColumna() > 0)
+				current = current.getLeft();
+			else
+				i = aliado.getAlcance();
 		}
 		if (!encontre)	
 			aliado.setState(new ObjectStateStatic());
