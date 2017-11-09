@@ -2,6 +2,7 @@ package objetosTemporales;
 
 import java.util.LinkedList;
 import logica.ObjetoTemporal;
+import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public class EfectoFrenzy extends ObjetoTemporal {
