@@ -49,14 +49,15 @@ public class Tienda {
 	public void agregar(ObjetoAtravesable a){
 		juego.agregarAtravesable(a);
 	}
-	//agregar comprar para temporales
 	
-	public void vender(Comprable a){
-		a.remover();
+	public void vender(Aliado a){
 		monedas+=a.getPrecioVenta();
+		a.remover();
 	}
-	
-	//agregar vender para temporales
+	public void vender(Comprable otcv){
+		monedas+=otcv.getPrecio();
+		otcv.remover();
+	}
 	
 	public PanelTienda getPanel(){
 		return miPanel;

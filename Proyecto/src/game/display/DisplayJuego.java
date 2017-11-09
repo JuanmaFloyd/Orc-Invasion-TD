@@ -75,7 +75,7 @@ public class DisplayJuego extends JPanel{
 		}
 		else
 			if(e.getY()-offset>=0 && (e.getX()-32)/64>=0 && (e.getX()-32)/64<=11)
-				myGame.interaccion(e.getX()-32, e.getY()-offset);
+				myGame.interaccion(e.getX(), e.getY()-offset);
 	}
 	
 	public void actualizarPuntaje(int p){

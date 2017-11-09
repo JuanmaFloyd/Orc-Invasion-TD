@@ -26,6 +26,7 @@ import java.util.LinkedList;
 public class PanelTienda extends JPanel {
 	
 	protected Game myGame;
+	protected Tienda tien;
 	protected JLabel labelPuntaje;
 	protected JPanel pScroll;
 	protected GridBagConstraints conScroll;
@@ -43,6 +44,7 @@ public class PanelTienda extends JPanel {
 		myGame=g;
 		
 		t.setPanel(this);
+		tien=t;
 		
 		botones=new LinkedList<BotonCompra>();
 		
@@ -345,17 +347,23 @@ public class PanelTienda extends JPanel {
 	}
 	public void agregarPremio(BotonCompraPremio p){
 		panelPre.add(p);
+		revalidate();
+		repaint();
 	}
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
+		revalidate();
+		repaint();
 	}
 
 	public void mostrarInfoAliado(Aliado a) {
 		if(panelInfo!=null)
 			pScroll.remove(panelInfo);
 		conScroll.gridy=5;
-		panelInfo = new PanelInfoAliado(a);
+		panelInfo = new PanelInfoAliado(a, tien);
 		pScroll.add(panelInfo, conScroll);
+		revalidate();
+		repaint();
 	}
 
 	public void mostrarInfoEnemigo(Enemigo e) {
@@ -364,6 +372,8 @@ public class PanelTienda extends JPanel {
 		conScroll.gridy=5;
 		panelInfo = new PanelInfoPersonaje(e);
 		pScroll.add(panelInfo, conScroll);
+		revalidate();
+		repaint();
 	}
 
 	public void mostrtarInfoOM(OMConVida omcv) {
@@ -372,5 +382,7 @@ public class PanelTienda extends JPanel {
 		conScroll.gridy=5;
 		panelInfo = new PanelInfo(omcv);
 		pScroll.add(panelInfo, conScroll);
+		revalidate();
+		repaint();
 	}
 }

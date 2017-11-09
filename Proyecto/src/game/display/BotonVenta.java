@@ -1,6 +1,7 @@
 package game.display;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
@@ -21,8 +22,9 @@ public class BotonVenta extends JLabel{
 	protected Tienda tien;
 	
 	//constructor
-	public BotonVenta(Comprable c){
+	public BotonVenta(Comprable c, Tienda t){
 		this.c = c;
+		tien=t;
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteVenta());
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
@@ -41,13 +43,15 @@ public class BotonVenta extends JLabel{
 		con.ipady=45;
 		JLabel val=new JLabel();
 		val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
+		val.setVisible(true);
 		val.setText("+" + c.getPrecioVenta());
 		val.setHorizontalAlignment(JLabel.RIGHT);
 		val.setVerticalAlignment(JLabel.BOTTOM);
-		val.setLocation(val.getX()-10, val.getY()-10);
+		val.setPreferredSize(new Dimension(20,10));
 		v.add(val,con);
 		v.setVisible(true);
 		per.add(v);
+		add(per);
 	}
 	
 	private class OyenteVenta implements MouseListener{
@@ -61,9 +65,10 @@ public class BotonVenta extends JLabel{
 			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
 		}
 		public void mouseReleased(MouseEvent arg0) {
-			if(((BotonCompra)arg0.getSource()).isEnabled()){
+			if(((BotonVenta)arg0.getSource()).isEnabled()){
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 				tien.vender(c);
+				((BotonVenta)arg0.getSource()).setEnabled(false);
 			}
 		}
 	}

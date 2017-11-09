@@ -1,8 +1,12 @@
 package game.display;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
@@ -41,14 +45,14 @@ public abstract class BotonCompra extends JLabel{
 			JLabel val=new JLabel();
 			val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
 			val.setText("" + valor);
+			val.setFont(new Font("Fipps-Regular", Font.PLAIN, 10));
 			val.setHorizontalAlignment(JLabel.RIGHT);
 			val.setVerticalAlignment(JLabel.BOTTOM);
-			val.setLocation(val.getX()-10, val.getY()-10);
+			val.setPreferredSize(new Dimension(20,10));
 			v.add(val,c);
 			v.setVisible(true);
 			per.add(v);
 		}
-		per.setVerticalTextPosition(BOTTOM);
 		add(per);
 		setHorizontalAlignment(JLabel.CENTER);
 	}
