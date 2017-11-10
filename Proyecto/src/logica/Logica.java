@@ -153,7 +153,6 @@ public class Logica {
 		}
 		eliminarObjetos();
 		for(Aliado a:listaAliados){
-			eliminarObjetos();
 			boolean encontre = false;
 			if(a.getTile().getColumna()!=0){
 				Tile actual = a.getTile().getLeft();
@@ -168,6 +167,7 @@ public class Logica {
 			if (!encontre)
 				a.setState(new ObjectStateStatic());
 			a.aumentarReloj();
+			eliminarObjetos();
 		}
 		agregarObjetos();
 		for(Enemigo e:listaEnemigos){
