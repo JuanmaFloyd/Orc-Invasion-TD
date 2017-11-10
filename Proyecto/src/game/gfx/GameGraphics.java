@@ -38,6 +38,7 @@ public class GameGraphics {
 				}
 			}
 		}
+		g.drawImage(ImageLoader.castillo, 0,0,ImageLoader.castillo.getWidth()*2, ImageLoader.castillo.getHeight()*2, null);
 	}
 	
 

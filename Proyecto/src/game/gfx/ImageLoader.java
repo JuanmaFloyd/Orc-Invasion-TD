@@ -9,7 +9,7 @@ public class ImageLoader {
 
 	private static int width = 64, height = 64;
 	private static BufferedImage sheet;
-	public static BufferedImage tierra, agua, piedra , arbol, fondo, peste;
+	public static BufferedImage tierra, agua, piedra , arbol, fondo, peste, castillo;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
 	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero, golem;
 	public static BufferedImage pBolaDeFuego, pBomba, pEscudo, pFrenzy, pPeste, pWololo;
@@ -40,6 +40,7 @@ public class ImageLoader {
 	
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
+ 		castillo = loadImage("/Textures/Castillo-Arboles.png");
 		sheet = loadImage("/Textures/SpriteSheet3x2.png");
 		//tierra = new BufferedImage[1]; 
 		tierra = sheet.getSubimage(0, 0, width, height);
