@@ -3,6 +3,7 @@ package logica;
 import java.util.LinkedList;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
 
 public class NivelFacil extends Nivel{
 
@@ -14,7 +15,7 @@ public class NivelFacil extends Nivel{
 		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
 		LinkedList<Enemigo> lista2 = new LinkedList<Enemigo>();
 		LinkedList<Enemigo> lista3 = new LinkedList<Enemigo>();
-		lista1.addLast(new Goblin());
+		lista1.addLast(new Golem());
 		lista1.addLast(new Goblin());
 		lista1.addLast(new Goblin());
 		lista1.addLast(new Goblin());

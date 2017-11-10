@@ -11,7 +11,7 @@ public class ImageLoader {
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol, fondo, peste;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
-	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero;
+	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero, golem;
 	public static BufferedImage pBolaDeFuego, pBomba, pEscudo, pFrenzy, pPeste, pWololo;
 	public static BufferedImage[] pesteMov = new BufferedImage[4];
 	public static BufferedImage[] vida = new BufferedImage[3];
@@ -35,6 +35,8 @@ public class ImageLoader {
 	public static BufferedImage[] orcoBallestaMov = new BufferedImage[4];
 	public static BufferedImage[] orcoBallestaAtk = new BufferedImage[4];
 	public static BufferedImage[] campeonEnanoAtk = new BufferedImage[4];
+	public static BufferedImage[] golemMov = new BufferedImage[4];
+	public static BufferedImage[] golemAtk = new BufferedImage[4];
 	
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
@@ -166,6 +168,15 @@ public class ImageLoader {
 		campeonEnanoAtk[1] = sheet.getSubimage(64, 0, 64, 64);
 		campeonEnanoAtk[2] = sheet.getSubimage(128, 0, 64, 64);
 		campeonEnanoAtk[3] = sheet.getSubimage(192, 0, 64, 64);	
+		golemAtk[0] = loadImage("/Textures/Personajes/Golem.png");
+		golemAtk[1] = loadImage("/Textures/Personajes/Golem.png");
+		golemAtk[2] = loadImage("/Textures/Personajes/Golem.png");
+		golemAtk[3] = loadImage("/Textures/Personajes/Golem.png");
+		golemMov[0] = loadImage("/Textures/Personajes/Golem.png");
+		golemMov[1] = loadImage("/Textures/Personajes/Golem.png");
+		golemMov[2] = loadImage("/Textures/Personajes/Golem.png");
+		golemMov[3] = loadImage("/Textures/Personajes/Golem.png");		
+		golem = loadImage("/Textures/Personajes/Golem.png");
 	}
 	
 	public static BufferedImage loadImage(String path){
