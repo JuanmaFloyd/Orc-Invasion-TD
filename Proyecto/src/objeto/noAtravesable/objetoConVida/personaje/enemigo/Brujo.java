@@ -8,23 +8,21 @@ import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 
 public class Brujo extends Enemigo{
-	public Brujo(Tile t){
+	public Brujo(){
 		super();
 		vida=50;
-		maxVida=50;
-		miTile=t;
+		maxVida = 50;
 		velocidadMov=2.3f;
-		velocidadAt=1.2f;
-		animation = new AnimationEnemy(this, 0 , t.getFila()*64, velocidadAt, velocidadMov ,ImageLoader.warlockAtk, ImageLoader.warlockMove);
+		velocidadAt=2.0f;
+		animation = new AnimationEnemy(this, 0 , 0, velocidadAt, velocidadMov ,ImageLoader.warlockAtk, ImageLoader.warlockMove);
 		animation.setYOffset(128);
-		t.setComponente(this);
 		image = ImageLoader.brujo;
 		ancho=1;
 		alto=1;
 		impacto=20;
 		alcance=4;
 		velMovMaxima=2.3f;
-		velAtMaxima=1.2f;
+		velAtMaxima=2.0f;
 		puntaje=20;
 		coins=200;
 		reloj=1;
@@ -34,7 +32,7 @@ public class Brujo extends Enemigo{
 		
 	}
 	public ObjetoNoAtravesable clone(){
-		return new Brujo(new Tile(null, 0, 0));
+		return new Brujo();
 	}
 	public void accept(VisitorWololo vw, Tile t){
 		vw.visit(this, t);

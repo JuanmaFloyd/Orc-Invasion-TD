@@ -45,7 +45,7 @@ public class Tienda {
 	}
 	
 	public void comprar(Aliado a){
-		monedas-=a.getPrecio();
+		monedas -= a.getPrecio();
 		juego.agregarAliado(a);
 		
 	}

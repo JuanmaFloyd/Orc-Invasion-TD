@@ -11,7 +11,9 @@ public class ObjectStateStatic extends ObjectState {
 	
 	
 	public void draw(Graphics g, Enemigo e){}
-	public void draw(Graphics g, Aliado a){a.getAnimation().draw(g, a.getImage());;}
+	public void draw(Graphics g, Aliado a){
+		a.getAnimation().draw(g, a.getImage());
+	}
 	public void draw(Graphics g, OMConVida omcv){}
 	public void draw(Graphics g, Premio p){}
 }

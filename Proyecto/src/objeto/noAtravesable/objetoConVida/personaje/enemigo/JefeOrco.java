@@ -18,7 +18,7 @@ public class JefeOrco extends Enemigo{
 		vida=100;
 		maxVida=100;
 		velocidadAt=1.8f;
-		velocidadMov=1.4f;
+		velocidadMov=2.0f;
 		animation = new AnimationEnemy(this, 0, 0, velocidadAt, velocidadMov, ImageLoader.jefeOrcoMov, ImageLoader.jefeOrcoMov);
 		animation.setYOffset(128);
 		image = ImageLoader.jefeOrco;
@@ -26,7 +26,7 @@ public class JefeOrco extends Enemigo{
 		alto=1;
 		impacto=30;
 		alcance=1;
-		velMovMaxima=1.4f;
+		velMovMaxima=2.0f;
 		velAtMaxima=1.8f;
 		puntaje=20;
 		coins=25;
