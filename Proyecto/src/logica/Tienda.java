@@ -7,6 +7,7 @@ import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public class Tienda {
+	
 	//atributos
 	protected int monedas;
 	protected Logica juego;
@@ -18,6 +19,7 @@ public class Tienda {
 		monedas=1000;
 		juego=l;
 	}
+	
 	public void setPanel(PanelTienda p){
 		miPanel=p;
 	}
@@ -28,27 +30,34 @@ public class Tienda {
 		
 		return instance;
 	}
+	
 	public void sumarMonedas(int m){
 		monedas+=m;
 	}
+	
 	public int getMonedas(){
 		return monedas;
 	}
+	
 	public void comprarAlianza(int val){
 		//asumo que no se puede comprar la alianza si no se tiene el dinero
 		monedas-=val;
 	}
+	
 	public void comprar(Aliado a){
 		monedas-=a.getPrecio();
 		juego.agregarAliado(a);
 		
 	}
+	
 	public void comprar(Comprable otcv){
 		monedas-=otcv.getPrecio();
 	}
+	
 	public void agregar(ObjetoAtravesable a){
 		juego.agregarAtravesable(a);
 	}
+	
 	public void vender(Comprable otcv){
 		monedas+=otcv.getPrecioVenta();
 		otcv.remover();

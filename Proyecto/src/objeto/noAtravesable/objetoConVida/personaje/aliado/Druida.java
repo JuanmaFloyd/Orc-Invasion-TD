@@ -44,15 +44,14 @@ public class Druida extends Aliado{
 	}
 	public void aumentarReloj(){
 		reloj=(reloj+1)%(int)(velocidadAt*60);
-		relojSummon=(relojSummon+1)%(int)(velocidadSummon*60);
-		if(relojSummon==0){
-			Random r=new Random();
-			int f=r.nextInt(6);
-			Random r1=new Random();
-			int c=r1.nextInt(12);
-			Tile ti=miTile.getLogica().getTile(f, c);
+		relojSummon = (relojSummon+1) % (int)(velocidadSummon*60);
+		if(relojSummon == 0){
+			Random r = new Random();
+			int f = r.nextInt(6);
+			int c = r.nextInt(11) + 1;
+			Tile ti = miTile.getLogica().getTile(f, c);
 			if(ti.getComponente()==null){
-				Treant t=new Treant(ti);
+				Treant t = new Treant(ti);
 				Tienda.getTienda(null).comprar(t);
 			}
 		}

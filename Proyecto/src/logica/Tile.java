@@ -48,25 +48,31 @@ public class Tile {
 	public Tile getLeft(){
 		return miJuego.getTile(fila, columna-1);
 	}
+	
 	public Tile getAbajo(){
 		return miJuego.getTile(fila+1, columna);
 	}
+	
 	public Tile getArriba() {
 		return miJuego.getTile(fila-1, columna);
 	}
+	
 	public void destruirAliado(Aliado a){
 		componente = null;
 		miJuego.agregarAliadoABorrar(a);
 	}
+	
 	public void agregarAliado(Aliado a){
 		miJuego.agregarAliado(a);
 	}
+	
 	public void destruirEnemigo(Enemigo e){
 		componente = null;
 		e.dropear();
 		miJuego.agregarEnemigoABorrar(e);
 		miJuego.agregarMonedas(e.getCoins());
 	}
+	
 	public void destruirObjeto(OMConVida ocv){
 		componente=null;
 	}
