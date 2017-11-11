@@ -31,6 +31,7 @@ public abstract class BotonCompra extends JLabel{
 		setOpaque(true);
 		JLabel per=new JLabel();
 		l=per;
+		per.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		per.setHorizontalAlignment(CENTER);
 		per.setLayout(new CardLayout());
 		if(value>0){
@@ -45,7 +46,7 @@ public abstract class BotonCompra extends JLabel{
 			JLabel val=new JLabel();
 			val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
 			val.setText("" + valor);
-			val.setFont(new Font("Fipps-Regular", Font.PLAIN, 10));
+			val.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 			val.setHorizontalAlignment(JLabel.RIGHT);
 			val.setVerticalAlignment(JLabel.BOTTOM);
 			val.setPreferredSize(new Dimension(20,10));

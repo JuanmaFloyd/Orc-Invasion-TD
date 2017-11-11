@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -29,7 +30,7 @@ public class PanelTienda extends JPanel {
 	protected Tienda tien;
 	protected JLabel labelPuntaje;
 	protected JPanel pScroll;
-	protected GridBagConstraints conScroll;
+	protected GridBagConstraints c;
 	protected Objeto prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
 	protected JPanel panelCompraElfos, panelCompraEnanos, panelPre, panelInfo;
@@ -50,7 +51,7 @@ public class PanelTienda extends JPanel {
 		
 		this.setLayout(new GridBagLayout());
 
-		GridBagConstraints c= new GridBagConstraints();
+		c= new GridBagConstraints();
 		c.gridx=0;
 		c.gridy=0;
 		c.weightx=0;
@@ -59,6 +60,7 @@ public class PanelTienda extends JPanel {
 		c.fill=GridBagConstraints.BOTH;
 
 		labelPuntaje = new JLabel("Score: 0    Monedas:0");
+		labelPuntaje.setFont(new Font("8-Bit Madness", Font.PLAIN, 10));
 		labelPuntaje.setHorizontalAlignment(JLabel.CENTER);
 		add(labelPuntaje, c);
 		
@@ -70,7 +72,7 @@ public class PanelTienda extends JPanel {
 		
 		pScroll=new JPanel(new GridBagLayout());
 		
-		conScroll = new GridBagConstraints();
+		GridBagConstraints conScroll = new GridBagConstraints();
 		conScroll.gridx=0;
 		conScroll.gridy=0;
 		conScroll.fill=GridBagConstraints.BOTH;
@@ -94,6 +96,7 @@ public class PanelTienda extends JPanel {
 		cs.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelHumanos = new JLabel("Humanos", JLabel.CENTER);
+		labelHumanos.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		
 		panelHumanos.add(labelHumanos, cs);
 		
@@ -143,6 +146,7 @@ public class PanelTienda extends JPanel {
 		c1.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelElfos = new JLabel("Elfos", JLabel.CENTER);
+		labelElfos.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		
 		panelElfos.add(labelElfos, c1);
 		
@@ -197,6 +201,7 @@ public class PanelTienda extends JPanel {
 		c2.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelEnanos = new JLabel("Enanos", JLabel.CENTER);
+		labelEnanos.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		
 		panelEnanos.add(labelEnanos, c2);
 		
@@ -253,6 +258,7 @@ public class PanelTienda extends JPanel {
 		c3.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelOT = new JLabel("Objetos", JLabel.CENTER);
+		labelOT.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		
 		panelOT.add(labelOT, c3);
 		
@@ -295,6 +301,7 @@ public class PanelTienda extends JPanel {
 		c4.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelPremios = new JLabel("Premios", JLabel.CENTER);
+		labelPremios.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		
 		panelPremios.add(labelPremios, c4);
 		
@@ -358,30 +365,30 @@ public class PanelTienda extends JPanel {
 
 	public void mostrarInfoAliado(Aliado a) {
 		if(panelInfo!=null)
-			pScroll.remove(panelInfo);
-		conScroll.gridy=5;
+			remove(panelInfo);
+		c.gridy=2;
 		panelInfo = new PanelInfoAliado(a, tien);
-		pScroll.add(panelInfo, conScroll);
+		add(panelInfo, c);
 		revalidate();
 		repaint();
 	}
 
 	public void mostrarInfoEnemigo(Enemigo e) {
 		if(panelInfo!=null)
-			pScroll.remove(panelInfo);
-		conScroll.gridy=5;
+			remove(panelInfo);
+		c.gridy=2;
 		panelInfo = new PanelInfoPersonaje(e);
-		pScroll.add(panelInfo, conScroll);
+		add(panelInfo, c);
 		revalidate();
 		repaint();
 	}
 
 	public void mostrtarInfoOM(OMConVida omcv) {
 		if(panelInfo!=null)
-			pScroll.remove(panelInfo);
-		conScroll.gridy=5;
+			remove(panelInfo);
+		c.gridy=2;
 		panelInfo = new PanelInfo(omcv);
-		pScroll.add(panelInfo, conScroll);
+		add(panelInfo, c);
 		revalidate();
 		repaint();
 	}

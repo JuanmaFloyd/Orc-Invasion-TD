@@ -73,4 +73,9 @@ public class Paladin extends Aliado{
 		public ObjetoNoAtravesable clone(){
 			return new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0));
 		}
+		public void remover(){
+			super.remover();
+			segundo.setComponente(null);
+			segundo=null;
+		}
 }

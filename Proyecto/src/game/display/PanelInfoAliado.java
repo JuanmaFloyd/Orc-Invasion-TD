@@ -9,7 +9,8 @@ public class PanelInfoAliado extends PanelInfoPersonaje{
 	//constructor
 	public PanelInfoAliado(Aliado a, Tienda t){
 		super(a);
-		c.gridy=2;
+		c.gridy=1;
+		c.gridx=1;
 		BotonVenta b = new BotonVenta(a, t);
 		add(b, c);
 	}

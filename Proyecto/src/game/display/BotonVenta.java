@@ -2,6 +2,7 @@ package game.display;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
@@ -25,12 +26,15 @@ public class BotonVenta extends JLabel{
 	public BotonVenta(Comprable c, Tienda t){
 		this.c = c;
 		tien=t;
+		setHorizontalAlignment(CENTER);
+		setVerticalAlignment(CENTER);
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteVenta());
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAnulado.png")));
 		setOpaque(true);
 		JLabel per=new JLabel("vender");
+		per.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		per.setHorizontalAlignment(CENTER);
 		per.setLayout(new CardLayout());
 		JLabel v=new JLabel();
@@ -45,6 +49,7 @@ public class BotonVenta extends JLabel{
 		val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
 		val.setVisible(true);
 		val.setText("+" + c.getPrecioVenta());
+		val.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		val.setHorizontalAlignment(JLabel.RIGHT);
 		val.setVerticalAlignment(JLabel.BOTTOM);
 		val.setPreferredSize(new Dimension(20,10));

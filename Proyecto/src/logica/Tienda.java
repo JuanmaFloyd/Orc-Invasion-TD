@@ -49,13 +49,8 @@ public class Tienda {
 	public void agregar(ObjetoAtravesable a){
 		juego.agregarAtravesable(a);
 	}
-	
-	public void vender(Aliado a){
-		monedas+=a.getPrecioVenta();
-		a.remover();
-	}
 	public void vender(Comprable otcv){
-		monedas+=otcv.getPrecio();
+		monedas+=otcv.getPrecioVenta();
 		otcv.remover();
 	}
 	
