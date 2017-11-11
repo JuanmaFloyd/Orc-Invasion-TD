@@ -175,7 +175,8 @@ public class Logica {
 			Tile actual=e.getTile();
 			if (actual.getColumna()==11){
 				encontre=true;
-				
+				enemigosABorrar.addLast(e);
+				actual.setComponente(null);
 			}
 			int restantes = 12 - (actual.getColumna()+e.getAlcance());
 			for(int i=0; restantes > 0 && i<e.getAlcance() && !encontre; i++){
