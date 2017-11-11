@@ -58,8 +58,8 @@ public class Paladin extends Aliado{
 			}
 		}
 		public void agregar(Tienda tien, Tile t){
-			super.agregar(tien, t);
 			if(t.getColumna()!=11 && t.getRight().getComponente()==null){
+				super.agregar(tien, t);
 				miTile=t;
 				t.setComponente(this);
 				if(t.getColumna()!=11){
@@ -75,7 +75,7 @@ public class Paladin extends Aliado{
 		}
 		public void remover(){
 			super.remover();
-			segundo.setComponente(null);
+			segundo.destruirAliado(this);
 			segundo=null;
 		}
 }

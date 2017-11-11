@@ -29,6 +29,8 @@ public class PanelInfo extends JPanel {
 			c.fill=GridBagConstraints.BOTH;
 			c.gridx=0;
 			c.gridy=0;
+			c.ipadx=0;
+			c.ipady=0;
 			c.gridheight=2;
 			
 			JLabel imagen = new JLabel(new ImageIcon(a.getImage()));

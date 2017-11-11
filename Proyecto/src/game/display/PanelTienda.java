@@ -367,6 +367,8 @@ public class PanelTienda extends JPanel {
 		if(panelInfo!=null)
 			remove(panelInfo);
 		c.gridy=2;
+		c.ipadx=0;
+		c.ipady=0;
 		panelInfo = new PanelInfoAliado(a, tien);
 		add(panelInfo, c);
 		revalidate();
@@ -377,6 +379,8 @@ public class PanelTienda extends JPanel {
 		if(panelInfo!=null)
 			remove(panelInfo);
 		c.gridy=2;
+		c.ipadx=0;
+		c.ipady=0;
 		panelInfo = new PanelInfoPersonaje(e);
 		add(panelInfo, c);
 		revalidate();
@@ -387,6 +391,8 @@ public class PanelTienda extends JPanel {
 		if(panelInfo!=null)
 			remove(panelInfo);
 		c.gridy=2;
+		c.ipadx=0;
+		c.ipady=0;
 		panelInfo = new PanelInfo(omcv);
 		add(panelInfo, c);
 		revalidate();
