@@ -91,6 +91,9 @@ public abstract class Nivel implements Runnable{
 			if (logicaJuego.getTile(x, y).getComponente() != null)
 				logicaJuego.getTile(x, y).getComponente().restarVida(10000);
 			Lava l = new Lava(logicaJuego.getTile(x, y));
+			if (logicaJuego.getTile(x, y).getComponenteAtravesable() != null){
+				logicaJuego.agregarAtravesableABorrar(logicaJuego.getTile(x, y).getComponenteAtravesable());
+			}
 			logicaJuego.getTile(x, y).setComponenteAtravesable(l);
 			logicaJuego.agregarAtravesable(l);
 		}
