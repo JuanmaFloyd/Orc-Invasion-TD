@@ -26,6 +26,7 @@ public abstract class Nivel implements Runnable{
 			return;
 		}
 		running = true;
+		vidas=3;
 		thread = new Thread(this);
 		thread.start();
 		
@@ -100,15 +101,20 @@ public abstract class Nivel implements Runnable{
 		
 	}
 	
-
-	
-	/*public void reducirVida(){
-		vidas--;
-		if (vidas == 0){
-			logica.
-		}
+	public boolean ganado(){
+		if(oleada3!=null)
+			return oleada3.oleadaFinalizada() && logicaJuego.noHayEnemigos();
+		else
+			return false;
 	}
-	*/
+	
+	public boolean perdido(){
+		return vidas==0;
+	}
+	
+	public void reducirVida(){
+		vidas--;
+	}
 	
 	
 	

@@ -14,5 +14,9 @@ public interface UIState {
 	public void actualizar();
 	
 	public void interactuar();
+
+	public void perderNivel();
+
+	public void ganarNivel();
 	
 }

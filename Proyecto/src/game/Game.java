@@ -78,6 +78,18 @@ public class Game implements Runnable{
 			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
 				update();
 				delta--;
+				if(nivel!=null){
+					if(nivel.perdido()){
+						nivel.stop();
+						state.perderNivel();
+						nivel=null;
+					}
+					else if(nivel.ganado()){
+						nivel.stop();
+						state.ganarNivel();
+						nivel=null;
+					}
+				}
 			}
 		}
 		

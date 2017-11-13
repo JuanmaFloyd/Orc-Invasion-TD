@@ -25,4 +25,16 @@ public class MenuState implements UIState {
 
 	}
 
+	@Override
+	public void perderNivel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ganarNivel() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -44,15 +44,22 @@ public class GameState implements UIState{
 		g.dispose();
 	}
 
-	@Override
 	public void actualizar() {
 		logica.actualizar();
 		display.actualizarPuntaje(logica.getScore());
 	}
 
-	@Override
 	public void interactuar() {
 		
+	}
+
+	public void perderNivel() {
+		display.perderNivel();
+		
+	}
+
+	public void ganarNivel() {
+		display.ganarNivel();
 	}
 
 	

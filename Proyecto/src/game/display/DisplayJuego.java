@@ -1,6 +1,7 @@
 package game.display;
 
 import java.awt.Canvas;
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -20,6 +21,7 @@ public class DisplayJuego extends JPanel{
 	private Canvas canvas;
 	private Game myGame;
 	private Tienda tienda;
+	private JPanel panelCanvas;
 	private PanelTienda panelTienda;
 	private int offset = 128;
 	
@@ -39,6 +41,8 @@ public class DisplayJuego extends JPanel{
 		
 		PremioManager.init(panelTienda);
 		
+		panelCanvas = new JPanel(new CardLayout());
+		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(864, 512));
 		canvas.setMaximumSize(new Dimension(864, 512));
@@ -52,11 +56,13 @@ public class DisplayJuego extends JPanel{
 		}
 		);
 		
+		panelCanvas.add(canvas);
+		
 		GridBagConstraints c = new GridBagConstraints();
 		c.gridx = 0;
 		c.gridy = 0;
 		c.fill = GridBagConstraints.BOTH;
-		add(canvas,c);
+		add(panelCanvas,c);
 		c.gridx=1;
 		c.ipadx=768/4;
 		add(panelTienda,c);
@@ -84,5 +90,15 @@ public class DisplayJuego extends JPanel{
 	
 	public PanelTienda getPanelTienda(){
 		return panelTienda;
+	}
+
+	public void perderNivel() {
+		panelTienda.setEnabled(false);
+		panelCanvas.add(new PanelPerder());
+	}
+
+	public void ganarNivel() {
+		panelTienda.setEnabled(false);
+		panelCanvas.add(new PanelGanar());
 	}
 }
