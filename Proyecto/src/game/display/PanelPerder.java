@@ -11,5 +11,6 @@ public class PanelPerder extends JPanel{
 	public PanelPerder(){
 		JLabel fondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/FondoNivelTerminado.png")));
 		add(fondo);
+		setOpaque(true);
 	}
 }

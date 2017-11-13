@@ -13,7 +13,9 @@ import game.gfx.ImageLoader;
 import logica.Nivel;
 import logica.NivelDificil;
 import logica.NivelFacil;
+import logica.NivelVacio;
 
+@SuppressWarnings("serial")
 public class Menu extends JPanel{
 	//atributos
 	private Game g;
@@ -37,11 +39,16 @@ public class Menu extends JPanel{
 		c.gridy=0;
 		
 		panelPrincipal.setOpaque(false);
+
+		BotonNivel n0 = new BotonNivel(this, new NivelVacio(), 0);
+		panelPrincipal.add(n0, c);
+		
+		c.gridx=1;
 		
 		BotonNivel n1 = new BotonNivel(this, new NivelFacil(), 1);
 		panelPrincipal.add(n1, c);
 
-		c.gridx=1;
+		c.gridx=2;
 		
 		BotonNivel n2 = new BotonNivel(this, new NivelDificil(), 2);
 		panelPrincipal.add(n2, c);

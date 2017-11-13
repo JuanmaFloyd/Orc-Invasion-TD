@@ -14,7 +14,7 @@ public abstract class Nivel implements Runnable{
 	protected Random random;
 	protected int numeroRandom;
 	
-	private int vidas;
+	protected int vidas;
 	
 	private Thread thread;
 	
@@ -26,7 +26,6 @@ public abstract class Nivel implements Runnable{
 			return;
 		}
 		running = true;
-		vidas=3;
 		thread = new Thread(this);
 		thread.start();
 		
@@ -78,7 +77,6 @@ public abstract class Nivel implements Runnable{
 					logicaJuego.agregarEnemigo(oleada3.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
 					else if (logicaJuego.noHayEnemigos()){
 						oleada3fin = true;
-						modificarMapa();
 					}
 				}
 		}
@@ -103,13 +101,16 @@ public abstract class Nivel implements Runnable{
 	
 	public boolean ganado(){
 		if(oleada3!=null)
-			return oleada3.oleadaFinalizada() && logicaJuego.noHayEnemigos();
+			return oleada3.oleadaFinalizada() && logicaJuego.noHayEnemigos() && vidas>0;
 		else
 			return false;
 	}
 	
 	public boolean perdido(){
-		return vidas==0;
+		if(oleada3!=null)
+			return !oleada3.oleadaFinalizada() && vidas==0;
+		else
+			return false;
 	}
 	
 	public void reducirVida(){

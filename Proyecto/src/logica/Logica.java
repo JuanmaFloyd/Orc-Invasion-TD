@@ -154,7 +154,7 @@ public class Logica {
 		eliminarObjetos();
 		for(Aliado a:listaAliados){
 			boolean encontre = false;
-			if(a.getTile().getColumna()!=0){
+			if(a.getTile()!=null && a.getTile().getColumna()!=0){
 				Tile actual = a.getTile().getLeft();
 				for(int i=0; !encontre && actual.getColumna()!=0 && i<a.getAlcance(); i++){
 					if(actual.getComponente()!=null){

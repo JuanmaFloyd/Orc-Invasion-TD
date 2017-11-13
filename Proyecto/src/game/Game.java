@@ -53,6 +53,7 @@ public class Game implements Runnable{
 	}
 	
 	private void update(){
+		
 		state.actualizar();
 	}
 
@@ -76,17 +77,20 @@ public class Game implements Runnable{
 			lastTime = now;   
 
 			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
-				update();
+				if(nivel!=null && !nivel.ganado() && !nivel.perdido())
+					update();
 				delta--;
 				if(nivel!=null){
 					if(nivel.perdido()){
 						nivel.stop();
 						state.perderNivel();
+						graphicsManager.stop();
 						nivel=null;
 					}
 					else if(nivel.ganado()){
 						nivel.stop();
 						state.ganarNivel();
+						graphicsManager.stop();
 						nivel=null;
 					}
 				}

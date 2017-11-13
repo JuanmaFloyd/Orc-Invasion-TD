@@ -354,11 +354,13 @@ public class PanelTienda extends JPanel {
 	}
 	public void agregarPremio(BotonCompraPremio p){
 		panelPre.add(p);
+		botones.addLast(p);
 		revalidate();
 		repaint();
 	}
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
+		botones.remove(p);
 		revalidate();
 		repaint();
 	}
@@ -397,5 +399,11 @@ public class PanelTienda extends JPanel {
 		add(panelInfo, c);
 		revalidate();
 		repaint();
+	}
+	public void setEnabled(boolean bool){
+		super.setEnabled(bool);
+		for(BotonCompra b: botones){
+			b.setEnabled(bool);
+		}
 	}
 }

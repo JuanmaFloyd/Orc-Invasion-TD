@@ -93,12 +93,18 @@ public class DisplayJuego extends JPanel{
 	}
 
 	public void perderNivel() {
+		System.out.println("DisplayJuego.perderNivel");
+		canvas.setEnabled(false);
 		panelTienda.setEnabled(false);
-		panelCanvas.add(new PanelPerder());
+		PanelPerder p=new PanelPerder();
+		panelCanvas.add(p);
 	}
 
 	public void ganarNivel() {
+		System.out.println("DisplayJuego.ganarNivel");
+		canvas.setEnabled(false);
 		panelTienda.setEnabled(false);
-		panelCanvas.add(new PanelGanar());
+		PanelGanar p= new PanelGanar();
+		panelCanvas.add(p);
 	}
 }
