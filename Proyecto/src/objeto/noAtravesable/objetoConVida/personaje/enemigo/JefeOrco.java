@@ -19,7 +19,7 @@ public class JefeOrco extends Enemigo{
 		maxVida=100;
 		velocidadAt=1.8f;
 		velocidadMov=2.0f;
-		animation = new AnimationEnemy(this, 0, 0, velocidadAt, velocidadMov, ImageLoader.jefeOrcoMov, ImageLoader.jefeOrcoMov);
+		animation = new AnimationEnemy(this, 0, 0, velocidadAt , velocidadMov*2, ImageLoader.jefeOrcoMov, ImageLoader.jefeOrcoMov);
 		animation.setYOffset(128);
 		image = ImageLoader.jefeOrco;
 		ancho=2;
@@ -63,6 +63,13 @@ public class JefeOrco extends Enemigo{
 			segundo = miTile.getLeft();
 			segundo.setComponente(this);
 		}
+	}
+	
+	public void normalizarVelocidad(){
+		velocidadMov=velMovMaxima;
+		velocidadAt=velAtMaxima;
+		animation.setAtkSpeed(velocidadAt);
+		animation.setMovSpeed(velocidadMov * 2);
 	}
 
 }
