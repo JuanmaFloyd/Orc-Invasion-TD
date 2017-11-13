@@ -32,11 +32,12 @@ public class PanelTienda extends JPanel {
 	protected JPanel pScroll;
 	protected GridBagConstraints c;
 	protected Objeto prototipo;
-	protected JPanel panelPersonajesElfos, panelPersonajesEnanos;
+	protected JPanel panelPersonajesElfos, panelPersonajesEnanos, panelPremios;
 	protected JPanel panelCompraElfos, panelCompraEnanos, panelPre, panelInfo;
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
+	private int cantPremios;
 
 	/**
 	 * Create the panel.
@@ -46,6 +47,8 @@ public class PanelTienda extends JPanel {
 		
 		t.setPanel(this);
 		tien=t;
+		
+		cantPremios=0;
 		
 		botones=new LinkedList<BotonCompra>();
 		
@@ -57,10 +60,11 @@ public class PanelTienda extends JPanel {
 		c.weightx=0;
 		c.weighty=0;
 		c.ipady=30;
+		c.ipadx=0;
 		c.fill=GridBagConstraints.BOTH;
 
 		labelPuntaje = new JLabel("Score: 0    Monedas:0");
-		labelPuntaje.setFont(new Font("8-Bit Madness", Font.PLAIN, 10));
+		labelPuntaje.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
 		labelPuntaje.setHorizontalAlignment(JLabel.CENTER);
 		add(labelPuntaje, c);
 		
@@ -289,7 +293,7 @@ public class PanelTienda extends JPanel {
 		
 		conScroll.gridy=4;
 		
-		JPanel panelPremios = new JPanel(new GridBagLayout());
+		panelPremios = new JPanel(new GridBagLayout());
 		
 		GridBagConstraints c4 = new GridBagConstraints();
 		c4.gridx=0;
@@ -313,6 +317,7 @@ public class PanelTienda extends JPanel {
 		panelPre= new JPanel(new GridLayout(3, 2));
 			
 		panelPremios.add(panelPre, c4);
+		panelPremios.setVisible(false);
 	
 		pScroll.add(panelPremios, conScroll);
 		
@@ -353,7 +358,10 @@ public class PanelTienda extends JPanel {
 		Tienda.getTienda(myGame.getLogica()).comprarAlianza(val);
 	}
 	public void agregarPremio(BotonCompraPremio p){
+		if(!panelPremios.isVisible())
+			panelPremios.setVisible(true);
 		panelPre.add(p);
+		cantPremios++;
 		botones.addLast(p);
 		revalidate();
 		repaint();
@@ -361,6 +369,9 @@ public class PanelTienda extends JPanel {
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
 		botones.remove(p);
+		cantPremios--;
+		if(cantPremios==0)
+			panelPremios.setVisible(false);
 		revalidate();
 		repaint();
 	}
@@ -405,5 +416,13 @@ public class PanelTienda extends JPanel {
 		for(BotonCompra b: botones){
 			b.setEnabled(bool);
 		}
+	}
+
+	public void removerInfo() {
+		if(panelInfo!=null)
+			remove(panelInfo);
+		panelInfo=null;
+		revalidate();
+		repaint();
 	}
 }

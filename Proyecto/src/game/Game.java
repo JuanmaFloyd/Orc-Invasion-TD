@@ -135,6 +135,8 @@ public class Game implements Runnable{
 				ObjetoNoAtravesable o=tile.getComponente();
 				o.accept(v);
 			}
+			else
+				v.clickearNulo();
 	}
 	/**
 	 * Retorna la logica

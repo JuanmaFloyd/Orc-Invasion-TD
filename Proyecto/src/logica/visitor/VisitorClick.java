@@ -22,8 +22,12 @@ public class VisitorClick extends Visitor{
 		panel.mostrtarInfoOM(omcv);
 	}
 	public void afectar(Premio p) {
+		panel.removerInfo();
 		p.serClickeado();
 		p.eliminar();
+	}
+	public void clickearNulo(){
+		panel.removerInfo();
 	}
 	public void setPanel(PanelTienda pan){
 		panel=pan;

@@ -28,6 +28,7 @@ public class GraphicsManager implements Runnable{
 		if(!running){
 			return;
 		}
+		
 		running = false;
 		try {
 			thread.join();
