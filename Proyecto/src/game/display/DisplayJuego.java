@@ -106,6 +106,7 @@ public class DisplayJuego extends JPanel{
 		canvas.setEnabled(false);
 		panelTienda.setEnabled(false);
 		PanelGanar p= new PanelGanar();
+		panelCanvas.removeAll();
 		panelCanvas.add(p);
 		panelCanvas.revalidate();
 		panelCanvas.repaint();
