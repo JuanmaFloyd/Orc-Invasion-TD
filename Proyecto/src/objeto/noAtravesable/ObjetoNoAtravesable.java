@@ -35,7 +35,6 @@ public abstract class ObjetoNoAtravesable extends Objeto {
 	public void agregar(Tienda tien, Tile t){
 		miTile=t;
 		t.setComponente(this);
-		tien.getPanel().setPrototype(null);
 	}
 
 	

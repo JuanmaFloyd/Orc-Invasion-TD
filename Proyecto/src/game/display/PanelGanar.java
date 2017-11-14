@@ -13,9 +13,6 @@ public class PanelGanar extends JPanel {
 	public PanelGanar(){
 		setLayout(new CardLayout());
 		JLabel fondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/FondoNivelTerminado.png")));
-		fondo.setVisible(true);
-		fondo.setOpaque(true);
-		
 		add(fondo);
 		setOpaque(true);
 		setVisible(true);

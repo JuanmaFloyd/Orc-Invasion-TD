@@ -76,10 +76,13 @@ public class DisplayJuego extends JPanel{
 
 		if(panelTienda.getPrototype()!=null && e.getY()-offset>=0 && (e.getX()-32)/64>=0 && (e.getX()-32)/64<=11){
 			panelTienda.getPrototype().agregar(tienda, myGame.getLogica().getTile((e.getY()-offset)/64, e.getX()/64));
+			panelTienda.setPrototype(null);
 		}
 		else
-			if(e.getY()-offset>=0 && (e.getX()-32)/64>=0 && (e.getX()-32)/64<=11)
+			if(e.getY()-offset>=0 && (e.getX()-32)/64>=0 && (e.getX()-32)/64<=11){
 				myGame.interaccion(e.getX(), e.getY()-offset);
+				panelTienda.setPrototype(null);
+			}
 	}
 	
 	public void actualizarPuntaje(int p){
@@ -104,5 +107,7 @@ public class DisplayJuego extends JPanel{
 		panelTienda.setEnabled(false);
 		PanelGanar p= new PanelGanar();
 		panelCanvas.add(p);
+		panelCanvas.revalidate();
+		panelCanvas.repaint();
 	}
 }
