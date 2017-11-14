@@ -78,12 +78,12 @@ public class DisplayJuego extends JPanel{
 	public void click(MouseEvent e){
 		System.out.println(e.getX() + " " + (e.getY()-offset));
 
-		if(panelTienda.getPrototype()!=null && e.getY()-offset>=0 && (e.getX()-32)/64>=0 && (e.getX()-32)/64<=11){
+		if(panelTienda.getPrototype()!=null && e.getY()-offset>=0 && (e.getX() <= 768)){
 			panelTienda.getPrototype().agregar(tienda, myGame.getLogica().getTile((e.getY()-offset)/64, e.getX()/64));
 			panelTienda.setPrototype(null);
 		}
 		else
-			if(e.getY()-offset>=0 && (e.getX()-32)/64>=0 && (e.getX()-32)/64<=11){
+			if(e.getY()-offset>=0 && (e.getX() <= 768)){
 				myGame.interaccion(e.getX(), e.getY()-offset);
 				panelTienda.setPrototype(null);
 			}
