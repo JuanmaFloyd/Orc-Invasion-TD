@@ -23,16 +23,20 @@ public class PanelGanar extends JPanel {
 		
 		JLabel fondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/FondoNivelTerminado.png")));
 		add(fondo);
+		fondo.setLayout(new CardLayout());
 		JPanel panel = new JPanel(new GridBagLayout());
 		
 		GridBagConstraints c = new GridBagConstraints();
+		c.fill=GridBagConstraints.BOTH;
 		c.gridx=0;
 		c.gridy=0;
 		
 		BotonNivel siguiente = new BotonNivel(g, n.getSiguiente(), "siguiente");
 		panel.add(siguiente, c);
 		
-		add(panel);
+		panel.setVisible(true);
+		panel.setOpaque(false);
+		fondo.add(panel);
 		
 		setOpaque(true);
 		setVisible(true);
