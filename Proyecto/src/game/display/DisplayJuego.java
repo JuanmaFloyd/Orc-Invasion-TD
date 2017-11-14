@@ -39,6 +39,7 @@ public class DisplayJuego extends JPanel{
 		setLayout(new GridBagLayout());
 
 		panelTienda = new PanelTienda(myGame, tienda);
+		tienda.sumarMonedas(nivel.getMonedasInicio());
 		
 		PremioManager.init(panelTienda);
 		

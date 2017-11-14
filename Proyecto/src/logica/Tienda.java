@@ -16,7 +16,6 @@ public class Tienda {
 
 	//constructor
 	private Tienda(Logica l){
-		monedas=1000;
 		juego=l;
 	}
 	

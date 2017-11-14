@@ -54,14 +54,24 @@ public class Menu extends JPanel{
 		Nivel n9 = new NivelDificil();
 		
 		n0.setSiguiente(n1);
+		n0.setMonedasInicio(500);
 		n1.setSiguiente(n2);
+		n1.setMonedasInicio(500);
 		n2.setSiguiente(n3);
+		n2.setMonedasInicio(500);
 		n3.setSiguiente(n4);
+		n3.setMonedasInicio(500);
 		n4.setSiguiente(n5);
+		n4.setMonedasInicio(500);
 		n5.setSiguiente(n6);
+		n5.setMonedasInicio(500);
 		n6.setSiguiente(n7);
+		n6.setMonedasInicio(500);
 		n7.setSiguiente(n8);
+		n7.setMonedasInicio(500);
 		n8.setSiguiente(n9);
+		n8.setMonedasInicio(500);
+		n9.setMonedasInicio(500);
 		
 		panelPrincipal.add( new BotonNivel(g, n0, "0"), c);
 		c.gridx++;
