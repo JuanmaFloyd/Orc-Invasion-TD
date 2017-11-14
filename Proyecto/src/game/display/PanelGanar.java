@@ -12,6 +12,7 @@ import game.gfx.ImageLoader;
 public class PanelGanar extends JPanel {
 	public PanelGanar(){
 		setLayout(new CardLayout());
+		
 		JLabel fondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/FondoNivelTerminado.png")));
 		add(fondo);
 		setOpaque(true);
