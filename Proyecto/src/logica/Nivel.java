@@ -10,6 +10,7 @@ public abstract class Nivel implements Runnable{
 	
 	protected Oleada oleada1, oleada2, oleada3;
 	private boolean nivelFinalizado = false, running = false;
+	private Nivel siguiente;
 	
 	protected Random random;
 	protected int numeroRandom;
@@ -117,6 +118,11 @@ public abstract class Nivel implements Runnable{
 		vidas--;
 	}
 	
-	
+	public void setSiguiente(Nivel n){
+		siguiente=n;
+	}
+	public Nivel getSiguiente(){
+		return siguiente;
+	}
 	
 }

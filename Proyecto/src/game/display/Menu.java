@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 import game.Game;
 import game.gfx.ImageLoader;
+import logica.Logica;
 import logica.Nivel;
 import logica.NivelDificil;
 import logica.NivelFacil;
@@ -39,25 +40,51 @@ public class Menu extends JPanel{
 		c.gridy=0;
 		
 		panelPrincipal.setOpaque(false);
-
-		BotonNivel n0 = new BotonNivel(this, new NivelVacio(), 0);
-		panelPrincipal.add(n0, c);
 		
-		c.gridx=1;
 		
-		BotonNivel n1 = new BotonNivel(this, new NivelFacil(), 1);
-		panelPrincipal.add(n1, c);
-
-		c.gridx=2;
+		Nivel n0 = new NivelVacio();
+		Nivel n1 = new NivelFacil();
+		Nivel n2 = new NivelFacil();
+		Nivel n3 = new NivelFacil();
+		Nivel n4 = new NivelFacil();
+		Nivel n5 = new NivelDificil();
+		Nivel n6 = new NivelDificil();
+		Nivel n7 = new NivelDificil();
+		Nivel n8 = new NivelDificil();
+		Nivel n9 = new NivelDificil();
 		
-		BotonNivel n2 = new BotonNivel(this, new NivelDificil(), 2);
-		panelPrincipal.add(n2, c);
+		n0.setSiguiente(n1);
+		n1.setSiguiente(n2);
+		n2.setSiguiente(n3);
+		n3.setSiguiente(n4);
+		n4.setSiguiente(n5);
+		n5.setSiguiente(n6);
+		n6.setSiguiente(n7);
+		n7.setSiguiente(n8);
+		n8.setSiguiente(n9);
 		
+		panelPrincipal.add( new BotonNivel(g, n0, "0"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n1, "1"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n2, "2"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n3, "3"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n4, "4"), c);
+		c.gridx=0;
+		c.gridy++;
+		panelPrincipal.add( new BotonNivel(g, n5, "5"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n6, "6"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n7, "7"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n8, "8"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n9, "9"), c);
+		c.gridx++;
 		
 		labelFondo.add(panelPrincipal);
-	}
-	
-	public void empezarNivel(Nivel n){
-		g.empezarNivel(n);
 	}
 }

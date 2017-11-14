@@ -11,11 +11,13 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 
 import game.Game;
+import logica.Nivel;
 import logica.Tienda;
 import logica.visitor.VisitorClick;
 
 @SuppressWarnings("serial")
 public class DisplayJuego extends JPanel{
+	private Nivel nivel;
 	private Canvas canvas;
 	private Game myGame;
 	private Tienda tienda;
@@ -24,7 +26,8 @@ public class DisplayJuego extends JPanel{
 	private int offset = 128;
 	
 	
-	public DisplayJuego(Game g, VisitorClick v){
+	public DisplayJuego(Game g, Nivel n, VisitorClick v){
+		nivel=n;
 		myGame = g;
 		tienda = Tienda.getTienda(myGame.getLogica());
 		createDisplay();
@@ -105,7 +108,7 @@ public class DisplayJuego extends JPanel{
 		System.out.println("DisplayJuego.ganarNivel");
 		canvas.setEnabled(false);
 		panelTienda.setEnabled(false);
-		PanelGanar p= new PanelGanar();
+		PanelGanar p= new PanelGanar(myGame, nivel);
 		panelCanvas.removeAll();
 		panelCanvas.add(p);
 		panelCanvas.revalidate();

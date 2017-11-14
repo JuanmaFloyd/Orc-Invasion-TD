@@ -151,7 +151,7 @@ public class Game implements Runnable{
 	 * @param n
 	 */
 	public void empezarNivel(Nivel n){
-		display.setJuego(v);
+		display.setJuego(v, n);
 		nivel=n;
 		
 		graphicsManager = new GraphicsManager();

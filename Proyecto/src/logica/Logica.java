@@ -15,7 +15,6 @@ public class Logica {
 	private LinkedList<Aliado> listaAliados, aliadosABorrar, aliadosAAgregar;
 	private LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
 	private LinkedList<ObjetoTemporal> objetosTemporales, objetosTemporalesABorrar;
-	
 	private Tienda tienda;
 	private int score;
 	private Tile[][] tablero;
@@ -38,7 +37,6 @@ public class Logica {
 		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
 		objetosTemporales = new LinkedList<ObjetoTemporal>();
 		objetosTemporalesABorrar = new LinkedList<ObjetoTemporal>();
-		
 	}
 	
 	public static Logica getLogica(){

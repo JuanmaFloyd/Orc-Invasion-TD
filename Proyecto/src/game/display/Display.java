@@ -1,5 +1,7 @@
 package game.display;
 
+import java.util.LinkedList;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -7,6 +9,10 @@ import game.Game;
 import game.GameState;
 import game.MenuState;
 import game.UIState;
+import logica.Nivel;
+import logica.NivelDificil;
+import logica.NivelFacil;
+import logica.NivelVacio;
 import logica.Objeto;
 import logica.visitor.VisitorClick;
 
@@ -33,10 +39,10 @@ public class Display {
 		
 		frame.pack();
 	}
-	public void setJuego(VisitorClick v){
+	public void setJuego(VisitorClick v, Nivel n){
 		if(panel!=null)
 			frame.remove(panel);
-		DisplayJuego d = new DisplayJuego(myGame, v);
+		DisplayJuego d = new DisplayJuego(myGame, n, v);
 		state = new GameState(d);
 		panel = d;
 		frame.add(panel);

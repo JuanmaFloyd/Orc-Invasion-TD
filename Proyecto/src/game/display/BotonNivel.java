@@ -7,6 +7,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
+
+import game.Game;
 import game.gfx.ImageLoader;
 import logica.Nivel;
 
@@ -14,12 +16,12 @@ import logica.Nivel;
 public class BotonNivel extends JLabel{
 	//atributos
 	private Nivel nivel;
-	private Menu menu;
+	private Game g;
 	
-	public BotonNivel(Menu m, Nivel n, int i){
+	public BotonNivel(Game m, Nivel n, String i){
 		
 		nivel = n;
-		menu = m;
+		g = m;
 		
 		setVisible(true);
 		setOpaque(true);
@@ -27,7 +29,7 @@ public class BotonNivel extends JLabel{
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteNivel());
 		
-		JLabel nivel = new JLabel("nivel" + i);
+		JLabel nivel = new JLabel("nivel " + i);
 		nivel.setHorizontalAlignment(CENTER);
 		nivel.setVerticalAlignment(CENTER);
 		add(nivel);
@@ -47,7 +49,7 @@ public class BotonNivel extends JLabel{
 		public void mouseReleased(MouseEvent arg0) {
 			if(((BotonNivel)arg0.getSource()).isEnabled()){
 				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
-				menu.empezarNivel(nivel);
+				g.empezarNivel(nivel);
 			}
 		}
 	}
