@@ -1,32 +1,42 @@
 package objeto.noAtravesable.objetoConVida.OMConVida;
 
 import game.gfx.ImageLoader;
+import logica.Comprable;
 import logica.Objeto;
 import logica.Tile;
 
-public class Barricada extends OMConVida{
+public class Barricada extends OMConVida implements Comprable{
 	public Barricada(){
 		vida = 200;
 		maxVida = 200;
 		alto = 1;
 		ancho = 1;
-		image = ImageLoader.arbol;
+		image = ImageLoader.barricada;
 	}
 	
 	public void agregar(Tile t){
 		t.setComponente(this);
 		miTile = t;
-		Barricada n = new Barricada();
-		if (t.getFila() < 5){
-			miTile.getArriba().setComponente(n);
-			n.setTile(t.getArriba());
-		} else {
-			miTile.getAbajo().setComponente(n);
-			n.setTile(t.getAbajo());
-		}
 	}
 	
 	public Objeto clone() {
 		return new Barricada();
+	}
+
+	@Override
+	public int getPrecio() {
+		return 150;
+	}
+
+	@Override
+	public int getPrecioVenta() {
+		return 150;
+	}
+
+	@Override
+	public void remover() {
+		miTile.destruirObjeto(this);
+		miTile.setComponente(null);
+		miTile = null;
 	}
 }
