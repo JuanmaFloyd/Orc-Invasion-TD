@@ -10,7 +10,7 @@ public class Barricada extends OMConVida{
 		maxVida = 200;
 		alto = 1;
 		ancho = 1;
-		image = ImageLoader.arbol;
+		image = ImageLoader.barricada;
 	}
 	
 	public void agregar(Tile t){

@@ -9,7 +9,7 @@ public class ImageLoader {
 
 	private static int width = 64, height = 64;
 	private static BufferedImage sheet;
-	public static BufferedImage tierra, agua, piedra , arbol, fondo, peste, castillo;
+	public static BufferedImage tierra, agua, piedra , arbol, fondo, peste, castillo, barricada;
 	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
 	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero, golem;
 	public static BufferedImage pBolaDeFuego, pBomba, pEscudo, pFrenzy, pPeste, pWololo;
@@ -186,6 +186,7 @@ public class ImageLoader {
 		golemMov[2] = loadImage("/Textures/Personajes/Golem.png");
 		golemMov[3] = loadImage("/Textures/Personajes/Golem.png");		
 		golem = loadImage("/Textures/Personajes/Golem.png");
+		barricada = loadImage("/Textures/Barricada.png");
 	}
 	
 	public static BufferedImage loadImage(String path){
