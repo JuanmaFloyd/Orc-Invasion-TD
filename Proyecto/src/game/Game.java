@@ -161,4 +161,8 @@ public class Game implements Runnable{
 		graphicsManager.setState(state);
 		nivel.start();
 	}
+
+	public Display getDisplay() {
+		return display;
+	}
 }

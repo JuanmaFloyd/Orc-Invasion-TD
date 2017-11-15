@@ -3,6 +3,8 @@ package game.display;
 import java.awt.CardLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -34,11 +36,55 @@ public class PanelGanar extends JPanel {
 		BotonNivel siguiente = new BotonNivel(g, n.getSiguiente(), "siguiente");
 		panel.add(siguiente, c);
 		
+		c.gridx=1;
+		
+		BotonMenu volver = new BotonMenu(g.getDisplay());
+		panel.add(volver, c);
+		
 		panel.setVisible(true);
 		panel.setOpaque(false);
 		fondo.add(panel);
 		
 		setOpaque(true);
 		setVisible(true);
+	}
+	private class BotonMenu extends JLabel{
+		//atributos
+		private Display d;
+		
+		public BotonMenu(Display dis){
+			
+			d=dis;
+			
+			setVisible(true);
+			setOpaque(true);
+			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+			setLayout(new CardLayout());
+			addMouseListener(new OyenteNivel());
+			
+			JLabel nivel = new JLabel("volver al menu principal");
+			nivel.setHorizontalAlignment(CENTER);
+			nivel.setVerticalAlignment(CENTER);
+			add(nivel);
+			
+		}
+		
+		private class OyenteNivel implements MouseListener{
+			public void mouseClicked(MouseEvent arg0) {
+			}
+			public void mouseEntered(MouseEvent arg0) {
+			}
+			public void mouseExited(MouseEvent arg0) {
+			}
+			public void mousePressed(MouseEvent arg0) {
+				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivelPresionado.png")));
+			}
+			public void mouseReleased(MouseEvent arg0) {
+				if(((JLabel)arg0.getSource()).isEnabled()){
+					setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+					d.setMenu();
+				}
+			}
+		}
 	}
 }
