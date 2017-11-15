@@ -10,16 +10,14 @@ import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 import logica.*;
 
 public class Grunt extends Enemigo{
-	public Grunt(Tile t){
+	public Grunt(){
 		super();
 		vida=45;
 		maxVida=45;
-		miTile=t;
 		velocidadMov = 2.0f;
 		velocidadAt=0.7f;
-		animation = new AnimationEnemy(this,0, t.getFila() * 64, velocidadAt, velocidadMov, ImageLoader.gruntAtk, ImageLoader.gruntMove);
+		animation = new AnimationEnemy(this,0, 0, velocidadAt, velocidadMov, ImageLoader.gruntAtk, ImageLoader.gruntMove);
 		animation.setYOffset(128);
-		t.setComponente(this);
 		image = ImageLoader.grunt;
 		ancho=1;
 		alto=1;
@@ -35,7 +33,7 @@ public class Grunt extends Enemigo{
 		premio = new Escudo();
 	}
 	public ObjetoNoAtravesable clone(){
-		return new Grunt(new Tile(null,0,0));
+		return new Grunt();
 	}
 	public void accept(VisitorWololo vw, Tile t){
 		vw.visit(this, t);

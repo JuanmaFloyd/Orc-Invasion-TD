@@ -15,14 +15,10 @@ public abstract class Aliado extends Personaje implements Comprable {
 	//atributos
 	protected VisitorAliado v;
 	protected Animation animation;
-	protected int escudo;
-	protected int maxEscudo;
 	protected int valor;
 	
 	public Aliado(){
 		super();
-		escudo = 0;
-		maxEscudo = (int)(maxVida*0.2);
 		state = stateStatic;
 	}
 	
@@ -31,11 +27,6 @@ public abstract class Aliado extends Personaje implements Comprable {
 		if(reloj==0){
 			e.accept(v);
 		}
-	}
-	
-	public void crearEscudo(){
-		escudo=(int)(maxVida*0.2);
-		maxEscudo = (int)(maxVida*0.2);
 	}
 	public Animation getAnimation(){
 		return animation;
@@ -81,7 +72,8 @@ public abstract class Aliado extends Personaje implements Comprable {
 		state.draw(g, this);
 		g.drawImage(ImageLoader.vida[1], getTile().getColumna() * 64, getTile().getFila() * 64 + 128, 40, 4, null);
 		g.drawImage(ImageLoader.vida[0], getTile().getColumna() * 64, getTile().getFila() * 64 + 128, (40*vida)/maxVida, 4, null);
-		g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64) + 135, (40*escudo)/maxEscudo, 4, null);
+		if(escudo>0)
+			g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64) + 135, (40*escudo)/maxEscudo, 4, null);
 	}
 	
 	public void agregar(Tienda tien, Tile t){

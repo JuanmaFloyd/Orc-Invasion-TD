@@ -1,9 +1,9 @@
 package logica;
 
 import java.util.LinkedList;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
+import java.util.Random;
+
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.*;
 
 public class NivelFacil extends Nivel{
 
@@ -15,29 +15,40 @@ public class NivelFacil extends Nivel{
 		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
 		LinkedList<Enemigo> lista2 = new LinkedList<Enemigo>();
 		LinkedList<Enemigo> lista3 = new LinkedList<Enemigo>();
-		lista1.addLast(new Golem());
-		lista1.addLast(new Goblin());
-		lista1.addLast(new Goblin());
-		lista1.addLast(new Goblin());
-		lista1.addLast(new Goblin());
-		lista1.addLast(new Goblin());
-		lista1.addLast(new Goblin());
-
-		lista2.addLast(new Goblin());
-		lista2.addLast(new Goblin());
-		lista2.addLast(new Goblin());
-		lista2.addLast(new Goblin());
-		lista2.addLast(new Goblin());
-		lista2.addLast(new Goblin());
-		lista2.addLast(new Goblin());
 		
-		lista3.addLast(new Goblin());
-		lista3.addLast(new Goblin());
-		lista3.addLast(new Goblin());
-		lista3.addLast(new Goblin());
-		lista3.addLast(new Goblin());
-		lista3.addLast(new Goblin());
-		lista3.addLast(new Goblin());
+		for (int i=0; i<7; i++){
+			Random r = new Random();
+			int e = r.nextInt(15);
+			int esc = r.nextInt(10);
+			if(e<8)
+				lista1.addLast(new Goblin());
+			else
+				lista1.addLast(new Grunt());
+			if(esc<1)
+				lista1.getLast().crearEscudo();
+		}
+		for (int i=0; i<7; i++){
+			Random r = new Random();
+			int e = r.nextInt(15);
+			int esc = r.nextInt(10);
+			if(e<8)
+				lista2.addLast(new Goblin());
+			else
+				lista2.addLast(new Grunt());
+			if(esc<1)
+				lista2.getLast().crearEscudo();
+		}
+		for (int i=0; i<7; i++){
+			Random r = new Random();
+			int e = r.nextInt(15);
+			int esc = r.nextInt(10);
+			if(e<8)
+				lista3.addLast(new Goblin());
+			else
+				lista3.addLast(new Grunt());
+			if(esc<1)
+				lista3.getLast().crearEscudo();
+		}
 		
 		oleada1 = new Oleada(lista1);
 		oleada2 = new Oleada(lista2);

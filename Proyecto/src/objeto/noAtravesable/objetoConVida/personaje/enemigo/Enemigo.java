@@ -79,8 +79,17 @@ public abstract class Enemigo extends Personaje{
 	}
 	
 	public void restarVida(int v){
-		vida-=v;
-		if(vida<=0){ 
+		if(escudo > 0){
+			escudo -= v;
+			if(escudo < 0){
+				vida += escudo;
+				escudo = 0;
+			}
+		}
+		else{
+			vida-=v;
+		}
+		if(vida<=0){
 			miTile.destruirEnemigo(this);
 			miTile = null;
 		}
@@ -104,6 +113,8 @@ public abstract class Enemigo extends Personaje{
 		state.draw(g, this);
 		g.drawImage(ImageLoader.vida[1], animation.getX(), animation.getY() + 128, 40, 4, null);
 		g.drawImage(ImageLoader.vida[0], animation.getX(), animation.getY() + 128, (40*getVida())/getMaxVida(), 4, null);
+		if(escudo>0)
+			g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64) + 135, (40*escudo)/maxEscudo, 4, null);
 	}
 	
 	public void switchMovementState(){

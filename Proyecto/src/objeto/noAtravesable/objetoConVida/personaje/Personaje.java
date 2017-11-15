@@ -13,13 +13,22 @@ public abstract class Personaje extends ObjetoConVida{
 	protected float velocidadAt;
 	protected float velAtMaxima;
 	protected ObjectState stateAttacking;
+	protected int escudo;
+	protected int maxEscudo;
 	
 	public Personaje(){
 		super();
+		escudo = 0;
+		maxEscudo = (int)(maxVida*0.2);
 		stateAttacking = new ObjectStateAttacking();
 	}
 	
 	//metodos
+	
+	public void crearEscudo(){
+		escudo=(int)(maxVida*0.2);
+		maxEscudo = (int)(maxVida*0.2);
+	}
 	public abstract void atacar(ObjetoNoAtravesable o);
 	
 	public int getAlcance(){
