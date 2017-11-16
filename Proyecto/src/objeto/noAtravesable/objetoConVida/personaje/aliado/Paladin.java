@@ -19,8 +19,8 @@ public class Paladin extends Aliado{
 				t2.setComponente(this);
 				segundo=t2;
 			}
-			velocidadAt=1.2f;
-			velAtMaxima=1.2f;
+			velocidadAt=1.5f;
+			velAtMaxima=1.5f;
 			t.setComponente(this);
 			image=ImageLoader.paladin;
 			vida=120;
@@ -29,9 +29,9 @@ public class Paladin extends Aliado{
 			maxEscudo = (int)(maxVida*0.2);
 			ancho=2;
 			alto=1;
-			impacto=45;
+			impacto=35;
 			alcance=1;
-			valor=50;
+			valor=60;
 			v=new VisitorAliado(this);
 			animation = new Animation(this, t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.paladinAtk);
 			animation.setYOffset(128);
