@@ -39,7 +39,6 @@ public class GameState implements UIState{
 		
 		graphics.setGraphics(g);
 		graphics.dibujarMapa();
-		actualizar();
 		
 		bs.show();
 		g.dispose();

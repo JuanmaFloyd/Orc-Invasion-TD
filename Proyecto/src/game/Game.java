@@ -82,13 +82,13 @@ public class Game implements Runnable{
 					if(nivel.perdido()){
 						nivel.stop();
 						state.perderNivel();
-						graphicsManager.stop();
+						graphicsManager.setState(null);
 						nivel=null;
 					}
 					else if(nivel.ganado()){
 						nivel.stop();
 						state.ganarNivel();
-						graphicsManager.stop();
+						graphicsManager.setState(null);
 						nivel=null;
 					}
 				}
@@ -151,9 +151,6 @@ public class Game implements Runnable{
 	public void empezarNivel(Nivel n){
 		display.setJuego(v, n);
 		nivel=n;
-		
-		graphicsManager = new GraphicsManager();
-		graphicsManager.start();
 		
 		state = display.getState();
 		graphicsManager.setState(state);

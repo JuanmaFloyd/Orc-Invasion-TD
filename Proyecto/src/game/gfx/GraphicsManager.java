@@ -62,8 +62,8 @@ public class GraphicsManager implements Runnable{
 	}
 
 	private void render(){
-		
-		state.render();
+		if(state!=null)
+			state.render();
 	}
 	
 }
