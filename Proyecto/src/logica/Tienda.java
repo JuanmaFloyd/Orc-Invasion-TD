@@ -37,6 +37,9 @@ public class Tienda {
 	public int getMonedas(){
 		return monedas;
 	}
+	public void setMonedas(int m){
+		monedas=m;
+	}
 	
 	public void comprarAlianza(int val){
 		//asumo que no se puede comprar la alianza si no se tiene el dinero

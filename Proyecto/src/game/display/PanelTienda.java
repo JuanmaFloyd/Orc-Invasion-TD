@@ -349,6 +349,7 @@ public class PanelTienda extends JPanel {
 		}
 		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
 		int v = Logica.getLogica().getVidas();
+		if(v>0){
 		if(vidas<v){
 			for (int i=vidas; i<v; i++){
 				lVidas.addLast(new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/vida.png"))));
@@ -368,6 +369,7 @@ public class PanelTienda extends JPanel {
 				revalidate();
 				repaint();
 			}
+		}
 		vidas=v;
 	}
 	public void setPrototype(Objeto ob){
@@ -417,7 +419,7 @@ public class PanelTienda extends JPanel {
 	public void mostrarInfoAliado(Aliado a) {
 		if(panelInfo!=null)
 			remove(panelInfo);
-		c.gridy=2;
+		c.gridy=3;
 		c.ipadx=0;
 		c.ipady=0;
 		panelInfo = new PanelInfoAliado(a, tien);
@@ -429,7 +431,7 @@ public class PanelTienda extends JPanel {
 	public void mostrarInfoEnemigo(Enemigo e) {
 		if(panelInfo!=null)
 			remove(panelInfo);
-		c.gridy=2;
+		c.gridy=3;
 		c.ipadx=0;
 		c.ipady=0;
 		panelInfo = new PanelInfoPersonaje(e);
@@ -441,7 +443,7 @@ public class PanelTienda extends JPanel {
 	public void mostrtarInfoOM(OMConVida omcv) {
 		if(panelInfo!=null)
 			remove(panelInfo);
-		c.gridy=2;
+		c.gridy=3;
 		c.ipadx=0;
 		c.ipady=0;
 		panelInfo = new PanelInfo(omcv);

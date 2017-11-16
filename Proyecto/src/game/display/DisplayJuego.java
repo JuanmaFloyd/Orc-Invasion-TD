@@ -40,7 +40,7 @@ public class DisplayJuego extends JPanel{
 		setLayout(new GridBagLayout());
 
 		panelTienda = new PanelTienda(myGame, tienda);
-		tienda.sumarMonedas(nivel.getMonedasInicio());
+		tienda.setMonedas(nivel.getMonedasInicio());
 		
 		PremioManager.init(panelTienda);
 		
@@ -77,7 +77,6 @@ public class DisplayJuego extends JPanel{
 	}
 	
 	public void click(MouseEvent e){
-		System.out.println(e.getX() + " " + (e.getY()-offset));
 
 		if(panelTienda.getPrototype()!=null && e.getY()-offset>=0 && (e.getX() <= 768)){
 			Objeto o = panelTienda.getPrototype();
