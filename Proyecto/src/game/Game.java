@@ -84,12 +84,14 @@ public class Game implements Runnable{
 						state.perderNivel();
 						graphicsManager.setState(null);
 						nivel=null;
+						myLogic.vaciar();
 					}
 					else if(nivel.ganado()){
 						nivel.stop();
 						state.ganarNivel();
 						graphicsManager.setState(null);
 						nivel=null;
+						myLogic.vaciar();
 					}
 				}
 			}

@@ -233,4 +233,15 @@ public class Logica {
 	public boolean noHayEnemigos(){
 		return listaEnemigos.size() == 0;
 	}
+
+	public void vaciar() {
+		for(Aliado a: listaAliados){
+			agregarAliadoABorrar(a);
+		}
+		for(Enemigo e: listaEnemigos){
+			agregarEnemigoABorrar(e);
+		}
+		eliminarObjetos();
+		
+	}
 }
