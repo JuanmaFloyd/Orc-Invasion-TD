@@ -82,7 +82,7 @@ public class PanelGanar extends JPanel {
 			public void mouseReleased(MouseEvent arg0) {
 				if(((JLabel)arg0.getSource()).isEnabled()){
 					setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
-					d.setMenu();
+					d.setMenu(g);
 				}
 			}
 		}

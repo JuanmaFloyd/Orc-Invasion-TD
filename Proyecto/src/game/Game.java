@@ -44,9 +44,7 @@ public class Game implements Runnable{
 		graphicsManager = new GraphicsManager();
 		
 		display = new Display(title , width , height, this);
-		display.setMenu();
-		
-		state = new MenuState();
+		display.setMenu(this);
 		
 		graphicsManager.setState(state);
 		v = new VisitorClick();
@@ -164,5 +162,10 @@ public class Game implements Runnable{
 
 	public Display getDisplay() {
 		return display;
+	}
+
+	public void setState(UIState state2) {
+		state=state2;
+		graphicsManager.setState(state);
 	}
 }

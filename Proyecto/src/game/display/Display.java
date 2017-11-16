@@ -43,17 +43,19 @@ public class Display {
 		if(panel!=null)
 			frame.remove(panel);
 		DisplayJuego d = new DisplayJuego(myGame, n, v);
+		
 		state = new GameState(d);
 		panel = d;
 		frame.add(panel);
 		frame.pack();
 	}
-	public void setMenu(){
+	public void setMenu(Game g){
 		if(panel!=null)
 			frame.remove(panel);
 		Menu m = new Menu(myGame);
 		state = new MenuState();
 		panel = m;
+		g.setState(state);
 		frame.add(panel);
 		frame.pack();
 	}
