@@ -15,7 +15,6 @@ public class VisitorClick extends Visitor{
 		panel.mostrarInfoAliado(a);
 	}
 	public void afectar(Enemigo e) {
-		System.out.println(e.getVida());
 		panel.mostrarInfoEnemigo(e);
 	}
 	public void afectar(OMConVida omcv) {

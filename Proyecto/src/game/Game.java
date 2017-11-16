@@ -130,7 +130,6 @@ public class Game implements Runnable{
 	 */
 	public void interaccion(int x, int y){
 		Tile tile = myLogic.getTile(y/64, x/64);
-			System.out.println("Orden de interactuar en "+ y/64+", "+x/64);
 			if(tile.getComponente()!=null){
 				ObjetoNoAtravesable o=tile.getComponente();
 				o.accept(v);

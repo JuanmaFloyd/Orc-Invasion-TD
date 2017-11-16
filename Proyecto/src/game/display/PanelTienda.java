@@ -5,6 +5,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import game.Game;
 import game.gfx.ImageLoader;
+import logica.Logica;
 import logica.Objeto;
 import logica.Portal;
 import logica.Tienda;
@@ -14,6 +15,7 @@ import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.*;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import java.awt.CardLayout;
@@ -30,15 +32,16 @@ public class PanelTienda extends JPanel {
 	protected Game myGame;
 	protected Tienda tien;
 	protected JLabel labelPuntaje;
-	protected JPanel pScroll;
-	protected GridBagConstraints c;
+	protected JPanel pScroll, panelVidas;
+	private LinkedList<JLabel> lVidas;
+	protected GridBagConstraints c, conVidas;
 	protected Objeto prototipo;
 	protected JPanel panelPersonajesElfos, panelPersonajesEnanos, panelPremios;
 	protected JPanel panelCompraElfos, panelCompraEnanos, panelPre, panelInfo;
 	protected BotonCompraPersonaje[] personajesElfos, personajesEnanos, personajesHumanos, objetosTienda;
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
-	private int cantPremios;
+	private int cantPremios, vidas;
 
 	/**
 	 * Create the panel.
@@ -50,6 +53,8 @@ public class PanelTienda extends JPanel {
 		tien=t;
 		
 		cantPremios=0;
+		
+		lVidas= new LinkedList<JLabel>();
 		
 		botones=new LinkedList<BotonCompra>();
 		
@@ -71,7 +76,13 @@ public class PanelTienda extends JPanel {
 		
 		c.gridy=1;
 		
-		JPanel labelVidas = new JPanel(new GridBagLayout());
+		panelVidas = new JPanel(new GridBagLayout());
+		conVidas = new GridBagConstraints();
+		conVidas.fill=GridBagConstraints.BOTH;
+		conVidas.gridx=0;
+		conVidas.gridy=0;
+		
+		add(panelVidas,c);
 		
 		
 		c.gridy=2;
@@ -337,6 +348,27 @@ public class PanelTienda extends JPanel {
 			b.setearComprable(m);
 		}
 		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
+		int v = Logica.getLogica().getVidas();
+		if(vidas<v){
+			for (int i=vidas; i<v; i++){
+				lVidas.addLast(new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/vida.png"))));
+				panelVidas.add(lVidas.getLast(), conVidas);
+				conVidas.gridx++;
+			}
+			revalidate();
+			repaint();
+		}
+		else
+			if(vidas>v){
+				for(int i=vidas; i>v; i--){
+					panelVidas.remove(lVidas.getLast());
+					lVidas.removeLast();
+					conVidas.gridx--;
+				}
+				revalidate();
+				repaint();
+			}
+		vidas=v;
 	}
 	public void setPrototype(Objeto ob){
 		prototipo=ob;
