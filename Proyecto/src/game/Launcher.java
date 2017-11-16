@@ -18,8 +18,7 @@ public class Launcher {
 
 		Game game = new Game("Juegazo", 768 , 384);
 		
-		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
-		new File("nix.wav"));
+		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("nix.wav"));
 		Clip clip = AudioSystem.getClip();
 		clip.open(audioInputStream);
 		FloatControl gainControl = 

@@ -9,7 +9,13 @@ import objeto.noAtravesable.objetoConVida.Premios.Premio;
 import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
 import java.awt.Graphics;
+import java.io.File;
 import java.util.Random;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
@@ -90,6 +96,15 @@ public abstract class Enemigo extends Personaje{
 			vida-=v;
 		}
 		if(vida<=0){
+			try{
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("muerteEnem.wav"));
+				Clip clip = AudioSystem.getClip();
+				clip.open(audioInputStream);
+				FloatControl gainControl = 
+				(FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+				gainControl.setValue(-10.0f); 
+				clip.start();
+			} catch(Exception e){}
 			miTile.destruirEnemigo(this);
 			miTile = null;
 		}

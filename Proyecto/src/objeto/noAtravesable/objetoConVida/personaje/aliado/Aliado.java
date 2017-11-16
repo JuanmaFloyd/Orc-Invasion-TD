@@ -1,6 +1,12 @@
 package objeto.noAtravesable.objetoConVida.personaje.aliado;
 
 import java.awt.Graphics;
+import java.io.File;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 
 import game.gfx.Animation;
 import game.gfx.ImageLoader;
@@ -44,6 +50,15 @@ public abstract class Aliado extends Personaje implements Comprable {
 			vida-=v;
 		}
 		if(vida<=0){
+			try{
+				AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("muerteAli.wav"));
+				Clip clip = AudioSystem.getClip();
+				clip.open(audioInputStream);
+				FloatControl gainControl = 
+				(FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+				gainControl.setValue(-15.0f); 
+				clip.start();
+			} catch(Exception e){}
 			miTile.destruirAliado(this);
 			miTile = null;
 		}
