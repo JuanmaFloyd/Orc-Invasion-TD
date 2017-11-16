@@ -1,6 +1,5 @@
 package logica.visitor;
 
-import logica.Logica;
 import objeto.atravesable.Lava;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;

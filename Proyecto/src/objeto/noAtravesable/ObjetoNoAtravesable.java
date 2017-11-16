@@ -1,14 +1,11 @@
 package objeto.noAtravesable;
 
 
-import logica.Comprable;
 import logica.Objeto;
 import logica.Tienda;
 import logica.Tile;
 import logica.visitor.Visitor;
-import objeto.atravesable.Agua;
 import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public abstract class ObjetoNoAtravesable extends Objeto {
 	

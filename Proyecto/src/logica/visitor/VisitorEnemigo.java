@@ -2,7 +2,6 @@ package logica.visitor;
 
 import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
-import objeto.noAtravesable.objetoConVida.personaje.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 

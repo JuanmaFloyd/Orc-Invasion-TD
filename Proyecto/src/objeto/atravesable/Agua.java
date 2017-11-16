@@ -6,7 +6,6 @@ import logica.Objeto;
 import logica.Tile;
 import logica.visitor.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
 public class Agua extends ObjetoAtravesable{
 	//atributos
