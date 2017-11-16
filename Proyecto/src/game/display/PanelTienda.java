@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import game.Game;
+import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Logica;
 import logica.Objeto;
@@ -20,7 +21,6 @@ import javax.swing.JLabel;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -70,7 +70,7 @@ public class PanelTienda extends JPanel {
 		c.fill=GridBagConstraints.BOTH;
 
 		labelPuntaje = new JLabel("Score: 0    Monedas:0");
-		labelPuntaje.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		labelPuntaje.setFont(Launcher.fuente(20));
 		labelPuntaje.setHorizontalAlignment(JLabel.CENTER);
 		add(labelPuntaje, c);
 		
@@ -117,7 +117,7 @@ public class PanelTienda extends JPanel {
 		cs.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelHumanos = new JLabel("Humanos", JLabel.CENTER);
-		labelHumanos.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		labelHumanos.setFont(Launcher.fuente(20));
 		
 		panelHumanos.add(labelHumanos, cs);
 		
@@ -167,7 +167,7 @@ public class PanelTienda extends JPanel {
 		c1.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelElfos = new JLabel("Elfos", JLabel.CENTER);
-		labelElfos.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		labelElfos.setFont(Launcher.fuente(20));
 		
 		panelElfos.add(labelElfos, c1);
 		
@@ -222,7 +222,7 @@ public class PanelTienda extends JPanel {
 		c2.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelEnanos = new JLabel("Enanos", JLabel.CENTER);
-		labelEnanos.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		labelEnanos.setFont(Launcher.fuente(20));
 		
 		panelEnanos.add(labelEnanos, c2);
 		
@@ -279,7 +279,7 @@ public class PanelTienda extends JPanel {
 		c3.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelOT = new JLabel("Objetos", JLabel.CENTER);
-		labelOT.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		labelOT.setFont(Launcher.fuente(20));
 		
 		panelOT.add(labelOT, c3);
 		
@@ -322,7 +322,7 @@ public class PanelTienda extends JPanel {
 		c4.fill=GridBagConstraints.BOTH;
 		
 		JLabel labelPremios = new JLabel("Premios", JLabel.CENTER);
-		labelPremios.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		labelPremios.setFont(Launcher.fuente(20));
 		
 		panelPremios.add(labelPremios, c4);
 		

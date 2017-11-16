@@ -11,6 +11,7 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Comprable;
 import logica.Objeto;
@@ -34,7 +35,7 @@ public class BotonVenta extends JLabel{
 		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAnulado.png")));
 		setOpaque(true);
 		JLabel per=new JLabel("vender");
-		per.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		per.setFont(Launcher.fuente(20));
 		per.setHorizontalAlignment(CENTER);
 		per.setLayout(new CardLayout());
 		JLabel v=new JLabel();
@@ -49,7 +50,7 @@ public class BotonVenta extends JLabel{
 		val.setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Coin.png")));
 		val.setVisible(true);
 		val.setText("+" + c.getPrecioVenta());
-		val.setFont(new Font("8-Bit Madness", Font.PLAIN, 20));
+		val.setFont(Launcher.fuente(20));
 		val.setHorizontalAlignment(JLabel.RIGHT);
 		val.setVerticalAlignment(JLabel.BOTTOM);
 		val.setPreferredSize(new Dimension(20,10));

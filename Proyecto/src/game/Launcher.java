@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.io.*;
 
 import javax.sound.sampled.*;
@@ -27,5 +29,14 @@ public class Launcher {
 		
 		game.start();
 
+	}
+	public static Font fuente(int size){
+		try{
+			return Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("/Fonts/8-Bit.ttf"))).deriveFont(Font.PLAIN, size);
+		}
+		catch(IOException | FontFormatException e){
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
