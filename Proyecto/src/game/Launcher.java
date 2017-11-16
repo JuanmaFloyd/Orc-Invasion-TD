@@ -32,7 +32,7 @@ public class Launcher {
 	}
 	public static Font fuente(int size){
 		try{
-			return Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("/Fonts/8-Bit.ttf"))).deriveFont(Font.PLAIN, size);
+			return Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("/Fonts/8-Bit.TTF"))).deriveFont(Font.PLAIN, size);
 		}
 		catch(IOException | FontFormatException e){
 			e.printStackTrace();
