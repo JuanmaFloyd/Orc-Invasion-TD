@@ -275,12 +275,12 @@ public class PanelTienda extends JPanel {
 		JPanel panelObjetosTienda= new JPanel(new GridLayout(2, 2));
 		objetosTienda = new BotonCompraPersonaje[3];
 		
-		BotonCompraPersonaje barricada = new BotonCompraPersonaje(this, ImageLoader.portalBlue[0], new Portal());
-		BotonCompraPersonaje meteorito = new BotonCompraPersonaje(this, ImageLoader.barricada, new Barricada());
-		BotonCompraPersonaje portal = new BotonCompraPersonaje(this, ImageLoader.paladin, new Paladin(new Tile(null, 0, 0), new Tile(null, 0, 0)));
+		BotonCompraPersonaje portal = new BotonCompraPersonaje(this, ImageLoader.portalBlue[0], new Portal());
+		BotonCompraPersonaje barricada = new BotonCompraPersonaje(this, ImageLoader.barricada, new Barricada());
+		BotonCompraPersonaje torre = new BotonCompraPersonaje(this, ImageLoader.torre, new Torre(new Tile(null, 0, 0)));
 		
 		objetosTienda[0] = barricada;
-		objetosTienda[1] = meteorito;
+		objetosTienda[1] = torre;
 		objetosTienda[2] = portal;
 		
 		for(int i=0; i<objetosTienda.length; i++){

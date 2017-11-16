@@ -10,7 +10,7 @@ public class ImageLoader {
 	private static int width = 64, height = 64;
 	private static BufferedImage sheet;
 	public static BufferedImage tierra, agua, piedra , arbol, fondo, peste, castillo, barricada;
-	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant;
+	public static BufferedImage mago, espadachin, paladin, arquero, monje, campeonEnano, cazadorEnano, druida, oso, treant, torre;
 	public static BufferedImage goblin, brujo, grunt, jefeOrco, orcoBallestero, golem;
 	public static BufferedImage pBolaDeFuego, pBomba, pEscudo, pFrenzy, pPeste, pWololo;
 	public static BufferedImage[] pesteMov = new BufferedImage[4];
@@ -39,6 +39,7 @@ public class ImageLoader {
 	public static BufferedImage[] golemAtk = new BufferedImage[4];
 	public static BufferedImage[] treantAtk = new BufferedImage[4];
 	public static BufferedImage[] druidAtk = new BufferedImage[4];
+	public static BufferedImage[] torreAtk = new BufferedImage[4];
 	
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
@@ -196,6 +197,11 @@ public class ImageLoader {
 		golemMov[3] = loadImage("/Textures/Personajes/Golem.png");		
 		golem = loadImage("/Textures/Personajes/Golem.png");
 		barricada = loadImage("/Textures/Barricada.png");
+		torre = loadImage("/Textures/Torre.png");
+		torreAtk[0] = torre;
+		torreAtk[1] = torre;
+		torreAtk[2] = torre;
+		torreAtk[3] = torre;
 	}
 	
 	public static BufferedImage loadImage(String path){
