@@ -11,8 +11,8 @@ import objeto.noAtravesable.objetoConVida.Premios.Bomba;
 public class Golem extends Enemigo{
 	public Golem(){
 		super();
-		vida=70;
-		maxVida=70;
+		vida=90;
+		maxVida=90;
 		velocidadMov=3.0f;
 		velocidadAt=2.0f;
 		animation = new AnimationEnemy(this, 0 , 0, velocidadAt, velocidadMov ,ImageLoader.golemAtk, ImageLoader.golemMov);

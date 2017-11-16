@@ -24,7 +24,7 @@ public class Launcher {
 		clip.open(audioInputStream);
 		FloatControl gainControl = 
 		(FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-		gainControl.setValue(-70.0f); 
+		gainControl.setValue(-30.0f); 
 		clip.start();
 		
 		game.start();
