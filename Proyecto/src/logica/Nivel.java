@@ -9,7 +9,7 @@ public abstract class Nivel implements Runnable{
 	protected static Logica logicaJuego = Logica.getLogica();
 	
 	protected Oleada oleada1, oleada2, oleada3;
-	private boolean nivelFinalizado = false, running = false;
+	private boolean running = false;
 	private Nivel siguiente;
 	private int monedas;
 	

@@ -23,7 +23,7 @@ public class PanelGanar extends JPanel {
 		g=ga;
 		setLayout(new CardLayout());
 		
-		JLabel fondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/FondoNivelTerminado.png")));
+		JLabel fondo = new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/ScreenVictory.png")));
 		add(fondo);
 		fondo.setLayout(new CardLayout());
 		JPanel panel = new JPanel(new GridBagLayout());
