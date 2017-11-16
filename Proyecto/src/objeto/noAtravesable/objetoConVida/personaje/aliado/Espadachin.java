@@ -21,7 +21,7 @@ public class Espadachin extends Aliado{
 		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
-		impacto=30;
+		impacto=20;
 		alcance=1;
 		valor=20;
 		v=new VisitorAliado(this);

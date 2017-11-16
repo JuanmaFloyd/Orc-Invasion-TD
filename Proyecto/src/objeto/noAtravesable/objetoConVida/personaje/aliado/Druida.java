@@ -32,7 +32,7 @@ public class Druida extends Aliado{
 		maxEscudo = (int)(maxVida*0.2);
 		ancho=1;
 		alto=1;
-		impacto=30;
+		impacto=15;
 		alcance=3;
 		valor=80;
 		v=new VisitorAliado(this);
