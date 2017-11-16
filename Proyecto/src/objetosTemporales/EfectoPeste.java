@@ -5,7 +5,7 @@ import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
 public class EfectoPeste extends ObjetoTemporal{
 	
-	Personaje j;
+	private Personaje j;
 	
 	public EfectoPeste(int reloj, Personaje j) {
 		super(reloj);
