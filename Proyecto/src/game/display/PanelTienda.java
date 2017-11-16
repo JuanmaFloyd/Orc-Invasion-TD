@@ -71,7 +71,7 @@ public class PanelTienda extends JPanel {
 		
 		c.gridy=1;
 		c.ipady=0;
-		c.ipadx=40;
+		c.ipadx=0;
 		c.weightx=0.5;
 		c.weighty=0.5;
 		

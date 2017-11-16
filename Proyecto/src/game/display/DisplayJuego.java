@@ -101,8 +101,11 @@ public class DisplayJuego extends JPanel{
 		System.out.println("DisplayJuego.perderNivel");
 		canvas.setEnabled(false);
 		panelTienda.setEnabled(false);
-		PanelPerder p=new PanelPerder();
+		PanelPerder p=new PanelPerder(myGame);
+		panelCanvas.removeAll();
 		panelCanvas.add(p);
+		panelCanvas.revalidate();
+		panelCanvas.repaint();
 	}
 
 	public void ganarNivel() {

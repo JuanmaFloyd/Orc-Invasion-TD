@@ -16,7 +16,7 @@ public class Logica {
 	private LinkedList<ObjetoAtravesable> listaAtravesables, atravesablesABorrar;
 	private LinkedList<ObjetoTemporal> objetosTemporales, objetosTemporalesABorrar;
 	private Tienda tienda;
-	private int score;
+	private int score, vidas;
 	private Tile[][] tablero;
 	private final int filas=6, columnas=12;
 	
@@ -44,6 +44,12 @@ public class Logica {
 	}
 	
 	//metodos
+	public void setVidas(int v){
+		vidas=v;
+	}
+	public int getVidas(){
+		return vidas;
+	}
 	public void agregarMonedas(int m){
 		tienda.sumarMonedas(m);
 	}
@@ -173,6 +179,7 @@ public class Logica {
 			Tile actual=e.getTile();
 			if (actual.getColumna()==11){
 				encontre=true;
+				vidas--;
 				enemigosABorrar.addLast(e);
 				actual.setComponente(null);
 			}
