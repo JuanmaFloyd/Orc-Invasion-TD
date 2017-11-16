@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import game.Game;
 import logica.Nivel;
+import logica.Objeto;
 import logica.Tienda;
 import logica.visitor.VisitorClick;
 
@@ -79,8 +80,9 @@ public class DisplayJuego extends JPanel{
 		System.out.println(e.getX() + " " + (e.getY()-offset));
 
 		if(panelTienda.getPrototype()!=null && e.getY()-offset>=0 && (e.getX() <= 768)){
-			panelTienda.getPrototype().agregar(tienda, myGame.getLogica().getTile((e.getY()-offset)/64, e.getX()/64));
+			Objeto o = panelTienda.getPrototype();
 			panelTienda.setPrototype(null);
+			o.agregar(tienda, myGame.getLogica().getTile((e.getY()-offset)/64, e.getX()/64));
 		}
 		else
 			if(e.getY()-offset>=0 && (e.getX() <= 768)){

@@ -41,7 +41,9 @@ public class Portal extends Objeto implements Comprable{
 				tien.agregar(pi);
 				tien.agregar(po);
 			}
-			else tien.getPanel().setPrototype(this);
+			else 
+				if(po!=null)
+					tien.getPanel().setPrototype(this);
 		}
 	}
 	

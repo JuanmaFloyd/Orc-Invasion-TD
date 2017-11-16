@@ -70,6 +70,11 @@ public class PanelTienda extends JPanel {
 		add(labelPuntaje, c);
 		
 		c.gridy=1;
+		
+		JPanel labelVidas = new JPanel(new GridBagLayout());
+		
+		
+		c.gridy=2;
 		c.ipady=0;
 		c.ipadx=0;
 		c.weightx=0.5;
