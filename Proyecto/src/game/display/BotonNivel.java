@@ -25,7 +25,8 @@ public class BotonNivel extends JLabel{
 		
 		setVisible(true);
 		setOpaque(true);
-		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
+		setOpaque(false);
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteNivel());
 		
@@ -44,11 +45,11 @@ public class BotonNivel extends JLabel{
 		public void mouseExited(MouseEvent arg0) {
 		}
 		public void mousePressed(MouseEvent arg0) {
-			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivelPresionado.png")));
+			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
 		}
 		public void mouseReleased(MouseEvent arg0) {
 			if(((BotonNivel)arg0.getSource()).isEnabled()){
-				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 				g.empezarNivel(nivel);
 			}
 		}

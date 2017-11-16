@@ -58,8 +58,9 @@ public class PanelGanar extends JPanel {
 			
 			setVisible(true);
 			setOpaque(true);
-			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+			setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 			setLayout(new CardLayout());
+			setOpaque(false);
 			addMouseListener(new OyenteNivel());
 			
 			JLabel nivel = new JLabel("volver al menu principal");
@@ -77,11 +78,11 @@ public class PanelGanar extends JPanel {
 			public void mouseExited(MouseEvent arg0) {
 			}
 			public void mousePressed(MouseEvent arg0) {
-				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivelPresionado.png")));
+				setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonPresionado.png")));
 			}
 			public void mouseReleased(MouseEvent arg0) {
 				if(((JLabel)arg0.getSource()).isEnabled()){
-					setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonNivel.png")));
+					setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 					d.setMenu(g);
 				}
 			}
