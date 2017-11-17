@@ -71,6 +71,7 @@ public class Tile {
 		e.dropear();
 		miJuego.agregarEnemigoABorrar(e);
 		miJuego.agregarMonedas(e.getCoins());
+		miJuego.agregarPuntos(e.getPuntaje());
 	}
 	
 	public void destruirObjeto(OMConVida ocv){

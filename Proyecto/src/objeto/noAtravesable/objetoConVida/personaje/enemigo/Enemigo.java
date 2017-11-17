@@ -150,4 +150,10 @@ public abstract class Enemigo extends Personaje{
 			System.out.println("dropie");
 		}
 	}
+	
+	public void quitar(){
+		Logica l = Logica.getLogica();
+		l.agregarEnemigoABorrar(this);
+		miTile.setComponente(null);
+	}
 }

@@ -71,5 +71,11 @@ public class JefeOrco extends Enemigo{
 		animation.setAtkSpeed(velocidadAt);
 		animation.setMovSpeed(velocidadMov * 2);
 	}
+	
+	public void quitar(){
+		super.quitar();
+		segundo.setComponente(null);
+		segundo = null;
+	}
 
 }

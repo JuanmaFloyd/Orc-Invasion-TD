@@ -42,7 +42,9 @@ public class Logica {
 	public static Logica getLogica(){
 		return logica;
 	}
-	
+	public void agregarPuntos(int e){
+		score+=e;
+	}
 	//metodos
 	public void setVidas(int v){
 		vidas=v;
@@ -70,7 +72,6 @@ public class Logica {
 	}
 	public void agregarEnemigoABorrar(Enemigo e){
 		enemigosABorrar.addLast(e);
-		score+=e.getPuntaje();
 	}
 	public void agregarAtravesableABorrar(ObjetoAtravesable oa){
 		atravesablesABorrar.addLast(oa);
@@ -180,8 +181,7 @@ public class Logica {
 			if (actual.getColumna()==11){
 				encontre=true;
 				vidas--;
-				enemigosABorrar.addLast(e);
-				actual.setComponente(null);
+				e.quitar();
 			}
 			int restantes = 12 - (actual.getColumna()+e.getAlcance());
 			for(int i=0; restantes > 0 && i<e.getAlcance() && !encontre; i++){
