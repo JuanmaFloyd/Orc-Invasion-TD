@@ -30,4 +30,7 @@ public class Lava extends ObjetoAtravesable{
 	public Objeto clone() {
 		return new Lava(new Tile(null, 0, 0));
 	}
+	public void remover() {
+		miTile.destruirAtravesable(this);
+	}
 }

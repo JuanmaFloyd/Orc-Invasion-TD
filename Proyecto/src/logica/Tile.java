@@ -81,4 +81,10 @@ public class Tile {
 		return miJuego;
 	}
 
+	public void destruirAtravesable(ObjetoAtravesable o) {
+		o.setTile(null);
+		componenteAtravesable=null;
+		miJuego.agregarAtravesableABorrar(o);
+	}
+
 }

@@ -1,0 +1,97 @@
+package logica;
+
+import java.util.LinkedList;
+import java.util.Random;
+import objeto.atravesable.Lava;
+
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
+
+public class NivelInfinito extends Nivel{
+	
+	public void init() {
+		
+		listaLava=new LinkedList<Lava>();
+		
+		logicaJuego.setVidas(5);
+		
+		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
+		
+		oleada1=new Oleada(lista1);
+		oleada2=new Oleada(lista1);
+		oleada3=new Oleada(lista1);
+		
+		generarOleada(oleada1);
+		generarOleada(oleada2);
+		generarOleada(oleada3);
+	}
+	public void run() {		
+		
+		init();
+		boolean oleada1fin = false, oleada2fin = false, oleada3fin = false;
+		random = new Random();
+		while(running){
+			
+			try {
+				Thread.sleep(5000);
+			} 
+			catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			numeroRandom = random.nextInt(6);
+			if (!oleada1fin){
+				if(!oleada1.oleadaFinalizada())
+					logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
+				else if (logicaJuego.noHayEnemigos()){
+					oleada1fin = true;
+					reestablecerMapa();
+					modificarMapa();
+				}
+			} else if (oleada1fin && !oleada2fin){
+			if(!oleada2.oleadaFinalizada())
+				logicaJuego.agregarEnemigo(oleada2.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
+				else if (logicaJuego.noHayEnemigos()){
+					oleada2fin = true;
+					reestablecerMapa();
+					modificarMapa();
+				}
+			} else if (!oleada3fin && oleada1fin && oleada2fin){
+				if(!oleada3.oleadaFinalizada())
+					logicaJuego.agregarEnemigo(oleada3.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
+					else if (logicaJuego.noHayEnemigos()){
+						oleada3fin = true;
+						reestablecerMapa();
+						modificarMapa();
+						generarOleada(oleada1);
+						generarOleada(oleada2);
+						generarOleada(oleada3);
+					}
+				}
+		}
+	}
+	
+	private void generarOleada(Oleada o){
+		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
+		for (int i=0; i<7; i++){
+			Random r = new Random();
+			int e = r.nextInt(15);
+			int esc = r.nextInt(10);
+			if(e<3)
+				lista1.addLast(new Goblin());
+			else
+				if(e<8)
+					lista1.addLast(new JefeOrco());
+				else
+					if(e<12)
+						lista1.addLast(new Brujo());
+					else
+						lista1.addLast(new Golem());
+			if(esc<1)
+				lista1.getLast().crearEscudo();
+		}
+		o.setLista(lista1);
+	}
+}

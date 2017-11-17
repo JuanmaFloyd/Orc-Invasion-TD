@@ -3,6 +3,7 @@ package game.display;
 import java.awt.CardLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -14,7 +15,9 @@ import logica.Logica;
 import logica.Nivel;
 import logica.NivelDificil;
 import logica.NivelFacil;
+import logica.NivelInfinito;
 import logica.NivelVacio;
+import objeto.atravesable.Lava;
 
 @SuppressWarnings("serial")
 public class Menu extends JPanel{
@@ -41,8 +44,6 @@ public class Menu extends JPanel{
 		
 		panelPrincipal.setOpaque(false);
 		
-		
-		Nivel n0 = new NivelVacio();
 		Nivel n1 = new NivelFacil();
 		Nivel n2 = new NivelFacil();
 		Nivel n3 = new NivelFacil();
@@ -52,9 +53,8 @@ public class Menu extends JPanel{
 		Nivel n7 = new NivelDificil();
 		Nivel n8 = new NivelDificil();
 		Nivel n9 = new NivelDificil();
+		Nivel nInf = new NivelInfinito();
 		
-		n0.setSiguiente(n1);
-		n0.setMonedasInicio(500);
 		n1.setSiguiente(n2);
 		n1.setMonedasInicio(500);
 		n2.setSiguiente(n3);
@@ -71,10 +71,12 @@ public class Menu extends JPanel{
 		n7.setMonedasInicio(500);
 		n8.setSiguiente(n9);
 		n8.setMonedasInicio(500);
+		n9.setSiguiente(nInf);
 		n9.setMonedasInicio(500);
+		nInf.setMonedasInicio(500);
 		
-		panelPrincipal.add( new BotonNivel(g, n0, "0"), c);
-		c.gridx++;
+		
+		
 		panelPrincipal.add( new BotonNivel(g, n1, "1"), c);
 		c.gridx++;
 		panelPrincipal.add( new BotonNivel(g, n2, "2"), c);
@@ -82,10 +84,10 @@ public class Menu extends JPanel{
 		panelPrincipal.add( new BotonNivel(g, n3, "3"), c);
 		c.gridx++;
 		panelPrincipal.add( new BotonNivel(g, n4, "4"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, n5, "5"), c);
 		c.gridx=0;
 		c.gridy++;
-		panelPrincipal.add( new BotonNivel(g, n5, "5"), c);
-		c.gridx++;
 		panelPrincipal.add( new BotonNivel(g, n6, "6"), c);
 		c.gridx++;
 		panelPrincipal.add( new BotonNivel(g, n7, "7"), c);
@@ -93,6 +95,8 @@ public class Menu extends JPanel{
 		panelPrincipal.add( new BotonNivel(g, n8, "8"), c);
 		c.gridx++;
 		panelPrincipal.add( new BotonNivel(g, n9, "9"), c);
+		c.gridx++;
+		panelPrincipal.add( new BotonNivel(g, nInf, "infinito"), c);
 		c.gridx++;
 		
 		labelFondo.add(panelPrincipal);

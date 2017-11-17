@@ -1,5 +1,6 @@
 package logica;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 import objeto.atravesable.Lava;
@@ -9,9 +10,11 @@ public abstract class Nivel implements Runnable{
 	protected static Logica logicaJuego = Logica.getLogica();
 	
 	protected Oleada oleada1, oleada2, oleada3;
-	private boolean running = false;
+	protected boolean running = false;
 	private Nivel siguiente;
 	private int monedas;
+	
+	protected LinkedList<Lava> listaLava;
 	
 	protected Random random;
 	protected int numeroRandom;
@@ -63,6 +66,7 @@ public abstract class Nivel implements Runnable{
 					logicaJuego.agregarEnemigo(oleada1.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
 				else if (logicaJuego.noHayEnemigos()){
 					oleada1fin = true;
+					reestablecerMapa();
 					modificarMapa();
 				}
 			} else if (oleada1fin && !oleada2fin){
@@ -70,6 +74,7 @@ public abstract class Nivel implements Runnable{
 				logicaJuego.agregarEnemigo(oleada2.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
 				else if (logicaJuego.noHayEnemigos()){
 					oleada2fin = true;
+					reestablecerMapa();
 					modificarMapa();
 				}
 			} else if (!oleada3fin && oleada1fin && oleada2fin){
@@ -95,8 +100,15 @@ public abstract class Nivel implements Runnable{
 			}
 			logicaJuego.getTile(x, y).setComponenteAtravesable(l);
 			logicaJuego.agregarAtravesable(l);
+			listaLava.addLast(l);
 		}
 		
+	}
+	
+	public void reestablecerMapa(){
+		for(Lava l:listaLava){
+			l.remover();
+		}
 	}
 	
 	public boolean ganado(){
