@@ -17,7 +17,7 @@ public class Peste extends Premio{
 	//constructor
 	public Peste(){
 		super();
-		EfectoCharcoPeste e = new EfectoCharcoPeste(this, 600);
+		new EfectoCharcoPeste(this, 600);
 		charcos = new LinkedList<CharcoPeste>();
 		image = ImageLoader.pPeste;
 		b = PremioManager.peste;

@@ -2,6 +2,12 @@ package game.gfx;
 
 import game.UIState;
 
+/**
+ * Clase GraphicsManager
+ * Implementa la clase Runnable de Java
+ * Maneja los graficos del juego
+ *
+ */
 public class GraphicsManager implements Runnable{
 	
 	private boolean running = false;
@@ -11,6 +17,10 @@ public class GraphicsManager implements Runnable{
 	public GraphicsManager (){
 	}
 	
+	/**
+	 * Setea un nuevo UIState
+	 * @param state nuevo estado
+	 */
 	public void setState(UIState state){
 		this.state = state;
 	}
