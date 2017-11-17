@@ -12,6 +12,13 @@ import javax.swing.ImageIcon;
 
 import game.gfx.ImageLoader;
 
+/**
+ * 
+ * Clase BotonCompraAlianza
+ * Extiende a la clase BotonCompra
+ * Representa un boton de compra de alianza para la tienda
+ *
+ */
 @SuppressWarnings("serial")
 public class BotonCompraAlianza extends BotonCompra{
 	//atributos
@@ -26,7 +33,7 @@ public class BotonCompraAlianza extends BotonCompra{
 			addMouseListener(new OyenteCompra());
 			setearTexto("Comprar alianza con "+al);
 		}
-		
+
 		private class OyenteCompra implements MouseListener{
 			public void mouseClicked(MouseEvent arg0) {
 			}

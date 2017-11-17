@@ -9,6 +9,7 @@ import logica.Logica;
 /**
  * 
  * Clase GameState
+ * Implementa la interfaz UIState
  * Representa el estado de juego
  *
  */
@@ -49,15 +50,10 @@ public class GameState implements UIState{
 		display.actualizarPuntaje(logica.getScore());
 	}
 
-	public void interactuar() {
-		
-	}
-
 	public void perderNivel() {
 		display.perderNivel();
 		
 	}
-
 	public void ganarNivel() {
 		display.ganarNivel();
 	}

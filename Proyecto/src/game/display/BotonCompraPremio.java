@@ -1,5 +1,6 @@
 package game.display;
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -15,10 +16,17 @@ import javax.sound.sampled.FloatControl;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Objeto;
 import objeto.noAtravesable.objetoConVida.Premios.Premio;
 
+/**
+ * Clase BotonCompraPremio
+ * Extiende a la clase BotonCompra
+ * Representa un boton en la tienda para agregar un premio al mapa
+ *
+ */
 @SuppressWarnings("serial")
 public class BotonCompraPremio extends BotonCompra {
 	//atributos
@@ -32,6 +40,7 @@ public class BotonCompraPremio extends BotonCompra {
 		setIcon(new ImageIcon(ImageLoader.loadImage("/Textures/Boton.png")));
 		setDisabledIcon(new ImageIcon(ImageLoader.loadImage("/Textures/BotonAnulado.png")));
 		addMouseListener(new OyenteCompra());
+		setLayout(new CardLayout());
 		o=ob;
 		setearIcono(i);
 		c=0;
@@ -45,6 +54,7 @@ public class BotonCompraPremio extends BotonCompra {
 		c.ipady=45;
 		cant=new JLabel();
 		cant.setText("" + this.c);
+		cant.setFont(Launcher.fuente(20));
 		cant.setHorizontalAlignment(JLabel.RIGHT);
 		cant.setVerticalAlignment(JLabel.TOP);
 		cant.setPreferredSize(new Dimension(20,10));
@@ -53,17 +63,30 @@ public class BotonCompraPremio extends BotonCompra {
 		v.setVisible(true);
 		add(v);
 	}
+	
+	/**
+	 * Agrega un premio al boton
+	 */
 	public void sumarPremio(){
 		c++;
 		cant.setText(""+c);
 		p.agregarPremio(this);
 	}
+	
+	/**
+	 * quita un premio al boton
+	 */
 	public void restarPremio(){
 		c--;
 		cant.setText(""+c);
 		if(c<=0)
 			p.eliminarPremio(this);
 	}
+	
+	/**
+	 * Consulta la cantidad de premios del boton
+	 * @return cantidad de premios
+	 */
 	public int cantidad(){
 		return c;
 	}

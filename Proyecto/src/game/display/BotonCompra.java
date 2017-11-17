@@ -12,6 +12,12 @@ import javax.swing.JLabel;
 import game.Launcher;
 import game.gfx.ImageLoader;
 
+/**
+ * Clase BotonCompra
+ * Extiende a la clase JLabel de Java
+ * Representa un boton de compra para la tienda
+ *
+ */
 @SuppressWarnings("serial")
 public abstract class BotonCompra extends JLabel{
 	//atributos
@@ -55,14 +61,25 @@ public abstract class BotonCompra extends JLabel{
 		add(per);
 		setHorizontalAlignment(JLabel.CENTER);
 	}
+	/**
+	 * Le setea un icono al boton
+	 * @param bi imagen a setear
+	 */
 	protected void setearIcono(BufferedImage bi){
 		l.setIcon(new ImageIcon(bi));
 	}
+	/**
+	 * Le setea un texto al boton
+	 * @param s texto a setear
+	 */
 	protected void setearTexto(String s){
 		l.setText(s);
 	}
 	
-	
+	/**
+	 * Invalida el boton si la cantidad de monedas es menor a su valor y viceversa
+	 * @param v cantidad de monedas disponibles
+	 */
 	public void setearComprable(int v){
 		if(valor>v){
 			setEnabled(false);

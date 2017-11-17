@@ -31,6 +31,11 @@ public class Launcher {
 		game.start();
 
 	}
+	/**
+	 * Retorna la fuente 8-bit usada en la mayoria del juego
+	 * @param size tamaño de fuente
+	 * @return fuente
+	 */
 	public static Font fuente(int size){
 		try{
 			return Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File("8-Bit.TTF"))).deriveFont(Font.PLAIN, size);

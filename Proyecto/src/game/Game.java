@@ -10,6 +10,7 @@ import game.gfx.ImageLoader;
 /**
  * 
  * Clase Game
+ * Implementa la interfaz Runnable de Java
  * se encarga de correr el juego
  *
  */
@@ -157,11 +158,17 @@ public class Game implements Runnable{
 		graphicsManager.setState(state);
 		nivel.start();
 	}
-
+	/**
+	 * Retorna el display del juego
+	 * @return display
+	 */
 	public Display getDisplay() {
 		return display;
 	}
-
+	/**
+	 * Cambia el estado de la interfaz
+	 * @param state2 nuevo estado
+	 */
 	public void setState(UIState state2) {
 		state=state2;
 		graphicsManager.setState(state);

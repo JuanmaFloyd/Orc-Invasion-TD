@@ -15,6 +15,13 @@ import game.gfx.ImageLoader;
 import logica.Comprable;
 import logica.Objeto;
 
+/**
+ * 
+ * Clase BotonCompraPersonaje
+ * Extiende a la clase BotonCompra
+ * Representa un boton de compra de personaje u objeto para la tienda
+ *
+ */
 @SuppressWarnings("serial")
 public class BotonCompraPersonaje extends BotonCompra{
 	//atributos
