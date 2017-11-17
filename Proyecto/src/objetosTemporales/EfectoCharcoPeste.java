@@ -2,27 +2,25 @@ package objetosTemporales;
 
 import logica.ObjetoTemporal;
 import objeto.noAtravesable.objetoConVida.Premios.Peste;
-import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
-public class EfectoPeste extends ObjetoTemporal{
+public class EfectoCharcoPeste extends ObjetoTemporal{
 	
-	private Personaje j;
+	private Peste p;
 	
-	public EfectoPeste(Peste p, int reloj, Personaje j) {
+	public EfectoCharcoPeste(Peste p, int reloj) {
 		super(reloj);
-		this.j = j;
+		this.p = p;
 	}
 
 	@Override
 	public void efectoInicial(){}
 
 	@Override
-	public void efecto() {
-		j.restarVida(1);
-	}
+	public void efecto() {}
 
 	@Override
 	public void efectoFinal() {
+		p.removerCharcos();
 	}
 	
 	public void decrementarReloj(){
@@ -30,9 +28,6 @@ public class EfectoPeste extends ObjetoTemporal{
 		if (reloj == 0){
 			efectoFinal();
 			logica.agregarObjetoTemporalABorrar(this);
-		}
-		if (reloj % 7 == 0 && j.getVida() > 0){
-			efecto();
 		}
 	}
 
