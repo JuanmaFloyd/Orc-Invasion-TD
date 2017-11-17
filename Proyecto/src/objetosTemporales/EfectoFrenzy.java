@@ -27,7 +27,9 @@ public class EfectoFrenzy extends ObjetoTemporal {
 	
 	public void efectoFinal(){
 		for (Aliado ali: aliados){
-			ali.normalizarAtaque();
+			if(ali != null){
+				ali.normalizarAtaque();
+			}
 		}
 		System.out.print("Modifique "+ aliados.size() + "Objetos");
 	}
