@@ -25,7 +25,7 @@ public class Oso extends Aliado{
 		alcance=1;
 		valor=0;
 		v=new VisitorAliado(this);
-		animation = new Animation(t.getColumna() * 64,t.getFila()*64, velocidadAt, ImageLoader.mageAtk);
+		animation = new Animation(t.getColumna() * 64,t.getFila()*64, velocidadAt, ImageLoader.osoAtk);
 		animation.setYOffset(128);
 	}
 	public ObjetoNoAtravesable clone(){
