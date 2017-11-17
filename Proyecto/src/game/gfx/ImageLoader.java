@@ -5,6 +5,11 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * Clase ImageLoader
+ * Carga las imagenes del juego
+ *
+ */
 public class ImageLoader {
 
 	private static int width = 64, height = 64;
@@ -45,6 +50,9 @@ public class ImageLoader {
 	public static BufferedImage[] bomb = new BufferedImage[8];
 	public static BufferedImage[] osoAtk = new BufferedImage[1];
 	
+	/**
+	 * inicializa las imagenes
+	 */
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
  		castillo = loadImage("/Textures/Castillo-Arboles.png");
@@ -232,7 +240,11 @@ public class ImageLoader {
 		bomb[7] = sheet.getSubimage(192, 64, 64, 64);
 	}
 	
- 	
+ 	/**
+ 	 * Carga una imagen a partir de un path
+ 	 * @param path
+ 	 * @return imagen
+ 	 */
 	public static BufferedImage loadImage(String path){
 		try {
 			return ImageIO.read(ImageLoader.class.getResource(path));

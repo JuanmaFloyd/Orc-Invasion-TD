@@ -3,8 +3,11 @@ package game.gfx;
 import java.awt.Graphics;
 import logica.Logica;
 
-
-	
+/**
+ * Clase GameGraphics
+ * Representa los graficos del juego
+ *
+ */
 public class GameGraphics {
 	
 	private Logica logic = Logica.getLogica();
@@ -14,7 +17,9 @@ public class GameGraphics {
 		this.g = g;
 	}
 	
-	
+	/**
+	 * Dibuja el mapa del juego
+	 */
 	public void dibujarMapa(){
 		g.drawImage(ImageLoader.fondo, 0, 0, ImageLoader.fondo.getWidth()*2,ImageLoader.fondo.getHeight()*2, null);
 		int filas = logic.getFilas();
