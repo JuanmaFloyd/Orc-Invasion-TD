@@ -17,7 +17,7 @@ public class Launcher {
 
 	public static void main(String[] args) throws Exception{
 
-		Game game = new Game("Juegazo", 768 , 384);
+		Game game = new Game("Orc - Invasion", 768 , 384);
 		
 		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
 		new File("nix.wav"));

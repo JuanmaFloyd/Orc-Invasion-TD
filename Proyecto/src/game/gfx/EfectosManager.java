@@ -16,7 +16,6 @@ public class EfectosManager {
 	public static void dibujarEfectos(Graphics g){
 		for(EfectoGrafico ef:efectos){
 			ef.drawrAtk(g);
-			System.out.println("Dibuje");
 			if (ef.efectoFinalizado()){
 				efectosAEliminar.addLast(ef);
 			}

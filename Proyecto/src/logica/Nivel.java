@@ -3,6 +3,9 @@ package logica;
 import java.util.LinkedList;
 import java.util.Random;
 
+import game.gfx.EfectoGrafico;
+import game.gfx.EfectosManager;
+import game.gfx.ImageLoader;
 import objeto.atravesable.Lava;
 
 public abstract class Nivel implements Runnable{
@@ -55,7 +58,7 @@ public abstract class Nivel implements Runnable{
 		while(running){
 			
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(3000);
 			} 
 			catch (InterruptedException e) {
 				e.printStackTrace();
@@ -90,8 +93,14 @@ public abstract class Nivel implements Runnable{
 	public void modificarMapa(){
 		Random r = new Random();
 		for (int i = 0; i<3; i++){
-			int x = r.nextInt(6);
-			int y = r.nextInt(11) + 1;
+			int x = r.nextInt(6);  //fila
+			int y = r.nextInt(11) + 1;  //Columna
+			EfectosManager.agregarEfecto(new EfectoGrafico(y*64, x*64 + 128, 1.0f, ImageLoader.efectoMeteorito));
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			if (logicaJuego.getTile(x, y).getComponente() != null)
 				logicaJuego.getTile(x, y).getComponente().restarVida(10000);
 			Lava l = new Lava(logicaJuego.getTile(x, y));
