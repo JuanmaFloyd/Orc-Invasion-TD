@@ -10,10 +10,8 @@ public class Animation {
 	protected BufferedImage ataque[];
 	protected int x, y, index, totalImages, indexTime, xOffset, yOffset;
 	protected long lastTime, now, timer;
-	protected Objeto o;
 	
-	public Animation (Objeto ob, int x, int y, float atkSpeed , BufferedImage[] anim){
-		o=ob;
+	public Animation (int x, int y, float atkSpeed , BufferedImage[] anim){
 		ataque = anim;
 		this.x = x;
 		this.y = y;

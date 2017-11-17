@@ -15,7 +15,7 @@ public class EnanoCazador extends Aliado {
 		velAtMaxima=2.0f;
 		t.setComponente(this);
 		image=ImageLoader.cazadorEnano;
-		animation = new Animation(this, t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.dwarfHunterAtk);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.dwarfHunterAtk);
 		vida=50;
 		maxVida=50;
 		escudo = 0;
