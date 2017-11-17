@@ -11,6 +11,7 @@ import objeto.noAtravesable.objetoConVida.personaje.aliado.Mago;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Paladin;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Grunt;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.OrcoConBallesta;
@@ -45,6 +46,12 @@ public class VisitorWololo {
 	public void visit(OrcoConBallesta ocb, Tile t){
 		ocb.restarVida(1000);
 		Arquero a = new Arquero(t);
+		t.agregarAliado(a);
+		playSound();
+	}
+	public void visit(Golem g, Tile t){
+		g.restarVida(1000);
+		EnanoCampeon a = new EnanoCampeon(t);
 		t.agregarAliado(a);
 		playSound();
 	}

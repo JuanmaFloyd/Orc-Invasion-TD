@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import game.Launcher;
 import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 
 @SuppressWarnings("serial")
@@ -43,8 +44,10 @@ public class PanelInfo extends JPanel {
 			
 			info = new JPanel(new GridLayout(2, 1));
 			JLabel vidaMax = new JLabel("Vida maxima: "+a.getMaxVida());
+			vidaMax.setFont(Launcher.fuente(20));
 			vidaMax.setHorizontalAlignment(JLabel.LEFT);
 			JLabel vida = new JLabel("Vida: "+a.getVida());
+			vida.setFont(Launcher.fuente(20));
 			vida.setHorizontalAlignment(JLabel.LEFT);
 			info.add(vidaMax);
 			info.add(vida);

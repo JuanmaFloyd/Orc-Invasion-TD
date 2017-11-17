@@ -129,7 +129,7 @@ public abstract class Enemigo extends Personaje{
 		g.drawImage(ImageLoader.vida[1], animation.getX(), animation.getY() + 128, 40, 4, null);
 		g.drawImage(ImageLoader.vida[0], animation.getX(), animation.getY() + 128, (40*getVida())/getMaxVida(), 4, null);
 		if(escudo>0)
-			g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64) + 135, (40*escudo)/maxEscudo, 4, null);
+			g.drawImage(ImageLoader.vida[2],  animation.getX(), animation.getY() + 135, (40*escudo)/maxEscudo, 4, null);
 	}
 	
 	public void switchMovementState(){

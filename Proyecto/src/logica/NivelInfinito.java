@@ -9,6 +9,7 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.OrcoConBallesta;
 
 public class NivelInfinito extends Nivel{
 	
@@ -72,7 +73,7 @@ public class NivelInfinito extends Nivel{
 		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
 		for (int i=0; i<7; i++){
 			Random r = new Random();
-			int e = r.nextInt(15);
+			int e = r.nextInt(17);
 			int esc = r.nextInt(10);
 			if(e<3)
 				lista1.addLast(new Goblin());
@@ -82,8 +83,11 @@ public class NivelInfinito extends Nivel{
 				else
 					if(e<12)
 						lista1.addLast(new Brujo());
-					else
-						lista1.addLast(new Golem());
+					else 
+						if(e<15)
+							lista1.addLast(new Golem());
+						else
+							lista1.addLast(new OrcoConBallesta());
 			if(esc<1)
 				lista1.getLast().crearEscudo();
 		}

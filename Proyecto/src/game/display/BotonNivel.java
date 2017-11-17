@@ -14,6 +14,7 @@ import javax.sound.sampled.FloatControl;
 import javax.swing.ImageIcon;
 
 import game.Game;
+import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Nivel;
 
@@ -35,7 +36,8 @@ public class BotonNivel extends JLabel{
 		setLayout(new CardLayout());
 		addMouseListener(new OyenteNivel());
 		
-		JLabel nivel = new JLabel("nivel " + i);
+		JLabel nivel = new JLabel("Nivel " + i);
+		nivel.setFont(Launcher.fuente(20));
 		nivel.setHorizontalAlignment(CENTER);
 		nivel.setVerticalAlignment(CENTER);
 		add(nivel);

@@ -10,20 +10,18 @@ import objeto.noAtravesable.objetoConVida.Premios.Bomba;
 import objeto.noAtravesable.objetoConVida.Premios.VisitorWololo;
 
 public class OrcoConBallesta extends Enemigo{
-	public OrcoConBallesta(Tile t){
+	public OrcoConBallesta(){
 		super();
 		vida=50;
 		maxVida=50;
-		miTile=t;
 		velocidadMov=1.3f;
 		velocidadAt=1.2f;
-		animation = new AnimationEnemy(this, 0 , t.getFila()*64, velocidadAt, velocidadMov ,ImageLoader.orcoBallestaAtk, ImageLoader.orcoBallestaMov);
+		animation = new AnimationEnemy(this, 0 , 0, velocidadAt, velocidadMov ,ImageLoader.orcoBallestaAtk, ImageLoader.orcoBallestaMov);
 		animation.setYOffset(128);
-		t.setComponente(this);
 		image = ImageLoader.orcoBallestero;
 		ancho=1;
 		alto=1;
-		impacto=25;
+		impacto=20;
 		alcance=3;
 		velMovMaxima=1.3f;
 		velAtMaxima=1.2f;
@@ -36,7 +34,7 @@ public class OrcoConBallesta extends Enemigo{
 		
 	}
 	public ObjetoNoAtravesable clone(){
-		return new OrcoConBallesta(new Tile(null, 0, 0));
+		return new OrcoConBallesta();
 	}
 	public void accept(VisitorWololo vw, Tile t){
 		vw.visit(this, t);

@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import game.Game;
+import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Nivel;
 
@@ -64,6 +65,7 @@ public class PanelGanar extends JPanel {
 			addMouseListener(new OyenteNivel());
 			
 			JLabel nivel = new JLabel("volver al menu principal");
+			nivel.setFont(Launcher.fuente(20));
 			nivel.setHorizontalAlignment(CENTER);
 			nivel.setVerticalAlignment(CENTER);
 			add(nivel);

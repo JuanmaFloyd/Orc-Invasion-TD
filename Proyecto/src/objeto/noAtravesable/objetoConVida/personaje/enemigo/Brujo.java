@@ -19,7 +19,7 @@ public class Brujo extends Enemigo{
 		image = ImageLoader.brujo;
 		ancho=1;
 		alto=1;
-		impacto=20;
+		impacto=10;
 		alcance=4;
 		velMovMaxima=2.3f;
 		velAtMaxima=2.0f;
