@@ -11,6 +11,7 @@ import logica.Objeto;
 import logica.Portal;
 import logica.Tienda;
 import logica.Tile;
+import objeto.noAtravesable.ObjetoNoAtravesable;
 import objeto.noAtravesable.objetoConVida.OMConVida.Barricada;
 import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.*;
@@ -42,6 +43,7 @@ public class PanelTienda extends JPanel {
 	protected JPanel panelElves, panelDwarves;
 	protected LinkedList<BotonCompra> botones;
 	private int cantPremios, vidas;
+	private ObjetoNoAtravesable objetoInfo;
 
 	/**
 	 * Create the panel.
@@ -349,7 +351,7 @@ public class PanelTienda extends JPanel {
 		}
 		labelPuntaje.setText("Score: "+p+"   Monedas: "+m);
 		int v = Logica.getLogica().getVidas();
-		if(v>0){
+		if(v>=0){
 		if(vidas<v){
 			for (int i=vidas; i<v; i++){
 				lVidas.addLast(new JLabel(new ImageIcon(ImageLoader.loadImage("/Textures/vida.png"))));
@@ -370,6 +372,8 @@ public class PanelTienda extends JPanel {
 				repaint();
 			}
 		}
+		if(objetoInfo!=null && objetoInfo.getVida()<=0)
+			removerInfo();
 		vidas=v;
 	}
 	public void setPrototype(Objeto ob){
@@ -424,6 +428,7 @@ public class PanelTienda extends JPanel {
 		c.ipady=0;
 		panelInfo = new PanelInfoAliado(a, tien);
 		add(panelInfo, c);
+		objetoInfo=a;
 		revalidate();
 		repaint();
 	}
@@ -436,6 +441,7 @@ public class PanelTienda extends JPanel {
 		c.ipady=0;
 		panelInfo = new PanelInfoPersonaje(e);
 		add(panelInfo, c);
+		objetoInfo=e;
 		revalidate();
 		repaint();
 	}
@@ -448,6 +454,7 @@ public class PanelTienda extends JPanel {
 		c.ipady=0;
 		panelInfo = new PanelInfo(omcv);
 		add(panelInfo, c);
+		objetoInfo=omcv;
 		revalidate();
 		repaint();
 	}
