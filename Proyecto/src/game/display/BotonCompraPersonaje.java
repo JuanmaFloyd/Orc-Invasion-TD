@@ -14,8 +14,6 @@ import javax.swing.ImageIcon;
 import game.gfx.ImageLoader;
 import logica.Comprable;
 import logica.Objeto;
-import objeto.noAtravesable.ObjetoNoAtravesable;
-import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 @SuppressWarnings("serial")
 public class BotonCompraPersonaje extends BotonCompra{

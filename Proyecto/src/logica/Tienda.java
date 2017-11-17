@@ -2,8 +2,6 @@ package logica;
 
 import game.display.PanelTienda;
 import objeto.atravesable.ObjetoAtravesable;
-import objeto.noAtravesable.objetoConVida.ObjetoConVida;
-import objeto.noAtravesable.objetoConVida.OMConVida.OMConVida;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
 public class Tienda {

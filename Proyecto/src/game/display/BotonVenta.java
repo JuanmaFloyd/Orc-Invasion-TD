@@ -2,7 +2,6 @@ package game.display;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
@@ -19,7 +18,6 @@ import javax.swing.JLabel;
 import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Comprable;
-import logica.Objeto;
 import logica.Tienda;
 
 @SuppressWarnings("serial")

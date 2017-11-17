@@ -3,8 +3,6 @@ package game.gfx;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import logica.Objeto;
-
 public class Animation {
 	
 	protected BufferedImage ataque[];

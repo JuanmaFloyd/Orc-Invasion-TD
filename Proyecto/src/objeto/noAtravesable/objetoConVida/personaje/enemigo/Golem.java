@@ -3,7 +3,6 @@ package objeto.noAtravesable.objetoConVida.personaje.enemigo;
 import game.gfx.AnimationEnemy;
 import game.gfx.ImageLoader;
 import logica.Objeto;
-import logica.Tile;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
 import objeto.noAtravesable.objetoConVida.Premios.Bomba;

@@ -14,6 +14,7 @@ public class VisitorPeste extends Visitor{
 		afecte = false;
 	}
 	
+	@SuppressWarnings("unused")
 	public void afectar(Aliado a){
 		if (!afecte && a != null){
 			EfectoPeste ef = new EfectoPeste(600, a);
@@ -24,6 +25,7 @@ public class VisitorPeste extends Visitor{
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	public void afectar(Enemigo e){
 		if (!afecte && e != null){
 			EfectoPeste ef = new EfectoPeste(600, e);

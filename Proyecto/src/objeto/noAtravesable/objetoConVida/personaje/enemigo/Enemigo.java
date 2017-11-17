@@ -147,7 +147,6 @@ public abstract class Enemigo extends Personaje{
 		if (prob == 4){
 			miTile.setComponente(premio);
 			premio.setTile(miTile);
-			System.out.println("dropie");
 		}
 	}
 	

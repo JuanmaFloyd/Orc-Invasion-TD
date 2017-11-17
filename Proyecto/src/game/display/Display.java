@@ -1,7 +1,5 @@
 package game.display;
 
-import java.util.LinkedList;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -10,10 +8,6 @@ import game.GameState;
 import game.MenuState;
 import game.UIState;
 import logica.Nivel;
-import logica.NivelDificil;
-import logica.NivelFacil;
-import logica.NivelVacio;
-import logica.Objeto;
 import logica.visitor.VisitorClick;
 
 public class Display {

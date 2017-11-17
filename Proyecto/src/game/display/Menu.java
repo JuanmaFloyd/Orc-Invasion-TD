@@ -3,7 +3,6 @@ package game.display;
 import java.awt.CardLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -11,13 +10,10 @@ import javax.swing.JPanel;
 
 import game.Game;
 import game.gfx.ImageLoader;
-import logica.Logica;
 import logica.Nivel;
 import logica.NivelDificil;
 import logica.NivelFacil;
 import logica.NivelInfinito;
-import logica.NivelVacio;
-import objeto.atravesable.Lava;
 
 @SuppressWarnings("serial")
 public class Menu extends JPanel{
