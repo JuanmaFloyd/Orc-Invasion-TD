@@ -19,9 +19,5 @@ public class Oleada {
 	public boolean oleadaFinalizada(){
 		return enemigos.isEmpty();
 	}
-
-	public void setLista(LinkedList<Enemigo> lista1) {
-		enemigos=lista1;
-	}
 	
 }

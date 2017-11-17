@@ -18,15 +18,9 @@ public class NivelInfinito extends Nivel{
 		
 		logicaJuego.setVidas(5);
 		
-		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
-		
-		oleada1=new Oleada(lista1);
-		oleada2=new Oleada(lista1);
-		oleada3=new Oleada(lista1);
-		
-		generarOleada(oleada1);
-		generarOleada(oleada2);
-		generarOleada(oleada3);
+		generarOleada1();
+		generarOleada2();
+		generarOleada3();
 	}
 	public void run() {		
 		
@@ -58,6 +52,7 @@ public class NivelInfinito extends Nivel{
 					reestablecerMapa();
 					modificarMapa();
 				}
+				generarOleada1();
 			} else if (!oleada3fin && oleada1fin && oleada2fin){
 				if(!oleada3.oleadaFinalizada())
 					logicaJuego.agregarEnemigo(oleada3.liberarEnemigo(), logicaJuego.getTile(numeroRandom, 0));
@@ -65,15 +60,15 @@ public class NivelInfinito extends Nivel{
 						oleada3fin = true;
 						reestablecerMapa();
 						modificarMapa();
-						generarOleada(oleada1);
-						generarOleada(oleada2);
-						generarOleada(oleada3);
+						generarOleada3();
 					}
 				}
+				generarOleada1();
+				generarOleada2();
 		}
 	}
 	
-	private void generarOleada(Oleada o){
+	private void generarOleada1(){
 		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
 		for (int i=0; i<7; i++){
 			Random r = new Random();
@@ -92,6 +87,48 @@ public class NivelInfinito extends Nivel{
 			if(esc<1)
 				lista1.getLast().crearEscudo();
 		}
-		o.setLista(lista1);
+		oleada1 = new Oleada(lista1);
+	}
+	private void generarOleada2(){
+		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
+		for (int i=0; i<7; i++){
+			Random r = new Random();
+			int e = r.nextInt(15);
+			int esc = r.nextInt(10);
+			if(e<3)
+				lista1.addLast(new Goblin());
+			else
+				if(e<8)
+					lista1.addLast(new JefeOrco());
+				else
+					if(e<12)
+						lista1.addLast(new Brujo());
+					else
+						lista1.addLast(new Golem());
+			if(esc<1)
+				lista1.getLast().crearEscudo();
+		}
+		oleada2 = new Oleada(lista1);
+	}
+	private void generarOleada3(){
+		LinkedList<Enemigo> lista1 = new LinkedList<Enemigo>();
+		for (int i=0; i<7; i++){
+			Random r = new Random();
+			int e = r.nextInt(15);
+			int esc = r.nextInt(10);
+			if(e<3)
+				lista1.addLast(new Goblin());
+			else
+				if(e<8)
+					lista1.addLast(new JefeOrco());
+				else
+					if(e<12)
+						lista1.addLast(new Brujo());
+					else
+						lista1.addLast(new Golem());
+			if(esc<1)
+				lista1.getLast().crearEscudo();
+		}
+		oleada3 = new Oleada(lista1);
 	}
 }
