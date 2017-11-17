@@ -4,14 +4,9 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import objeto.atravesable.Lava;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Brujo;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Goblin;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
-import objeto.noAtravesable.objetoConVida.personaje.enemigo.OrcoConBallesta;
+import objeto.noAtravesable.objetoConVida.personaje.enemigo.*;
 
-public class NivelDificil extends Nivel{
+public class NivelMedio extends Nivel{
 	
 	@Override
 	public void init() {
@@ -32,15 +27,12 @@ public class NivelDificil extends Nivel{
 				lista1.addLast(new Goblin());
 			else
 				if(e<8)
-					lista1.addLast(new JefeOrco());
+					lista1.addLast(new Grunt());
 				else
 					if(e<12)
 						lista1.addLast(new Brujo());
-					else 
-						if(e<15)
-							lista1.addLast(new Golem());
-						else
-							lista1.addLast(new OrcoConBallesta());
+					else
+						lista1.addLast(new Golem());
 			if(esc<1)
 				lista1.getLast().crearEscudo();
 		}
@@ -52,15 +44,12 @@ public class NivelDificil extends Nivel{
 				lista2.addLast(new Goblin());
 			else
 				if(e<8)
-					lista2.addLast(new JefeOrco());
+					lista2.addLast(new Grunt());
 				else
 					if(e<12)
 						lista2.addLast(new Brujo());
-					else 
-						if(e<15)
-							lista1.addLast(new Golem());
-						else
-							lista1.addLast(new OrcoConBallesta());
+					else
+						lista2.addLast(new Golem());
 			if(esc<1)
 				lista2.getLast().crearEscudo();
 		}
@@ -72,15 +61,12 @@ public class NivelDificil extends Nivel{
 				lista3.addLast(new Goblin());
 			else
 				if(e<8)
-					lista3.addLast(new JefeOrco());
+					lista3.addLast(new Grunt());
 				else
 					if(e<12)
 						lista3.addLast(new Brujo());
-					else 
-						if(e<15)
-							lista1.addLast(new Golem());
-						else
-							lista1.addLast(new OrcoConBallesta());
+					else
+						lista3.addLast(new Golem());
 			if(esc<1)
 				lista3.getLast().crearEscudo();
 		}

@@ -14,6 +14,7 @@ import logica.Nivel;
 import logica.NivelDificil;
 import logica.NivelFacil;
 import logica.NivelInfinito;
+import logica.NivelMedio;
 
 @SuppressWarnings("serial")
 public class Menu extends JPanel{
@@ -43,9 +44,9 @@ public class Menu extends JPanel{
 		Nivel n1 = new NivelFacil();
 		Nivel n2 = new NivelFacil();
 		Nivel n3 = new NivelFacil();
-		Nivel n4 = new NivelFacil();
-		Nivel n5 = new NivelDificil();
-		Nivel n6 = new NivelDificil();
+		Nivel n4 = new NivelMedio();
+		Nivel n5 = new NivelMedio();
+		Nivel n6 = new NivelMedio();
 		Nivel n7 = new NivelDificil();
 		Nivel n8 = new NivelDificil();
 		Nivel n9 = new NivelDificil();

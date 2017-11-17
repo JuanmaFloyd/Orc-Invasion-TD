@@ -107,8 +107,11 @@ public class NivelInfinito extends Nivel{
 				else
 					if(e<12)
 						lista1.addLast(new Brujo());
-					else
-						lista1.addLast(new Golem());
+					else 
+						if(e<15)
+							lista1.addLast(new Golem());
+						else
+							lista1.addLast(new OrcoConBallesta());
 			if(esc<1)
 				lista1.getLast().crearEscudo();
 		}
@@ -128,8 +131,11 @@ public class NivelInfinito extends Nivel{
 				else
 					if(e<12)
 						lista1.addLast(new Brujo());
-					else
-						lista1.addLast(new Golem());
+					else 
+						if(e<15)
+							lista1.addLast(new Golem());
+						else
+							lista1.addLast(new OrcoConBallesta());
 			if(esc<1)
 				lista1.getLast().crearEscudo();
 		}
