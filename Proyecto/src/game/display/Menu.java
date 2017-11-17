@@ -16,6 +16,12 @@ import logica.NivelFacil;
 import logica.NivelInfinito;
 import logica.NivelMedio;
 
+/**
+ * Clase Menu
+ * Extiende a la clase JPanel de Java
+ * Representa la grafica del menu principal
+ *
+ */
 @SuppressWarnings("serial")
 public class Menu extends JPanel{
 	//atributos

@@ -3,6 +3,12 @@ package game.display;
 import logica.Tienda;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 
+/**
+ * Clase PanelInfoAliado
+ * Extiende a la clase PanelInfoPersonaje
+ * Representa el panel de informacion de un aliado
+ *
+ */
 @SuppressWarnings("serial")
 public class PanelInfoAliado extends PanelInfoPersonaje{
 	

@@ -10,6 +10,11 @@ import game.UIState;
 import logica.Nivel;
 import logica.visitor.VisitorClick;
 
+/**
+ * Clase Display
+ * Representa la ventana con todos los objetos graficos
+ *
+ */
 public class Display {
 	//atributos
 	private JFrame frame;
@@ -33,6 +38,12 @@ public class Display {
 		
 		frame.pack();
 	}
+	
+	/**
+	 * Setea un nivel en el juego
+	 * @param v	VisitorClick del juego
+	 * @param n Nivel a empezar
+	 */
 	public void setJuego(VisitorClick v, Nivel n){
 		if(panel!=null)
 			frame.remove(panel);
@@ -43,6 +54,11 @@ public class Display {
 		frame.add(panel);
 		frame.pack();
 	}
+	
+	/**
+	 * Setea el menu en la ventana
+	 * @param g Game
+	 */
 	public void setMenu(Game g){
 		if(panel!=null)
 			frame.remove(panel);
@@ -53,6 +69,11 @@ public class Display {
 		frame.add(panel);
 		frame.pack();
 	}
+	
+	/**
+	 * Consulta el estado de la ventana
+	 * @return estado de la ventana
+	 */
 	public UIState getState(){
 		return state;
 	}

@@ -18,6 +18,12 @@ import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Nivel;
 
+/**
+ * Clase BotonNivel
+ * Extiende a la clase JLabel de Java
+ * Representa un boton para empezar un nivel
+ *
+ */
 @SuppressWarnings("serial")
 public class BotonNivel extends JLabel{
 	//atributos

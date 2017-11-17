@@ -20,6 +20,12 @@ import game.gfx.ImageLoader;
 import logica.Comprable;
 import logica.Tienda;
 
+/**
+ * Clase BotonVenta
+ * Extiende a la clase JLabel de Java
+ * Representa un boton para vender un Comprable
+ *
+ */
 @SuppressWarnings("serial")
 public class BotonVenta extends JLabel{
 	//atributos

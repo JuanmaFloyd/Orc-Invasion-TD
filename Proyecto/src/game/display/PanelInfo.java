@@ -12,6 +12,12 @@ import javax.swing.JPanel;
 import game.Launcher;
 import objeto.noAtravesable.objetoConVida.ObjetoConVida;
 
+/**
+ * Clase PanelInfo
+ * Extiende a la clase JPanel de Java
+ * Representa un panel de informacion de un objeto
+ *
+ */
 @SuppressWarnings("serial")
 public class PanelInfo extends JPanel {
 	//atributos

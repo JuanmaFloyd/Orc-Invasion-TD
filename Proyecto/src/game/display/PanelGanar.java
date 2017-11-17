@@ -15,6 +15,12 @@ import game.Launcher;
 import game.gfx.ImageLoader;
 import logica.Nivel;
 
+/**
+ * Clase PanelGanar
+ * Extiende a la clase JPanel de Java
+ * Representa la pantalla que se muestra cuando se gana un nivel
+ *
+ */
 @SuppressWarnings("serial")
 public class PanelGanar extends JPanel {
 	//atributos

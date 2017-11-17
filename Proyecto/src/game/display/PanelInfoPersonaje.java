@@ -7,6 +7,12 @@ import javax.swing.JPanel;
 
 import objeto.noAtravesable.objetoConVida.personaje.Personaje;
 
+/**
+ * Clase PanelInfoPersonaje
+ * Extiende a la clase Panelinfo
+ * Representa el panel de informacion de un personaje
+ *
+ */
 @SuppressWarnings("serial")
 public class PanelInfoPersonaje extends PanelInfo{
 	//constructor

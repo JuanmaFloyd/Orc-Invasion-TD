@@ -16,6 +16,12 @@ import logica.Objeto;
 import logica.Tienda;
 import logica.visitor.VisitorClick;
 
+/**
+ * Clase DisplayJuego
+ * Extiende a la clase JPanel de Java
+ * Representa la parte grafica de todo un nivel
+ *
+ */
 @SuppressWarnings("serial")
 public class DisplayJuego extends JPanel{
 	private Nivel nivel;
@@ -35,6 +41,9 @@ public class DisplayJuego extends JPanel{
 		v.setPanel(panelTienda);
 	}
 	
+	/**
+	 * Crea el display
+	 */
 	private void createDisplay(){
 
 		setLayout(new GridBagLayout());
@@ -72,10 +81,18 @@ public class DisplayJuego extends JPanel{
 		
 	}
 	
+	/**
+	 * Retorna el canvas del mapa
+	 * @return canvas
+	 */
 	public Canvas getCanvas(){
 		return canvas;
 	}
 	
+	/**
+	 * Maneja la interaccion con un click del mapa
+	 * @param e MouseEvent
+	 */
 	public void click(MouseEvent e){
 
 		if(panelTienda.getPrototype()!=null && e.getY()-offset>=0 && (e.getX() <= 768)){
@@ -90,14 +107,25 @@ public class DisplayJuego extends JPanel{
 			}
 	}
 	
+	/**
+	 * Actualiza el puntaje en el panel de la tienda
+	 * @param p nuevo puntaje
+	 */
 	public void actualizarPuntaje(int p){
 		panelTienda.actualizarPuntaje(p, tienda.getMonedas());
 	}
 	
+	/**
+	 * Retorna el panel de la tienda
+	 * @return panelTienda
+	 */
 	public PanelTienda getPanelTienda(){
 		return panelTienda;
 	}
-
+	
+	/**
+	 * Pierde un nivel
+	 */
 	public void perderNivel() {
 		System.out.println("DisplayJuego.perderNivel");
 		canvas.setEnabled(false);
@@ -108,7 +136,10 @@ public class DisplayJuego extends JPanel{
 		panelCanvas.revalidate();
 		panelCanvas.repaint();
 	}
-
+	
+	/**
+	 * Gana un nivel
+	 */
 	public void ganarNivel() {
 		System.out.println("DisplayJuego.ganarNivel");
 		canvas.setEnabled(false);

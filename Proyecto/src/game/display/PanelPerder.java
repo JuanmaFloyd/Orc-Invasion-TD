@@ -14,6 +14,12 @@ import game.Game;
 import game.Launcher;
 import game.gfx.ImageLoader;
 
+/**
+ * Clase PanelPerder
+ * Extiende a la clase JPanel de Java
+ * Representa el panel que se muestra cuando se gana un nivel
+ *
+ */
 @SuppressWarnings("serial")
 public class PanelPerder extends JPanel{
 	//atributos

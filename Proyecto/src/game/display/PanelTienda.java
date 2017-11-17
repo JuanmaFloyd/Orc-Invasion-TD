@@ -27,6 +27,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.util.LinkedList;
 
+/**
+ * Clase PanelTienda
+ * Extiende a la clase JPanel de Java
+ * Representa el panel de la tienda
+ *
+ */
 @SuppressWarnings("serial")
 public class PanelTienda extends JPanel {
 	
