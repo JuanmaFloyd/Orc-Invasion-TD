@@ -41,6 +41,7 @@ public class ImageLoader {
 	public static BufferedImage[] druidAtk = new BufferedImage[4];
 	public static BufferedImage[] torreAtk = new BufferedImage[4];
 	public static BufferedImage[] efectoMeteorito = new BufferedImage[9];
+	public static BufferedImage[] shield = new BufferedImage[4];
 	
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
@@ -212,6 +213,11 @@ public class ImageLoader {
 		efectoMeteorito[5] = sheet.getSubimage(1000, 0, 200,512);
 		efectoMeteorito[6] = sheet.getSubimage(1200, 0, 200,512);
 		efectoMeteorito[7] = sheet.getSubimage(1400, 0, 200,512);
+		sheet = loadImage("/Textures/Animations/Shield.png");
+		shield[0] = sheet.getSubimage(0, 0, 64, 64);
+		shield[0] = sheet.getSubimage(64, 0, 64, 64);
+		shield[0] = sheet.getSubimage(128, 0, 64, 64);
+		shield[0] = sheet.getSubimage(192, 0, 64, 64);
 	}
 	
  	
