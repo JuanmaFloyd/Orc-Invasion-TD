@@ -40,6 +40,7 @@ public class ImageLoader {
 	public static BufferedImage[] treantAtk = new BufferedImage[4];
 	public static BufferedImage[] druidAtk = new BufferedImage[4];
 	public static BufferedImage[] torreAtk = new BufferedImage[4];
+	public static BufferedImage[] efectoMeteorito = new BufferedImage[8];
 	
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
@@ -202,8 +203,18 @@ public class ImageLoader {
 		torreAtk[1] = torre;
 		torreAtk[2] = torre;
 		torreAtk[3] = torre;
+		sheet = loadImage("/Textures/Animations/Meteorito.png");
+		efectoMeteorito[0] = sheet.getSubimage(0, 0, 100,256);
+		efectoMeteorito[1] = sheet.getSubimage(100, 0, 100,256);
+		efectoMeteorito[2] = sheet.getSubimage(200, 0, 100,256);
+		efectoMeteorito[3] = sheet.getSubimage(300, 0, 100,256);
+		efectoMeteorito[4] = sheet.getSubimage(400, 0, 100,256);
+		efectoMeteorito[5] = sheet.getSubimage(500, 0, 100,256);
+		efectoMeteorito[6] = sheet.getSubimage(600, 0, 100,256);
+		efectoMeteorito[7] = sheet.getSubimage(700, 0, 100,256);
 	}
 	
+ 	
 	public static BufferedImage loadImage(String path){
 		try {
 			return ImageIO.read(ImageLoader.class.getResource(path));

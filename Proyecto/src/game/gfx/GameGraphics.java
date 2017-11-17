@@ -9,7 +9,6 @@ public class GameGraphics {
 	
 	private Logica logic = Logica.getLogica();
 	private Graphics g;
-	private Efectos efectos;
 	
 	public void setGraphics(Graphics g){
 		this.g = g;
@@ -36,7 +35,7 @@ public class GameGraphics {
 				}
 			}
 		}
-		efectos.dibujarEfectos(g);
+		EfectosManager.dibujarEfectos(g);
 		g.drawImage(ImageLoader.castillo, 0,0,ImageLoader.castillo.getWidth()*2, ImageLoader.castillo.getHeight()*2, null);
 	}
 	

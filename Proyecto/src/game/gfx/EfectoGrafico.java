@@ -4,9 +4,9 @@ import java.awt.image.BufferedImage;
 
 import logica.Objeto;
 
-public class Efecto extends Animation {
+public class EfectoGrafico extends Animation {
 
-	public Efecto(Objeto ob, int x, int y, float atkSpeed, BufferedImage[] anim) {
+	public EfectoGrafico(int x, int y, float atkSpeed, BufferedImage[] anim) {
 		super(x, y, atkSpeed, anim);
 	}
 
