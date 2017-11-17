@@ -19,6 +19,7 @@ import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
 public class VisitorWololo {
+	
 	public void visit(Goblin g, Tile t){
 		g.restarVida(1000);
 		Espadachin e = new Espadachin(t);

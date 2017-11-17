@@ -24,7 +24,7 @@ public class Treant extends Aliado{
 		alcance=1;
 		valor=0;
 		v=new VisitorAliado(this);
-		animation = new Animation(t.getColumna() * 64, t.getFila()*64, velocidadAt, ImageLoader.treantAtk);
+		animation = new Animation(t.getColumna() * 64,t.getFila()*64, velocidadAt, ImageLoader.treantAtk);
 		animation.setYOffset(128);
 	}
 	public ObjetoNoAtravesable clone(){
