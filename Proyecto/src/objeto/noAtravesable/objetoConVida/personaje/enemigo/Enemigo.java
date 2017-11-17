@@ -144,7 +144,7 @@ public abstract class Enemigo extends Personaje{
 	public void dropear(){
 		Random r = new Random();
 		int prob = r.nextInt(10);
-		if (prob == 4){
+		if (true){
 			miTile.setComponente(premio);
 			premio.setTile(miTile);
 		}
