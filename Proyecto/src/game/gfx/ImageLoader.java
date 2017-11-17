@@ -215,9 +215,9 @@ public class ImageLoader {
 		efectoMeteorito[7] = sheet.getSubimage(1400, 0, 200,512);
 		sheet = loadImage("/Textures/Animations/Shield.png");
 		shield[0] = sheet.getSubimage(0, 0, 64, 64);
-		shield[0] = sheet.getSubimage(64, 0, 64, 64);
-		shield[0] = sheet.getSubimage(128, 0, 64, 64);
-		shield[0] = sheet.getSubimage(192, 0, 64, 64);
+		shield[1] = sheet.getSubimage(64, 0, 64, 64);
+		shield[2] = sheet.getSubimage(128, 0, 64, 64);
+		shield[3] = sheet.getSubimage(192, 0, 64, 64);
 	}
 	
  	

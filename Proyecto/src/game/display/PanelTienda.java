@@ -350,7 +350,12 @@ public class PanelTienda extends JPanel {
 		add(scrollPane, c);
 		
 	}
-
+	
+	/**
+	 * Actualiza el puntaje y las monedas
+	 * @param p puntaje nuevo
+	 * @param m nueva cantidad de monedas
+	 */
 	public void actualizarPuntaje(int p, int m){
 		for(BotonCompra b: botones){
 			b.setearComprable(m);
@@ -382,12 +387,28 @@ public class PanelTienda extends JPanel {
 			removerInfo();
 		vidas=v;
 	}
+	
+	/**
+	 * Setea un nuevo prototipo para agregar en el mapa
+	 * @param ob objeto a agregar
+	 */
 	public void setPrototype(Objeto ob){
 		prototipo=ob;
 	}
+	
+	/**
+	 * Retorna el prototipo actual
+	 * @return prototipo
+	 */
 	public Objeto getPrototype(){
 		return prototipo;
 	}
+	
+	/**
+	 * Compra una alianza
+	 * @param al nombre de la alianza
+	 * @param val valor de la compra
+	 */
 	public void comprarAlianza(String al, int val){
 		if(al.equals("elfos")){
 			personajesElfos[0].setVisible(true);
@@ -407,6 +428,11 @@ public class PanelTienda extends JPanel {
 		}
 		Tienda.getTienda(myGame.getLogica()).comprarAlianza(val);
 	}
+	
+	/**
+	 * Agrega un premio al panel
+	 * @param p Boton en el cual se debe agregar
+	 */
 	public void agregarPremio(BotonCompraPremio p){
 		if(!panelPremios.isVisible())
 			panelPremios.setVisible(true);
@@ -416,6 +442,11 @@ public class PanelTienda extends JPanel {
 		revalidate();
 		repaint();
 	}
+	
+	/**
+	 * Elimina un premio del panel
+	 * @param p boton del cual se debe eliminar
+	 */
 	public void eliminarPremio(BotonCompraPremio p){
 		panelPre.remove(p);
 		botones.remove(p);
@@ -425,7 +456,11 @@ public class PanelTienda extends JPanel {
 		revalidate();
 		repaint();
 	}
-
+	
+	/**
+	 * Muestra la info de un aliado
+	 * @param a aliado de la info
+	 */
 	public void mostrarInfoAliado(Aliado a) {
 		if(panelInfo!=null)
 			remove(panelInfo);
@@ -438,7 +473,11 @@ public class PanelTienda extends JPanel {
 		revalidate();
 		repaint();
 	}
-
+	
+	/**
+	 * Muestra la info de un enemigo
+	 * @param e enemigo de la info
+	 */
 	public void mostrarInfoEnemigo(Enemigo e) {
 		if(panelInfo!=null)
 			remove(panelInfo);
@@ -451,7 +490,11 @@ public class PanelTienda extends JPanel {
 		revalidate();
 		repaint();
 	}
-
+	
+	/**
+	 * Muestra la info de un objeto del mapa
+	 * @param omcv objeto de la info
+	 */
 	public void mostrtarInfoOM(OMConVida omcv) {
 		if(panelInfo!=null)
 			remove(panelInfo);
@@ -464,13 +507,17 @@ public class PanelTienda extends JPanel {
 		revalidate();
 		repaint();
 	}
+	
 	public void setEnabled(boolean bool){
 		super.setEnabled(bool);
 		for(BotonCompra b: botones){
 			b.setEnabled(bool);
 		}
 	}
-
+	
+	/**
+	 * Remueve la info que se mostraba hasta el momento
+	 */
 	public void removerInfo() {
 		if(panelInfo!=null)
 			remove(panelInfo);
