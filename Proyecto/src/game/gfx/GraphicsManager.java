@@ -51,7 +51,7 @@ public class GraphicsManager implements Runnable{
 			delta += (now - lastTime) / timePerTick; // delta va a ir aumentando lentamente por cada vuelta del ciclo while
 			lastTime = now;   
 
-			if(delta >= 1){		// Cuando delta llegue a 1, llamo a los metodos update y render
+			if(delta >= 1){		// Cuando delta llegue a 1, llamo a render
 				render();
 				delta--;
 			}

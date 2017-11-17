@@ -24,7 +24,7 @@ public class EnanoCampeon extends Aliado{
 		alcance=1;
 		valor=65;
 		v=new VisitorAliado(this);
-		animation = new Animation(this, t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.campeonEnanoAtk);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.campeonEnanoAtk);
 		animation.setYOffset(128);
 	}
 	public ObjetoNoAtravesable clone(){

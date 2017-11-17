@@ -26,7 +26,7 @@ public class Clerigo extends Aliado {
 		alcance=1;
 		valor=40;
 		v=new VisitorClerigo(this);
-		animation = new Animation(this, t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.monkAtk);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.monkAtk);
 		animation.setYOffset(128);
 	}
 	

@@ -19,7 +19,7 @@ public class Agua extends ObjetoAtravesable{
 		rall=1.5f;
 		v=new VisitorAgua(this);
 		miTile = t;
-		animation = new Animation(this, t.getColumna()*64, t.getFila()*64, 0.5f, ImageLoader.aguaMov);
+		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.5f, ImageLoader.aguaMov);
 		animation.setYOffset(128);
 	}
 	

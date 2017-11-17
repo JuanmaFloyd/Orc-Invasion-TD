@@ -14,7 +14,7 @@ public class CharcoPeste extends ObjetoAtravesable{
 		miTile = t;
 		visitor = new VisitorPeste();
 		image = ImageLoader.peste;
-		animation = new Animation(this, t.getColumna()*64, t.getFila()*64, 0.5f, ImageLoader.pesteMov);
+		animation = new Animation(t.getColumna()*64, t.getFila()*64, 0.5f, ImageLoader.pesteMov);
 		animation.setYOffset(128);
 	}
 	@Override

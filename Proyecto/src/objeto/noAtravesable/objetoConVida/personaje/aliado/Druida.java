@@ -36,7 +36,7 @@ public class Druida extends Aliado{
 		alcance=3;
 		valor=80;
 		v=new VisitorAliado(this);
-		animation = new Animation(this, t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.druidAtk);
+		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.druidAtk);
 		animation.setYOffset(128);
 	}
 	public ObjetoNoAtravesable clone(){
