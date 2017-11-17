@@ -86,7 +86,8 @@ public abstract class Aliado extends Personaje implements Comprable {
 	public void dibujar(Graphics g){
 		if (miTile != null){
 			state.draw(g, this);
-			g.drawImage(ImageLoader.vida[1], getTile().getColumna() * 64, getTile().getFila() * 64 + 128, 40, 4, null);
+			g.drawImage
+				(ImageLoader.vida[1], getTile().getColumna() * 64, getTile().getFila() * 64 + 128, 40, 4, null);
 			g.drawImage(ImageLoader.vida[0], getTile().getColumna() * 64, getTile().getFila() * 64 + 128, (40*vida)/maxVida, 4, null);
 			if(escudo>0)
 				g.drawImage(ImageLoader.vida[2], getTile().getColumna() * 64, (getTile().getFila() * 64) + 135, (40*escudo)/maxEscudo, 4, null);

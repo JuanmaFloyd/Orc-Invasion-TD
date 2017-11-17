@@ -5,6 +5,12 @@ import java.awt.image.BufferedImage;
 
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
+/**
+ * Clase AnimationEnemy
+ * Extiende a la clase Animation
+ * Representa la animacion de un enemigo
+ *
+ */
 public class AnimationEnemy extends Animation {
 
 	protected BufferedImage movement[];
@@ -23,10 +29,17 @@ public class AnimationEnemy extends Animation {
 		stopped = false;
 	}
 	
+	/**
+	 * Cambia el estado de movimiento entre detenido y no detenido
+	 */
 	public void switchMovementState(){
 		stopped = !stopped;
 	}
-
+	
+	/**
+	 * Dibuja una imagen del movimiento del enemigo y pasa a la siguiente imagen de la animacion
+	 * @param g Graphics donde dibujar
+	 */
 	public void drawMove(Graphics g){
 		if (!stopped){
 			g.drawImage(movement[index], x + xOffset - (movement[index].getWidth() - 64), y + yOffset - (movement[index].getHeight() - 64), movement[index].getWidth() , movement[index].getHeight(), null);
@@ -55,6 +68,10 @@ public class AnimationEnemy extends Animation {
 		}
 	}
 	
+	/**
+	 * Setea la velocidad de la animacion de movimiento
+	 * @param value velocidad
+	 */
 	public void setMovSpeed(float value){
 		pixelTime = (int) ((1000 * value) / 64);
 	}
