@@ -31,7 +31,7 @@ public class NivelInfinito extends Nivel{
 		while(running){
 			
 			try {
-				Thread.sleep(500);
+				Thread.sleep(6000);
 			} 
 			catch (InterruptedException e) {
 				e.printStackTrace();
