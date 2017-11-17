@@ -1,0 +1,18 @@
+Para antes de jugar:
+
+-Para colocar un aliado en el mapa, aprete el boton del aliado que desee y a continuación presione en la zona del mapa que desea colocar el aliado
+
+-Nota sobre Clérigo: el Clérigo tiene la habilidad de curar a una unidad aliada, para ello debe colocar al Clérigo justo detras de la unidad que desea que cure
+
+-Portales: para colocar los portales, presione el boton con un portal y a continuación presione dos veces en el mapa sin presionar ningún otro boton entre medio. El primer click coloca el portal de entrada (azul) y el segundo, el de salida (naranja)
+
+-Los premios son liberados por los enemigos cuando mueren. Hay una pequeña probabilidad de que lo hagan. Si un enemigo "dropea" debe cliquear el premio en el mapa para obtenerlo, si el premio es alcanzado por un enemigo, se pierde el premio
+
+-Los premios se utilizan igual que los aliados (apretar botón y apretara en mapa), pero son gratis! No lo son los objetos comprables (barricada, portal y torre), que se colocan igual a los enemigos
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Notas sobre el juego:
+
+El juego cuenta con seis tipos de premios dropeables. El escudo es uno de los premios, que otorga en area a todos los aliados que se encuentran en la misma vida extra (barra de vida azul). El frenzy otorga en un area velocidad de ataque extra en un tiempo. La bomba genera daño en area. La bola de fuego genera daño a una unidad. La peste enferma a enemigos que transiten un area y los hace perder vida por un tiempo. Por ultimo, el wololo transforma a una unidad enemiga en una unidad aliada equivalente. Cuidado! La bomba, la bola de fuego y la peste pueden afectar unidades aliadas también.
+Se cuenta con tres objetos comprables. La barricada simplemente detendra a las unidades enemigas hasta que sea destruida. La torre proporciona daño con un gran alcance. El portal transporta unidades enemigas de un lado a otro.
