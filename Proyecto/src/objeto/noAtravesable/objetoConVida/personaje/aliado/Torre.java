@@ -24,7 +24,7 @@ public class Torre extends Aliado{
 		alcance=5;
 		valor=150;
 		v=new VisitorAliado(this);
-		animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.torreAtk);
+		animation = new Animation(t.getColumna() * 64,t.getFila()*64, velocidadAt, ImageLoader.torreAtk);
 		animation.setYOffset(128);
 	}
 	public ObjetoNoAtravesable clone(){

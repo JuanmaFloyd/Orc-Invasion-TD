@@ -89,29 +89,29 @@ public class Logica {
 		for(Aliado a : aliadosAAgregar){
 			listaAliados.addLast(a);
 		}
-		aliadosAAgregar = new LinkedList<Aliado>();
+		aliadosAAgregar.clear();
 		for(Enemigo e : enemigosAAgregar){
 			listaEnemigos.addLast(e);
 		}
-		enemigosAAgregar = new LinkedList<Enemigo>();
+		enemigosAAgregar.clear();
 	}
 	private void eliminarObjetos(){
 		for (ObjetoTemporal obj : objetosTemporalesABorrar){
 			objetosTemporales.remove(obj);
 		}
-		objetosTemporalesABorrar = new LinkedList<ObjetoTemporal>();
+		objetosTemporalesABorrar.clear();
 		for (Aliado a : aliadosABorrar){
 			listaAliados.remove(a);
 		}
-		aliadosABorrar = new LinkedList<Aliado>();
+		aliadosABorrar.clear();
 		for (Enemigo e : enemigosABorrar){
 			listaEnemigos.remove(e);
 		}
-		enemigosABorrar = new LinkedList<Enemigo>();
+		enemigosABorrar.clear();
 		for (ObjetoAtravesable oa : atravesablesABorrar){
 			listaAtravesables.remove(oa);
 		}
-		atravesablesABorrar = new LinkedList<ObjetoAtravesable>();
+		atravesablesABorrar.clear();
 	}
 	
 	public void generarMapa(){

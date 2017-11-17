@@ -48,6 +48,7 @@ public class ImageLoader {
 	public static BufferedImage[] efectoMeteorito = new BufferedImage[9];
 	public static BufferedImage[] shield = new BufferedImage[4];
 	public static BufferedImage[] bomb = new BufferedImage[8];
+	public static BufferedImage[] osoAtk = new BufferedImage[1];
 	
 	/**
 	 * inicializa las imagenes
@@ -93,6 +94,7 @@ public class ImageLoader {
 		pesteMov[1] = peste;
 		pesteMov[2] = peste;
 		pesteMov[3] = peste;
+		osoAtk[0] = oso;
 		sheet = loadImage("/Textures/Animations/Treant attack.png");
 		treantAtk [0] = sheet.getSubimage(0,0,64,64);
 		treantAtk [1] = sheet.getSubimage(64,0,64,64);

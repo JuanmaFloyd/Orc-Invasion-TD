@@ -25,7 +25,7 @@ public class Arquero extends Aliado{
 			alcance=3;
 			valor=40;
 			v=new VisitorAliado(this);
-			animation = new Animation(t.getFila() * 64,t.getColumna()*64, velocidadAt, ImageLoader.arqueroAtk);
+			animation = new Animation(t.getColumna() * 64,t.getFila()*64, velocidadAt, ImageLoader.arqueroAtk);
 			animation.setYOffset(128);
 		}
 		
