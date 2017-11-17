@@ -13,7 +13,7 @@ public class VisitorEscudo extends Visitor{
 	@Override
 	public void afectar(Aliado a) {
 		a.crearEscudo();
-		EfectosManager.agregarEfecto(new EfectoGrafico(a.getTile().getFila()*64, a.getTile().getColumna()*64 + 128, 1.0f, ImageLoader.shield));
+		EfectosManager.agregarEfecto(new EfectoGrafico( a.getTile().getColumna()*64 + 128, a.getTile().getFila()*64, 1.0f, ImageLoader.shield));
 	}
 	public void afectar(Enemigo e) {}
 	public void afectar(OMConVida omcv) {}

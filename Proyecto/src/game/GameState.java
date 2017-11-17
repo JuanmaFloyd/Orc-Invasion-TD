@@ -35,14 +35,15 @@ public class GameState implements UIState{
 			display.getCanvas().createBufferStrategy(3);
 			return;
 		}
+		else{
+			Graphics g = bs.getDrawGraphics();
 		
-		Graphics g = bs.getDrawGraphics();
-		
-		graphics.setGraphics(g);
-		graphics.dibujarMapa();
-		
-		bs.show();
-		g.dispose();
+			graphics.setGraphics(g);
+			graphics.dibujarMapa();
+			
+			bs.show();
+			g.dispose();
+		}
 	}
 
 	public void actualizar() {
