@@ -42,6 +42,7 @@ public class ImageLoader {
 	public static BufferedImage[] torreAtk = new BufferedImage[4];
 	public static BufferedImage[] efectoMeteorito = new BufferedImage[9];
 	public static BufferedImage[] shield = new BufferedImage[4];
+	public static BufferedImage[] bomb = new BufferedImage[8];
 	
  	public static void init(){
  		fondo = loadImage("/Textures/Fondo.png");
@@ -218,6 +219,15 @@ public class ImageLoader {
 		shield[1] = sheet.getSubimage(64, 0, 64, 64);
 		shield[2] = sheet.getSubimage(128, 0, 64, 64);
 		shield[3] = sheet.getSubimage(192, 0, 64, 64);
+		sheet = loadImage("/Textures/Animations/Explosion.png");
+		bomb[0] = sheet.getSubimage(0, 0, 64, 64);
+		bomb[1] = sheet.getSubimage(64, 0, 64, 64);
+		bomb[2] = sheet.getSubimage(128, 0, 64, 64);
+		bomb[3] = sheet.getSubimage(192, 0, 64, 64);
+		bomb[4] = sheet.getSubimage(0, 64, 64, 64);
+		bomb[5] = sheet.getSubimage(64, 64, 64, 64);
+		bomb[6] = sheet.getSubimage(128, 64, 64, 64);
+		bomb[7] = sheet.getSubimage(192, 64, 64, 64);
 	}
 	
  	

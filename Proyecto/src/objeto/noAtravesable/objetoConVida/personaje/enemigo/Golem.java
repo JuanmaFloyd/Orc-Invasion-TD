@@ -5,7 +5,7 @@ import game.gfx.ImageLoader;
 import logica.Objeto;
 import logica.visitor.VisitorEnemigo;
 import objeto.noAtravesable.ObjectStateMoving;
-import objeto.noAtravesable.objetoConVida.Premios.Bomba;
+import objeto.noAtravesable.objetoConVida.Premios.Fireball;
 
 public class Golem extends Enemigo{
 	public Golem(){
@@ -28,7 +28,7 @@ public class Golem extends Enemigo{
 		reloj=1;
 		v = new VisitorEnemigo(this);
 		setState(new ObjectStateMoving());
-		premio = new Bomba();
+		premio = new Fireball();
 		
 	}
 	@Override
