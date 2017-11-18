@@ -10,7 +10,6 @@ import objeto.noAtravesable.objetoConVida.Premios.Peste;
 
 public class CharcoPeste extends ObjetoAtravesable{
 	private VisitorPeste visitor;
-	private Peste p;
 	
 	public CharcoPeste(Peste p, Tile t){
 		miTile = t;
@@ -27,7 +26,7 @@ public class CharcoPeste extends ObjetoAtravesable{
 
 	@Override
 	public Objeto clone() {
-		return new CharcoPeste(p, null);
+		return new CharcoPeste(null, null);
 	}
 
 }
