@@ -6,6 +6,11 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 import objeto.atravesable.*;
 import objeto.noAtravesable.ObjetoNoAtravesable;
 
+/**
+ * Clase Tile
+ * Representa un Tile del tablero (mapa)
+ *
+ */
 public class Tile {
 	//atributos
 	protected ObjetoNoAtravesable componente;
@@ -24,48 +29,107 @@ public class Tile {
 	}
 	
 	//metodos
+	/**
+	 * Consulta el componente no atravesable que tiene encima
+	 * @return componente no atravesable
+	 */
 	public ObjetoNoAtravesable getComponente(){
 		return componente;
 	}
+	
+	/**
+	 * Consulta el componente atravesable que tiene encima
+	 * @return componente atravesable
+	 */
 	public ObjetoAtravesable getComponenteAtravesable(){
 		return componenteAtravesable;
 	}
+	
+	/**
+	 * Le setea un componente no atravesable encima
+	 * @param o objeto no atravesable
+	 */
 	public void setComponente(ObjetoNoAtravesable o){
 		componente=o;
 	}
+
+	/**
+	 * Le setea un componente atravesable encima
+	 * @param o objeto atravesable
+	 */
 	public void setComponenteAtravesable(ObjetoAtravesable o){
 		componenteAtravesable=o;
 	}
+	
+	/**
+	 * Consulta la fila del tile
+	 * @return fila
+	 */
 	public int getFila(){
 		return fila;
 	}
+	
+	/**
+	 * Consulta la columna del tile
+	 * @return columna
+	 */
 	public int getColumna(){
 		return columna;
 	}
+	
+	/**
+	 * Consulta el tile a la derecha
+	 * @return tile derecho
+	 */
 	public Tile getRight(){
 		return miJuego.getTile(fila, columna+1);
 	}
+	
+	/**
+	 * Consulta el tile a la izquierda
+	 * @return tile izquierdo
+	 */
 	public Tile getLeft(){
 		return miJuego.getTile(fila, columna-1);
 	}
 	
+	/**
+	 * Consulta el tile de abajo
+	 * @return tile de abajo
+	 */
 	public Tile getAbajo(){
 		return miJuego.getTile(fila+1, columna);
 	}
 	
+	/**
+	 * Consulta el tile de arriba
+	 * @return tile de arriba
+	 */
 	public Tile getArriba() {
 		return miJuego.getTile(fila-1, columna);
 	}
 	
+	/**
+	 * Destruye un aliado que tenia encima
+	 * @param a aliado
+	 */
 	public void destruirAliado(Aliado a){
 		componente = null;
 		miJuego.agregarAliadoABorrar(a);
 	}
 	
+	/**
+	 * Agrega un aliado a la logica
+	 * @param a aliado
+	 */
 	public void agregarAliado(Aliado a){
 		miJuego.agregarAliado(a);
 	}
 	
+	/**
+	 * Destruye un enemigo que tenia encima
+	 * @param e enemigo
+	 */
 	public void destruirEnemigo(Enemigo e){
 		componente = null;
 		e.dropear();
@@ -74,13 +138,18 @@ public class Tile {
 		miJuego.agregarPuntos(e.getPuntaje());
 	}
 	
+	/**
+	 * Destruye un objeto de mapa que tenia encima
+	 * @param ocv objeto de mapa
+	 */
 	public void destruirObjeto(OMConVida ocv){
 		componente=null;
 	}
-	public Logica getLogica(){
-		return miJuego;
-	}
-
+	
+	/**
+	 * Destruye un objeto atravesable que tenia encima
+	 * @param o objeto atravesable
+	 */
 	public void destruirAtravesable(ObjetoAtravesable o) {
 		o.setTile(null);
 		componenteAtravesable=null;

@@ -4,6 +4,13 @@ import logica.visitor.VisitorPortal;
 import objeto.atravesable.PortalIn;
 import objeto.atravesable.PortalOut;
 
+/**
+ * Clase Portal
+ * Extiende a la clase Objeto
+ * Implementa a la interfaz Comprable
+ * Representa un portal del juego (con sus resprectivos portales de entrada y salida)
+ *
+ */
 public class Portal extends Objeto implements Comprable{
 	protected PortalIn pi;
 	protected PortalOut po;
@@ -12,17 +19,22 @@ public class Portal extends Objeto implements Comprable{
 	public Portal(){
 	}
 	
+	/**
+	 * Retorna el portal de salida
+	 * @return portal de salida
+	 */
 	public PortalOut getOut(){
 		return po;
 	}
+	
+	/**
+	 * Retorna el portal de entrada
+	 * @return portal de entrada
+	 */
 	public PortalIn getIn(){
 		return pi;
 	}
-	
-	//despues lo borro
-	public void restarVida(int v) {
-	}
-	
+
 	public Objeto clone() {
 		return new Portal();
 	}

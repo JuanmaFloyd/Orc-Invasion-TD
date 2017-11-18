@@ -11,6 +11,12 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.OrcoConBallesta;
 
+/**
+ * Clase NivelDificil
+ * Extiende a la clase Nivel
+ * Representa un nivel dificil del juego
+ *
+ */
 public class NivelDificil extends Nivel{
 	
 	@Override

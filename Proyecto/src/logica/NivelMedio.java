@@ -6,6 +6,12 @@ import java.util.Random;
 import objeto.atravesable.Lava;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.*;
 
+/**
+ * Clase NivelMedio
+ * Extiende a la clase Nivel
+ * Representa un nivel de dificultad media
+ *
+ */
 public class NivelMedio extends Nivel{
 	
 	@Override

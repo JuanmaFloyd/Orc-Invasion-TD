@@ -11,6 +11,12 @@ import objeto.noAtravesable.objetoConVida.personaje.enemigo.Golem;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.JefeOrco;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.OrcoConBallesta;
 
+/**
+ * Clase NivelInfinito
+ * Extiende a la clase Nivel
+ * Representa un nivel infinito
+ *
+ */
 public class NivelInfinito extends Nivel{
 	
 	public void init() {

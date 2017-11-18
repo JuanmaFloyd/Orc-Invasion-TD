@@ -6,6 +6,12 @@ import java.util.Random;
 import objeto.atravesable.Lava;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.*;
 
+/**
+ * Clase NivelFacil
+ * Extiende a la clase Nivel
+ * Representa un nivel facil del juego
+ *
+ */
 public class NivelFacil extends Nivel{
 
 	@Override

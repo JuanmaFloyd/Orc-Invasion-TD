@@ -8,6 +8,12 @@ import game.gfx.EfectosManager;
 import game.gfx.ImageLoader;
 import objeto.atravesable.Lava;
 
+/**
+ * Clase Nivel
+ * Implmenta la interfaz Runnable de Java
+ * Representa un nivel del juego
+ *
+ */
 public abstract class Nivel implements Runnable{
 
 	protected static Logica logicaJuego = Logica.getLogica();
@@ -96,6 +102,9 @@ public abstract class Nivel implements Runnable{
 		}
 	}
 	
+	/**
+	 * Modifica el mapa entre oleadas
+	 */
 	public void modificarMapa(){
 		Random r = new Random();
 		for (int i = 0; i<3; i++){
@@ -120,12 +129,19 @@ public abstract class Nivel implements Runnable{
 		
 	}
 	
+	/**
+	 * Reestablece el mapa luego que paso una oleada
+	 */
 	public void reestablecerMapa(){
 		for(Lava l:listaLava){
 			l.remover();
 		}
 	}
 	
+	/**
+	 * Consulta si se gano el nivel
+	 * @return ganado
+	 */
 	public boolean ganado(){
 		if(oleada3!=null)
 			return oleada3.oleadaFinalizada() && logicaJuego.noHayEnemigos() && logicaJuego.getVidas()>0;
@@ -133,6 +149,10 @@ public abstract class Nivel implements Runnable{
 			return false;
 	}
 	
+	/**
+	 * Consulta si se perdio el nivel
+	 * @return perdido
+	 */
 	public boolean perdido(){
 		if(oleada3!=null)
 			return !oleada3.oleadaFinalizada() && logicaJuego.getVidas()==0;
@@ -140,15 +160,34 @@ public abstract class Nivel implements Runnable{
 			return false;
 	}
 	
+	/**
+	 * Setea un nivel como siguiente
+	 * @param n siguiente
+	 */
 	public void setSiguiente(Nivel n){
 		siguiente=n;
 	}
+	
+	/**
+	 * Consulta el nivel siguiente
+	 * @return siguiente
+	 */
 	public Nivel getSiguiente(){
 		return siguiente;
 	}
+	
+	/**
+	 * Setea una cantidad de monedas de inicio del nivel
+	 * @param m monedas de inicio
+	 */
 	public void setMonedasInicio(int m){
 		monedas=m;
 	}
+	
+	/**
+	 * Consulta la cantidad de monedas de inicio
+	 * @return monedas de inicio
+	 */
 	public int getMonedasInicio(){
 		return monedas;
 	}

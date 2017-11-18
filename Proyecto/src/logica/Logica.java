@@ -8,6 +8,11 @@ import objeto.noAtravesable.objetoConVida.OMConVida.*;
 import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 import objeto.noAtravesable.objetoConVida.personaje.enemigo.Enemigo;
 
+/**
+ * Clase Logica
+ * Representa a la logica de todo el juego
+ *
+ */
 public class Logica {
 	
 	//atributos
@@ -39,52 +44,114 @@ public class Logica {
 		objetosTemporalesABorrar = new LinkedList<ObjetoTemporal>();
 	}
 	
+
+	//metodos
 	public static Logica getLogica(){
 		return logica;
 	}
+	
+	/**
+	 * Agrega puntos a la partida
+	 * @param e puntos a agregar
+	 */
 	public void agregarPuntos(int e){
 		score+=e;
 	}
-	//metodos
+	
+	/**
+	 * Setea una cantidad de vidas
+	 * @param v cantidad de vidas
+	 */
 	public void setVidas(int v){
 		vidas=v;
 	}
+	
+	/**
+	 * Consulta la cantidad de vidas restantes
+	 * @return vidas
+	 */
 	public int getVidas(){
 		return vidas;
 	}
+	
+	/**
+	 * Agrega monedas a la tienda
+	 * @param m monedas a agregar
+	 */
 	public void agregarMonedas(int m){
 		tienda.sumarMonedas(m);
 	}
+	
+	/**
+	 * Agrega un aliado a la logica
+	 * @param a aliado
+	 */
 	public void agregarAliado(Aliado a){
 		aliadosAAgregar.addLast(a);
 	}
+	
+	/**
+	 * Agrega un enemigo a la logica en un tile
+	 * @param e enemigo
+	 * @param t tile
+	 */
 	public void agregarEnemigo(Enemigo e, Tile t){
 		enemigosAAgregar.addLast(e);
 		e.setTile(t);
 		t.setComponente(e);
 	}
+	
+	/**
+	 * Agrega un objeto atravesable a la logica
+	 * @param oa objeto atravesable
+	 */
 	public void agregarAtravesable(ObjetoAtravesable oa){
 		listaAtravesables.addLast(oa);
 	}
-
+	
+	/**
+	 * Agrega un aliado para luego ser borrado
+	 * @param a aliado
+	 */
 	public void agregarAliadoABorrar(Aliado a){
 		aliadosABorrar.addLast(a);
 	}
+	
+	/**
+	 * Agrega un enemigo para luego ser borrado
+	 * @param e Enemigo
+	 */
 	public void agregarEnemigoABorrar(Enemigo e){
 		enemigosABorrar.addLast(e);
 	}
+	
+	/**
+	 * Agrega un objeto atravesable para luego ser borrado
+	 * @param oa objeto atravesable
+	 */
 	public void agregarAtravesableABorrar(ObjetoAtravesable oa){
 		atravesablesABorrar.addLast(oa);
 	}
 	
+	/**
+	 * Agrega un objeto temporal a la logica
+	 * @param obj objeto temporal
+	 */
 	public void agregarObjetoTemporal(ObjetoTemporal obj){
 		objetosTemporales.addLast(obj);
 	}
 	
+	/**
+	 * Agrega un objeto temporal para luego ser borrado
+	 * @param obj objeto temporal
+	 */
 	public void agregarObjetoTemporalABorrar(ObjetoTemporal obj){
 		objetosTemporalesABorrar.addLast(obj);
 	}
 	
+	/**
+	 * Agrega todos los objetos agregados previamente
+	 */
 	private void agregarObjetos(){
 		for(Aliado a : aliadosAAgregar){
 			listaAliados.addLast(a);
@@ -95,6 +162,9 @@ public class Logica {
 		}
 		enemigosAAgregar.clear();
 	}
+	/**
+	 * Borra todos los objetos eliminados previamente
+	 */
 	private void eliminarObjetos(){
 		for (ObjetoTemporal obj : objetosTemporalesABorrar){
 			objetosTemporales.remove(obj);
@@ -114,6 +184,9 @@ public class Logica {
 		atravesablesABorrar.clear();
 	}
 	
+	/**
+	 * Genera un mapa al azar
+	 */
 	public void generarMapa(){
 		
 		int r;
@@ -152,6 +225,9 @@ public class Logica {
 		}
 	}
 	
+	/**
+	 * Actualiza la logica
+	 */
 	public void actualizar(){
 		for(ObjetoTemporal obj: objetosTemporales){
 			obj.decrementarReloj();
@@ -205,14 +281,28 @@ public class Logica {
 		}
 	}
 	
+	/**
+	 * Consulta el score
+	 * @return score
+	 */
 	public int getScore(){
 		return score;
 	}
 	
+	/**
+	 * Setea el score
+	 * @param s nuevo score
+	 */
 	public void setScore(int s){
 		score = s;
 	}
 	
+	/**
+	 * Retorna un tile en una fila y columna especificas del tablero
+	 * @param f fila
+	 * @param c columna
+	 * @return tile
+	 */
 	public Tile getTile(int f, int c){
 		if (f < tablero.length && c < tablero[0].length){
 			return tablero[f][c];
@@ -222,18 +312,33 @@ public class Logica {
 		}
 	}
 	
+	/**
+	 * Consulta la cantidad de filas
+	 * @return filas
+	 */
 	public int getFilas(){
 		return filas;
 	}
 	
+	/**
+	 * Consulta la cantidad de columnas
+	 * @return columnas
+	 */
 	public int getColumnas(){
 		return columnas;
 	}
 	
+	/**
+	 * Consulta si no hay enemigos en el mapa
+	 * @return true si no hay enemigos, false en caso contrario
+	 */
 	public boolean noHayEnemigos(){
 		return listaEnemigos.size() == 0;
 	}
-
+	
+	/**
+	 * vacia todo el mapa de aliados y enemigos
+	 */
 	public void vaciar() {
 		for(Aliado a: listaAliados){
 			agregarAliadoABorrar(a);
