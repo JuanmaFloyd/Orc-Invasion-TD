@@ -135,7 +135,7 @@ public class Tile {
 		e.dropear();
 		miJuego.agregarEnemigoABorrar(e);
 		miJuego.agregarMonedas(e.getCoins());
-		miJuego.agregarPuntos(e.getPuntaje());
+		miJuego.setScore(miJuego.getScore()+e.getPuntaje());
 	}
 	
 	/**

@@ -51,14 +51,6 @@ public class Logica {
 	}
 	
 	/**
-	 * Agrega puntos a la partida
-	 * @param e puntos a agregar
-	 */
-	public void agregarPuntos(int e){
-		score+=e;
-	}
-	
-	/**
 	 * Setea una cantidad de vidas
 	 * @param v cantidad de vidas
 	 */
