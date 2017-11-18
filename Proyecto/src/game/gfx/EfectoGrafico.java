@@ -2,8 +2,6 @@ package game.gfx;
 
 import java.awt.image.BufferedImage;
 
-import logica.Objeto;
-
 /**
  * Clase EfectoGrafico
  * Extiende a la clase Animation

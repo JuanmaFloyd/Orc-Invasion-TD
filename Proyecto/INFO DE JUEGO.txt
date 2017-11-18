@@ -14,5 +14,14 @@ Para antes de jugar:
 
 Notas sobre el juego:
 
-El juego cuenta con seis tipos de premios dropeables. El escudo es uno de los premios, que otorga en area a todos los aliados que se encuentran en la misma vida extra (barra de vida azul). El frenzy otorga en un area velocidad de ataque extra en un tiempo. La bomba genera daño en area. La bola de fuego genera daño a una unidad. La peste enferma a enemigos que transiten un area y los hace perder vida por un tiempo. Por ultimo, el wololo transforma a una unidad enemiga en una unidad aliada equivalente. Cuidado! La bomba, la bola de fuego y la peste pueden afectar unidades aliadas también.
-Se cuenta con tres objetos comprables. La barricada simplemente detendra a las unidades enemigas hasta que sea destruida. La torre proporciona daño con un gran alcance. El portal transporta unidades enemigas de un lado a otro.
+El juego cuenta con seis tipos de premios dropeables:
+	El escudo es uno de los premios, que otorga en area a todos los aliados que se encuentran en la misma vida extra (barra de vida azul). 
+	El frenzy otorga en un area velocidad de ataque extra en un tiempo. 
+	La bomba genera daño en area. La bola de fuego genera daño a una unidad. 
+	La peste enferma a enemigos que transiten un area y los hace perder vida por un tiempo. 
+	Por ultimo, el wololo transforma a una unidad enemiga en una unidad aliada equivalente. 
+	Cuidado! La bomba, la bola de fuego y la peste pueden afectar unidades aliadas también.
+Se cuenta con tres objetos comprables: 
+	La barricada simplemente detendra a las unidades enemigas hasta que sea destruida. 
+	La torre proporciona daño con un gran alcance. 
+	El portal transporta unidades enemigas de un lado a otro.

@@ -7,7 +7,6 @@ import objeto.noAtravesable.objetoConVida.personaje.aliado.Aliado;
 public class EfectoFrenzy extends ObjetoTemporal {
 
 	private LinkedList<Aliado> aliados;
-	private LinkedList<Aliado> aRem;
 	private float modificador;
 	
 	public EfectoFrenzy(int reloj, float mod, LinkedList<Aliado> alis){
